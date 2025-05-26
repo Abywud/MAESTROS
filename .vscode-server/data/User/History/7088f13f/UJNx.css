@@ -1,0 +1,18 @@
+div {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 10px solid transparent; /* Ensures a border exists */
+}
+
+/* Set border-top-color for each div */
+#red { border-top-color: #f00; }
+#orange { border-top-color: #ffa500; width: 180px; height: 180px; }
+#yellow { border-top-color: #ff0; width: 160px; height: 160px; }
+#green { border-top-color: #00bc3f; width: 140px; height: 140px; }
+#blue { border-top-color: #06f; width: 120px; height: 120px; }
+#indigo { border-top-color: #8a2be2; width: 100px; height: 100px; }
+#violet { border-top-color: #d300c9; width: 80px; height: 80px; }

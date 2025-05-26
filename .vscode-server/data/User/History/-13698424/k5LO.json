@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        ""
+    ],
+    "files.autoSave": "afterDelay",
+    "git.openRepositoryInParentFolders": "always",
+    "liveServer.settings.donotShowInfoMsg": true
+}

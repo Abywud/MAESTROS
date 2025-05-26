@@ -1,0 +1,22 @@
+2025-04-30 21:00:17.159 [info] Extension host with pid 1442 started
+2025-04-30 21:00:17.159 [error] Error: EEXIST: file already exists, open '/home/abywu/.vscode-server/data/User/workspaceStorage/b956eff80c7c669487f5059479dc2c45/vscode.lock'
+2025-04-30 21:00:17.181 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/b956eff80c7c669487f5059479dc2c45/vscode.lock': Could not acquire lock, checking if the file is stale.
+2025-04-30 21:00:17.245 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-30 21:00:17.249 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2025-04-30 21:00:17.485 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/b956eff80c7c669487f5059479dc2c45/vscode.lock': The pid 3917 appears to be gone.
+2025-04-30 21:00:17.485 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/b956eff80c7c669487f5059479dc2c45/vscode.lock': Deleting a stale lock.
+2025-04-30 21:00:17.572 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/b956eff80c7c669487f5059479dc2c45/vscode.lock': Lock acquired.
+2025-04-30 21:00:18.252 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-04-30 21:00:18.296 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-04-30 21:00:18.297 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-04-30 21:00:18.684 [info] Eager extensions activated
+2025-04-30 21:00:18.685 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:00:18.686 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:00:18.687 [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:00:23.568 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-04-30 21:00:26.559 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10009
+2025-04-30 21:01:00.692 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:02:16.699 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-04-30 21:02:16.701 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-04-30 21:02:16.702 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-04-30 21:06:42.201 [info] ExtensionService#_doActivateExtension vscode.tunnel-forwarding, startup: false, activationEvent: 'onTunnel'

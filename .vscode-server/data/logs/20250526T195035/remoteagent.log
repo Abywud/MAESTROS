@@ -1,0 +1,14 @@
+2025-05-26 19:50:36.007 [info] 
+
+
+
+
+2025-05-26 19:50:36.008 [info] Extension host agent started.
+2025-05-26 19:50:36.186 [info] [127.0.0.1][0a557eac][ManagementConnection] New connection established.
+2025-05-26 19:50:36.251 [info] Deleted marked for removal extension from disk rangav.vscode-thunder-client /home/abywu/.vscode-server/extensions/rangav.vscode-thunder-client-2.34.3
+2025-05-26 19:50:36.544 [info] ComputeTargetPlatform: linux-x64
+2025-05-26 19:50:36.682 [info] [127.0.0.1][6489e6ba][ExtensionHostConnection] New connection established.
+2025-05-26 19:50:37.589 [info] [127.0.0.1][6489e6ba][ExtensionHostConnection] <2851> Launched Extension Host Process.
+2025-05-26 19:50:41.097 [info] ComputeTargetPlatform: linux-x64
+2025-05-26 20:59:46.071 [info] [127.0.0.1][0a557eac][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-05-26 20:59:46.311 [info] [127.0.0.1][6489e6ba][ExtensionHostConnection] <2851> Extension Host Process exited with code: 0, signal: null.

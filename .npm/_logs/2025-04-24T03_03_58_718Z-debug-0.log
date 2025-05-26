@@ -1,0 +1,85 @@
+0 verbose cli /home/abywu/.nvm/versions/node/v22.13.1/bin/node /home/abywu/.nvm/versions/node/v22.13.1/bin/npm
+1 info using npm@10.9.2
+2 info using node@v22.13.1
+3 silly config load:file:/home/abywu/.nvm/versions/node/v22.13.1/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/abywu/.cache/typescript/5.8/.npmrc
+5 silly config load:file:/home/abywu/.npmrc
+6 silly config load:file:/home/abywu/.nvm/versions/node/v22.13.1/etc/npmrc
+7 verbose title npm install @types/babel-core@ts5.8 @types/chai@ts5.8 @types/jsdom@ts5.8 @types/mocha@ts5.8
+8 verbose argv "install" "--ignore-scripts" "@types/babel-core@ts5.8" "@types/chai@ts5.8" "@types/jsdom@ts5.8" "@types/mocha@ts5.8" "--save-dev" "--user-agent" "typesInstaller/5.8.2"
+9 verbose logfile logs-max:10 dir:/home/abywu/.npm/_logs/2025-04-24T03_03_58_718Z-
+10 verbose logfile /home/abywu/.npm/_logs/2025-04-24T03_03_58_718Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:2063859712 maxSize:515964928 maxEntrySize:257982464
+14 silly packumentCache corgi:https://registry.npmjs.org/@types%2fbabel-core cache-miss
+15 silly packumentCache corgi:https://registry.npmjs.org/@types%2fchai cache-miss
+16 silly packumentCache corgi:https://registry.npmjs.org/@types%2fjsdom cache-miss
+17 silly packumentCache corgi:https://registry.npmjs.org/@types%2fmocha cache-miss
+18 http fetch GET 200 https://registry.npmjs.org/@types%2fmocha 640ms (cache updated)
+19 silly packumentCache corgi:https://registry.npmjs.org/@types%2fmocha set size:undefined disposed:false
+20 http fetch GET 200 https://registry.npmjs.org/@types%2fjsdom 664ms (cache updated)
+21 silly packumentCache corgi:https://registry.npmjs.org/@types%2fjsdom set size:undefined disposed:false
+22 http fetch GET 200 https://registry.npmjs.org/@types%2fbabel-core 739ms (cache updated)
+23 silly packumentCache corgi:https://registry.npmjs.org/@types%2fbabel-core set size:undefined disposed:false
+24 http fetch GET 200 https://registry.npmjs.org/@types%2fchai 1141ms (cache updated)
+25 silly packumentCache corgi:https://registry.npmjs.org/@types%2fchai set size:undefined disposed:false
+26 silly idealTree buildDeps
+27 silly fetch manifest @types/babel-core@6.25.10
+28 silly packumentCache full:https://registry.npmjs.org/@types%2fbabel-core cache-miss
+29 http fetch GET 200 https://registry.npmjs.org/@types%2fbabel-core 409ms (cache updated)
+30 silly packumentCache full:https://registry.npmjs.org/@types%2fbabel-core set size:undefined disposed:false
+31 silly fetch manifest @types/chai@5.2.1
+32 silly packumentCache full:https://registry.npmjs.org/@types%2fchai cache-miss
+33 http fetch GET 200 https://registry.npmjs.org/@types%2fchai 628ms (cache updated)
+34 silly packumentCache full:https://registry.npmjs.org/@types%2fchai set size:undefined disposed:false
+35 silly fetch manifest @types/jsdom@21.1.7
+36 silly packumentCache full:https://registry.npmjs.org/@types%2fjsdom cache-miss
+37 http fetch GET 200 https://registry.npmjs.org/@types%2fjsdom 402ms (cache updated)
+38 silly packumentCache full:https://registry.npmjs.org/@types%2fjsdom set size:undefined disposed:false
+39 silly fetch manifest @types/mocha@10.0.10
+40 silly packumentCache full:https://registry.npmjs.org/@types%2fmocha cache-miss
+41 http fetch GET 200 https://registry.npmjs.org/@types%2fmocha 429ms (cache updated)
+42 silly packumentCache full:https://registry.npmjs.org/@types%2fmocha set size:undefined disposed:false
+43 silly placeDep ROOT @types/babel-core@6.25.10 REPLACE for:  want: 6.25.10
+44 silly placeDep ROOT @types/chai@5.2.1 REPLACE for:  want: 5.2.1
+45 silly placeDep ROOT @types/jsdom@21.1.7 REPLACE for:  want: 21.1.7
+46 silly placeDep ROOT @types/mocha@10.0.10 REPLACE for:  want: 10.0.10
+47 silly reify moves {}
+48 silly audit bulk request {
+48 silly audit   '@babel/helper-string-parser': [ '7.25.9' ],
+48 silly audit   '@babel/helper-validator-identifier': [ '7.25.9' ],
+48 silly audit   '@babel/parser': [ '7.27.0' ],
+48 silly audit   '@babel/types': [ '7.27.0' ],
+48 silly audit   '@types/babel__core': [ '7.20.5' ],
+48 silly audit   '@types/babel__generator': [ '7.6.8' ],
+48 silly audit   '@types/babel__preset-env': [ '7.10.0' ],
+48 silly audit   '@types/babel__template': [ '7.4.4' ],
+48 silly audit   '@types/babel__traverse': [ '7.20.7' ],
+48 silly audit   '@types/babel-generator': [ '6.25.8' ],
+48 silly audit   '@types/babel-template': [ '6.25.5' ],
+48 silly audit   '@types/babel-traverse': [ '6.25.10' ],
+48 silly audit   '@types/babel-types': [ '7.0.16' ],
+48 silly audit   '@types/babylon': [ '6.16.9' ],
+48 silly audit   '@types/deep-eql': [ '4.0.2' ],
+48 silly audit   '@types/node': [ '22.13.10' ],
+48 silly audit   '@types/sinon': [ '17.0.4' ],
+48 silly audit   '@types/sinonjs__fake-timers': [ '8.1.5' ],
+48 silly audit   '@types/tough-cookie': [ '4.0.5' ],
+48 silly audit   entities: [ '4.5.0' ],
+48 silly audit   parse5: [ '7.2.1' ],
+48 silly audit   'types-registry': [ '0.1.717' ],
+48 silly audit   'undici-types': [ '6.20.0' ],
+48 silly audit   '@types/babel-core': [ '6.25.10' ],
+48 silly audit   '@types/chai': [ '5.2.1' ],
+48 silly audit   '@types/jsdom': [ '21.1.7' ],
+48 silly audit   '@types/mocha': [ '10.0.10' ]
+48 silly audit }
+49 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 605ms
+50 silly audit report {}
+51 verbose cwd /home/abywu/.cache/typescript/5.8
+52 verbose os Linux 5.15.167.4-microsoft-standard-WSL2
+53 verbose node v22.13.1
+54 verbose npm  v10.9.2
+55 verbose exit 0
+56 info ok

@@ -1,0 +1,29 @@
+2025-04-27 12:10:42.019 [info] [main] Log level: Info
+2025-04-27 12:10:42.019 [info] [main] Validating found git in: "git"
+2025-04-27 12:10:42.019 [info] [main] Using git "2.48.1" from "git"
+2025-04-27 12:10:42.019 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-27 12:10:42.019 [info] > git rev-parse --show-toplevel [7ms]
+2025-04-27 12:10:42.019 [info] > git rev-parse --git-dir --git-common-dir [72ms]
+2025-04-27 12:10:42.019 [info] [Model][openRepository] Opened repository: /home/abywu/moringa/SDF-PT10/Phase-1/DOM-editing/phase-0-the-dom-editing-lab
+2025-04-27 12:10:42.034 [info] > git rev-parse --show-toplevel [5ms]
+2025-04-27 12:10:42.036 [info] > git config --get commit.template [10ms]
+2025-04-27 12:10:42.049 [info] > git rev-parse --show-toplevel [9ms]
+2025-04-27 12:10:42.054 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-04-27 12:10:42.060 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [15ms]
+2025-04-27 12:10:42.085 [info] > git status -z -uall [10ms]
+2025-04-27 12:10:42.087 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [5ms]
+2025-04-27 12:10:42.128 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [12ms]
+2025-04-27 12:10:42.138 [info] > git config --get commit.template [10ms]
+2025-04-27 12:10:42.141 [info] > git config --get --local branch.master.vscode-merge-base [8ms]
+2025-04-27 12:10:42.152 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [6ms]
+2025-04-27 12:10:42.172 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [21ms]
+2025-04-27 12:10:42.174 [info] > git merge-base refs/heads/master refs/remotes/origin/master [15ms]
+2025-04-27 12:10:42.182 [info] > git diff --name-status -z --diff-filter=ADMR c4d390ad1fde2608704fa540add9f60b6b7029d4...refs/remotes/origin/master [4ms]
+2025-04-27 12:10:42.195 [info] > git status -z -uall [8ms]
+2025-04-27 12:10:42.481 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [290ms]
+2025-04-27 12:10:42.513 [info] > git show --textconv :index.html [9ms]
+2025-04-27 12:10:42.514 [info] > git ls-files --stage -- index.html [4ms]
+2025-04-27 12:10:42.520 [info] > git cat-file -s 20f2b73bdea08060d5bcedd2d1bdf33604f569bb [2ms]
+2025-04-27 12:10:42.575 [info] > git check-ignore -v -z --stdin [4ms]
+2025-04-27 12:10:42.593 [info] > git blame --root --incremental c4d390ad1fde2608704fa540add9f60b6b7029d4 -- index.html [5ms]
+2025-04-27 12:10:46.593 [info] > git check-ignore -v -z --stdin [5ms]

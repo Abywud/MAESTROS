@@ -1,0 +1,58 @@
+2025-05-26 20:59:58.287 [info] [main] Log level: Info
+2025-05-26 20:59:58.287 [info] [main] Validating found git in: "git"
+2025-05-26 20:59:58.397 [info] [main] Using git "2.48.1" from "git"
+2025-05-26 20:59:58.397 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-26 20:59:58.403 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-26 21:20:15.222 [info] > git rev-parse --show-toplevel [19ms]
+2025-05-26 21:20:15.233 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2025-05-26 21:20:15.262 [info] [Model][openRepository] Opened repository (path): /home/abywu
+2025-05-26 21:20:15.262 [info] [Model][openRepository] Opened repository (real path): /home/abywu
+2025-05-26 21:20:15.277 [info] > git config --get commit.template [3ms]
+2025-05-26 21:20:15.292 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [8ms]
+2025-05-26 21:20:15.313 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [3ms]
+2025-05-26 21:20:13.280 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-26 21:20:15.089 [info] > git status -z -uall [-208ms] (cancelled)
+2025-05-26 21:20:16.639 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [1553ms]
+2025-05-26 21:20:16.710 [info] > git config --get --local branch.gh-pages.vscode-merge-base [60ms]
+2025-05-26 21:20:16.711 [warning] [Git][config] git config failed: Failed to execute git
+2025-05-26 21:20:16.720 [info] > git config --get commit.template [89ms]
+2025-05-26 21:20:16.735 [info] > git reflog gh-pages --grep-reflog=branch: Created from *. [17ms]
+2025-05-26 21:20:16.742 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [14ms]
+2025-05-26 21:20:16.755 [info] > git reflog HEAD --grep-reflog=checkout: moving from .* to gh-pages [14ms]
+2025-05-26 21:20:16.763 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2025-05-26 21:20:16.765 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2025-05-26 21:20:16.779 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [6ms]
+2025-05-26 21:20:16.779 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-05-26 21:20:16.780 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-05-26 21:20:17.197 [info] > git status -z -uall [450ms] (cancelled)
+2025-05-26 21:27:57.317 [info] > git show --textconv :Abiud/maestros/v [5ms]
+2025-05-26 21:27:57.326 [info] > git ls-files --stage -- Abiud/maestros/v [8ms]
+2025-05-26 21:27:57.331 [info] > git hash-object -t tree /dev/null [6ms]
+2025-05-26 21:27:57.332 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:27:57.342 [info] > git hash-object -t tree /dev/null [12ms]
+2025-05-26 21:27:57.342 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:27:57.439 [info] > git blame --root --incremental 23de520d000a896e83e9fb0da99c46a80dabc8f5 -- Abiud/maestros/v [4ms]
+2025-05-26 21:27:57.439 [info] fatal: no such path Abiud/maestros/v in 23de520d000a896e83e9fb0da99c46a80dabc8f5
+2025-05-26 21:27:57.723 [info] > git check-ignore -v -z --stdin [7ms]
+2025-05-26 21:28:22.342 [info] > git show --textconv :Abiud/maestros/v [7ms]
+2025-05-26 21:28:22.343 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:28:22.344 [info] > git ls-files --stage -- Abiud/maestros/v [3ms]
+2025-05-26 21:28:22.347 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:28:59.543 [info] > git show --textconv :Abiud/maestros/v [7ms]
+2025-05-26 21:28:59.544 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:28:59.545 [info] > git ls-files --stage -- Abiud/maestros/v [2ms]
+2025-05-26 21:28:59.545 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:30:04.298 [info] > git show --textconv :Abiud/maestros/v [6ms]
+2025-05-26 21:30:04.299 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:30:04.300 [info] > git ls-files --stage -- Abiud/maestros/v [3ms]
+2025-05-26 21:30:04.301 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:30:45.843 [info] > git show --textconv :Abiud/maestros/v [9ms]
+2025-05-26 21:30:45.847 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:30:45.858 [info] > git ls-files --stage -- Abiud/maestros/v [16ms]
+2025-05-26 21:30:45.859 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/Abiud/maestros/v.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2FAbiud%2Fmaestros%2Fv%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 21:49:23.397 [info] > git config --get commit.template [10ms]
+2025-05-26 21:49:23.398 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [4ms]
+2025-05-26 21:49:23.421 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [3ms]
+2025-05-26 21:49:23.200 [info] > git status -z -uall [-202ms] (cancelled)
+2025-05-26 21:49:23.201 [info] > git blame --root --incremental c99552442bbecf8c433523f60f41098a3577d0b7 -- Abiud/maestros/v [-636ms]
+2025-05-26 21:49:23.201 [info] fatal: no such path Abiud/maestros/v in c99552442bbecf8c433523f60f41098a3577d0b7

@@ -1,0 +1,14 @@
+2025-04-30 13:47:06.288 [info] 
+
+
+
+
+2025-04-30 13:47:06.343 [info] Extension host agent started.
+2025-04-30 13:47:06.593 [info] [127.0.0.1][5deeba58][ManagementConnection] New connection established.
+2025-04-30 13:47:07.404 [info] [127.0.0.1][625893b0][ExtensionHostConnection] New connection established.
+2025-04-30 13:47:08.401 [info] [127.0.0.1][625893b0][ExtensionHostConnection] <3917> Launched Extension Host Process.
+2025-04-30 13:54:57.427 [info] [127.0.0.1][5deeba58][ManagementConnection] The client has reconnected.
+2025-04-30 13:57:50.395 [info] [127.0.0.1][625893b0][ExtensionHostConnection] The client has reconnected.
+2025-04-30 13:58:47.089 [error] Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)
+2025-04-30 14:01:26.120 [info] [127.0.0.1][5deeba58][ManagementConnection] The client has reconnected.

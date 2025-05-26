@@ -1,0 +1,131 @@
+2025-04-21 10:59:47.812 [info] 
+
+
+
+
+2025-04-21 10:59:47.847 [info] Extension host agent started.
+2025-04-21 10:59:47.994 [info] [127.0.0.1][e7ac1773][ManagementConnection] New connection established.
+2025-04-21 10:59:48.890 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] New connection established.
+2025-04-21 10:59:49.050 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] <970> Launched Extension Host Process.
+2025-04-21 11:06:02.169 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] <970> [0mGET /favicon.ico [33m404[0m 2.735 ms - 150[0m
+
+2025-04-21 11:52:32.463 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] <970> [0mGET /style.css?_cacheOverride=1745225552116 [33m404[0m 10.334 ms - 148[0m
+
+2025-04-21 12:12:56.827 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 12:12:57.428 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 12:14:03.067 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 12:14:06.293 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 12:19:54.668 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 12:19:55.018 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 12:40:19.202 [error] Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)
+2025-04-21 12:40:19.227 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+2025-04-21 12:40:20.432 [info] [127.0.0.1][e7ac1773][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+2025-04-21 12:40:20.433 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 12:41:25.741 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 12:50:49.728 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 12:52:54.006 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 13:36:16.608 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 13:48:02.391 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 15:57:08.252 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 15:57:10.452 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 16:06:19.549 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 16:20:49.049 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 16:37:54.074 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 16:37:57.823 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 17:25:03.039 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 17:25:03.400 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 17:55:50.176 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 17:55:50.519 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 18:10:20.161 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 18:10:20.764 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 18:17:09.851 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 18:17:10.279 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 18:25:19.713 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 18:25:20.475 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 20:26:12.256 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 20:26:13.420 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 20:33:49.803 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 20:33:50.328 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-21 21:51:55.387 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-21 21:51:55.977 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 00:53:43.952 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 00:53:45.600 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 00:58:58.284 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 00:59:02.120 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 01:00:02.086 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 01:00:02.279 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 02:19:50.846 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 02:19:51.277 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 02:21:23.982 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 02:23:38.157 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 02:23:38.346 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 02:23:52.557 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 02:25:11.719 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 02:25:12.028 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 05:24:02.420 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 05:24:03.332 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 06:02:46.629 [info] [127.0.0.1][a3715ee7][ManagementConnection] New connection established.
+2025-04-22 06:02:47.010 [info] [127.0.0.1][7f4a37ca][ExtensionHostConnection] New connection established.
+2025-04-22 06:02:47.043 [info] [127.0.0.1][7f4a37ca][ExtensionHostConnection] <48253> Launched Extension Host Process.
+2025-04-22 06:03:00.009 [info] [127.0.0.1][a3715ee7][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-22 06:03:00.314 [info] [127.0.0.1][7f4a37ca][ExtensionHostConnection] <48253> Extension Host Process exited with code: 0, signal: null.
+2025-04-22 06:03:26.026 [info] [127.0.0.1][845b25be][ManagementConnection] New connection established.
+2025-04-22 06:03:26.843 [info] [127.0.0.1][427ebd27][ExtensionHostConnection] New connection established.
+2025-04-22 06:03:26.856 [info] [127.0.0.1][427ebd27][ExtensionHostConnection] <48448> Launched Extension Host Process.
+2025-04-22 06:04:00.777 [info] [127.0.0.1][845b25be][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-22 06:04:00.878 [info] [127.0.0.1][427ebd27][ExtensionHostConnection] <48448> Extension Host Process exited with code: 0, signal: null.
+2025-04-22 06:04:13.262 [info] [127.0.0.1][2b923548][ManagementConnection] New connection established.
+2025-04-22 06:04:14.342 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] New connection established.
+2025-04-22 06:04:14.349 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] <49127> Launched Extension Host Process.
+2025-04-22 06:53:50.343 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 06:53:51.426 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 06:53:52.146 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 07:00:31.023 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 10:01:14.275 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 10:01:18.266 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 10:01:19.608 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 10:01:20.176 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 10:17:08.781 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 10:17:09.315 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 10:17:09.751 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 10:17:10.128 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 10:56:47.921 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 10:56:49.146 [error] Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:218:20)
+2025-04-22 11:04:53.993 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 11:47:26.048 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 11:47:27.401 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 11:47:28.435 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 11:47:29.088 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 11:59:57.712 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 11:59:58.537 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 11:59:59.155 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 11:59:59.823 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 12:09:51.641 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 12:09:52.061 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 12:17:30.434 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 12:17:31.381 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 12:17:32.217 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 12:17:32.905 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 12:20:51.687 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 12:20:52.303 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 13:08:31.821 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 13:08:35.233 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 13:08:36.452 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 13:08:37.263 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 13:31:23.454 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 13:31:24.171 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 13:31:24.895 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 13:31:25.479 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 13:34:37.341 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 13:34:38.018 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.
+2025-04-22 13:34:38.521 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 19:39:38.535 [info] [127.0.0.1][2b923548][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+2025-04-22 19:39:38.778 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+2025-04-22 19:39:38.846 [info] [127.0.0.1][e7ac1773][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+2025-04-22 19:39:38.847 [info] [127.0.0.1][2b923548][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+2025-04-22 19:39:38.848 [info] [127.0.0.1][e4f92da2][ExtensionHostConnection] The client has reconnected.
+2025-04-22 19:39:41.657 [info] [127.0.0.1][e0fc6080][ExtensionHostConnection] The client has reconnected.
+2025-04-22 19:39:43.218 [info] [127.0.0.1][e7ac1773][ManagementConnection] The client has reconnected.
+2025-04-22 19:39:44.744 [info] [127.0.0.1][2b923548][ManagementConnection] The client has reconnected.

@@ -1,0 +1,26 @@
+2025-04-30 13:12:49.241 [info] [main] Log level: Info
+2025-04-30 13:12:49.241 [info] [main] Validating found git in: "git"
+2025-04-30 13:12:49.241 [info] [main] Using git "2.48.1" from "git"
+2025-04-30 13:12:49.241 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-30 13:12:49.241 [info] > git rev-parse --show-toplevel [18ms]
+2025-04-30 13:12:49.241 [info] > git rev-parse --git-dir --git-common-dir [99ms]
+2025-04-30 13:12:49.241 [info] [Model][openRepository] Opened repository: /home/abywu
+2025-04-30 13:12:49.241 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-04-30 13:12:49.241 [info] > git config --get commit.template [5ms]
+2025-04-30 13:12:49.263 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [15ms]
+2025-04-30 13:12:49.290 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [12ms]
+2025-04-30 13:12:54.848 [info] > git status -z -uall [5578ms] (cancelled)
+2025-04-30 13:12:57.753 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [2925ms]
+2025-04-30 13:12:57.852 [info] > git config --get --local branch.gh-pages.vscode-merge-base [90ms]
+2025-04-30 13:12:57.852 [warning] [Git][config] git config failed: Failed to execute git
+2025-04-30 13:12:57.873 [info] > git config --get commit.template [129ms]
+2025-04-30 13:12:57.898 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [9ms]
+2025-04-30 13:12:57.914 [info] > git reflog gh-pages --grep-reflog=branch: Created from *. [42ms]
+2025-04-30 13:12:57.935 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [21ms]
+2025-04-30 13:12:57.937 [info] > git reflog HEAD --grep-reflog=checkout: moving from .* to gh-pages [17ms]
+2025-04-30 13:12:57.947 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2025-04-30 13:12:57.963 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [10ms]
+2025-04-30 13:12:57.963 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-04-30 13:12:57.963 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-04-30 13:12:58.359 [info] > git status -z -uall [454ms] (cancelled)
+2025-04-30 13:13:16.283 [info] > git check-ignore -v -z --stdin [3ms]

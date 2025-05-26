@@ -1,0 +1,9 @@
+h1{ 
+    font-style: inherit;
+    size: 22px;
+    border-color: aquamarine;
+    position: sticky;
+    stop-color: blue;
+    text-align: center;
+   
+}

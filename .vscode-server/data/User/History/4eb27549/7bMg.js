@@ -1,0 +1,4 @@
+alert(
+    "HELLO"
+)
+typeof 

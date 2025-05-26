@@ -1,0 +1,18 @@
+div {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+
+
+#red > div { border-top: 50px solid #f00; }
+#orange > div { border-top: 50px solid #ffa500; }
+#yellow > div { border-top: 50px solid #ff0; }
+#green > div { border-top: 50px solid #00bc3f; }
+#blue > div { border-top: 50px solid #06f; }
+#indigo > div { border-top: 50px solid #8a2be2; }
+#violet > div { border-top: 50px solid #d300c9; }

@@ -1,0 +1,35 @@
+2025-05-26 19:44:55.655 [info] [main] Log level: Info
+2025-05-26 19:44:55.655 [info] [main] Validating found git in: "git"
+2025-05-26 19:44:55.655 [info] [main] Using git "2.48.1" from "git"
+2025-05-26 19:44:55.655 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-26 19:44:55.655 [info] > git rev-parse --show-toplevel [36ms]
+2025-05-26 19:44:55.655 [info] > git rev-parse --git-dir --git-common-dir [27ms]
+2025-05-26 19:44:55.655 [info] [Model][openRepository] Opened repository: /home/abywu
+2025-05-26 19:44:55.660 [info] > git rev-parse --show-toplevel [7ms]
+2025-05-26 19:44:55.666 [info] > git config --get commit.template [17ms]
+2025-05-26 19:44:55.716 [info] > git rev-parse --show-toplevel [36ms]
+2025-05-26 19:44:55.735 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [25ms]
+2025-05-26 19:44:55.765 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2025-05-26 19:44:55.774 [info] > git rev-parse --show-toplevel [10ms]
+2025-05-26 19:44:55.785 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-26 19:44:56.033 [info] > git show --textconv :vite-project/src/message,tsx [11ms]
+2025-05-26 19:44:56.048 [info] > git ls-files --stage -- vite-project/src/message,tsx [18ms]
+2025-05-26 19:44:56.065 [info] > git hash-object -t tree /dev/null [20ms]
+2025-05-26 19:44:56.066 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/vite-project/src/message%2Ctsx.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fsrc%2Fmessage%2Ctsx%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 19:44:56.084 [info] > git hash-object -t tree /dev/null [21ms]
+2025-05-26 19:44:56.085 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/vite-project/src/message%2Ctsx.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fsrc%2Fmessage%2Ctsx%22%2C%22ref%22%3A%22%22%7D
+2025-05-26 19:44:56.242 [info] > git check-ignore -v -z --stdin [4ms]
+2025-05-26 19:44:59.102 [info] > git status -z -uall [3359ms] (cancelled)
+2025-05-26 19:45:03.966 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [4873ms]
+2025-05-26 19:45:04.071 [info] > git config --get --local branch.gh-pages.vscode-merge-base [77ms]
+2025-05-26 19:45:04.071 [warning] [Git][config] git config failed: Failed to execute git
+2025-05-26 19:45:04.108 [info] > git config --get commit.template [182ms]
+2025-05-26 19:45:04.110 [info] > git reflog gh-pages --grep-reflog=branch: Created from *. [4ms]
+2025-05-26 19:45:04.134 [info] > git reflog HEAD --grep-reflog=checkout: moving from .* to gh-pages [12ms]
+2025-05-26 19:45:04.150 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [18ms]
+2025-05-26 19:45:04.175 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [26ms]
+2025-05-26 19:45:04.190 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [5ms]
+2025-05-26 19:45:04.191 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-05-26 19:45:04.191 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-05-26 19:45:04.193 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [22ms]
+2025-05-26 19:45:04.930 [info] > git status -z -uall [764ms] (cancelled)

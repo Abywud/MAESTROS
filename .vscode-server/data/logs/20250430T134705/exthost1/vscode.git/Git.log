@@ -1,0 +1,36 @@
+2025-04-30 13:47:10.930 [info] [main] Log level: Info
+2025-04-30 13:47:10.930 [info] [main] Validating found git in: "git"
+2025-04-30 13:47:10.930 [info] [main] Using git "2.48.1" from "git"
+2025-04-30 13:47:10.930 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-30 13:47:10.930 [info] > git rev-parse --show-toplevel [16ms]
+2025-04-30 13:47:10.930 [info] > git rev-parse --git-dir --git-common-dir [77ms]
+2025-04-30 13:47:10.930 [info] [Model][openRepository] Opened repository: /home/abywu
+2025-04-30 13:47:10.930 [info] > git rev-parse --show-toplevel [38ms]
+2025-04-30 13:47:10.930 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-04-30 13:47:10.930 [info] > git config --get commit.template [59ms]
+2025-04-30 13:47:10.941 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [4ms]
+2025-04-30 13:47:10.964 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [5ms]
+2025-04-30 13:47:14.150 [info] > git status -z -uall [3200ms] (cancelled)
+2025-04-30 13:47:14.151 [info] > git check-ignore -v -z --stdin [2490ms]
+2025-04-30 13:47:14.153 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [2504ms]
+2025-04-30 13:47:14.225 [info] > git config --get --local branch.gh-pages.vscode-merge-base [63ms]
+2025-04-30 13:47:14.225 [warning] [Git][config] git config failed: Failed to execute git
+2025-04-30 13:47:14.240 [info] > git config --get commit.template [107ms]
+2025-04-30 13:47:14.249 [info] > git reflog gh-pages --grep-reflog=branch: Created from *. [11ms]
+2025-04-30 13:47:14.269 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [6ms]
+2025-04-30 13:47:14.287 [info] > git reflog HEAD --grep-reflog=checkout: moving from .* to gh-pages [31ms]
+2025-04-30 13:47:14.293 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2025-04-30 13:47:14.296 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2025-04-30 13:47:14.311 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [9ms]
+2025-04-30 13:47:14.312 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-04-30 13:47:14.312 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-04-30 13:47:14.683 [info] > git status -z -uall [408ms] (cancelled)
+2025-04-30 13:47:49.312 [info] > git check-ignore -v -z --stdin [22ms]
+2025-04-30 13:47:49.364 [info] > git show --textconv :abiud/maestros/index.html [26ms]
+2025-04-30 13:47:49.375 [info] > git ls-files --stage -- abiud/maestros/index.html [19ms]
+2025-04-30 13:47:49.386 [info] > git hash-object -t tree /dev/null [14ms]
+2025-04-30 13:47:49.388 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/abiud/maestros/index.html.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fabiud%2Fmaestros%2Findex.html%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 13:47:49.395 [info] > git hash-object -t tree /dev/null [12ms]
+2025-04-30 13:47:49.396 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/abiud/maestros/index.html.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fabiud%2Fmaestros%2Findex.html%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 13:58:11.569 [info] > git blame --root --incremental 23de520d000a896e83e9fb0da99c46a80dabc8f5 -- abiud/maestros/index.html [7ms]
+2025-04-30 13:58:11.569 [info] fatal: no such path abiud/maestros/index.html in 23de520d000a896e83e9fb0da99c46a80dabc8f5

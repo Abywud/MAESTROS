@@ -1,0 +1,18 @@
+div {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+
+#red { background-color: #f00; }
+#orange { background-color: #ffa500: width: 180px; height: 180px; }
+#yellow { background-color: #ff0; width: 160px; height: 160px; }
+#green { background-color: #00bc3f; width: 140px; height: 140px; }
+#blue { background-color: #06f; width: 120px; height: 120px; }
+#indigo { background-color: #8a2be2; width: 100px; height: 100px; }
+#violet { background-color: #d300c9; width: 80px; height: 80px; }
+

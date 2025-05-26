@@ -1,0 +1,99 @@
+const startBtn = document.getElementById("start-btn");
+const gameScreen = document.getElementById("game-screen");
+const startScreen = document.getElementById("start-screen");
+const playBtn = document.getElementById("play-btn");
+const restartBtn = document.getElementById("restart-btn");
+
+const player1Select = document.getElementById("player1");
+const player2Select = document.getElementById("player2");
+
+const resultDiv = document.getElementById("result");
+const score1Span = document.getElementById("score1");
+const score2Span = document.getElementById("score2");
+const roundSpan = document.getElementById("round-number");
+
+let score1 = 0;
+let score2 = 0;
+let round = 1;
+let totalRounds = 3;
+
+// Load RPS objects from API
+async function loadObjects() {
+  const res = await fetch("https://rps101.pythonanywhere.com/api/v1/objects/all");
+  const data = await res.json();
+
+  data.objects.forEach((obj) => {
+    const option1 = document.createElement("option");
+    const option2 = document.createElement("option");
+    option1.value = obj;
+    option1.textContent = obj;
+    option2.value = obj;
+    option2.textContent = obj;
+    player1Select.appendChild(option1);
+    player2Select.appendChild(option2);
+  });
+}
+
+// Play a single round
+async function playRound() {
+  const obj1 = player1Select.value;
+  const obj2 = player2Select.value;
+
+  if (!obj1 || !obj2) {
+    resultDiv.textContent = "Please select objects for both players.";
+    return;
+  }
+
+  const res = await fetch(
+    `https://rps101.pythonanywhere.com/api/v1/match?object_one=${obj1}&object_two=${obj2}`
+  );
+  const data = await res.json();
+
+  resultDiv.textContent = data.outcome;
+
+  if (data.winner === "Player 1") {
+    score1++;
+    score1Span.textContent = score1;
+  } else if (data.winner === "Player 2") {
+    score2++;
+    score2Span.textContent = score2;
+  }
+
+  if (round === totalRounds) {
+    let finalWinner =
+      score1 > score2
+        ? "Player 1 Wins!"
+        : score2 > score1
+        ? "Player 2 Wins!"
+        : "It's a tie!";
+    resultDiv.textContent += ` 🎉 ${finalWinner}`;
+    playBtn.disabled = true;
+    restartBtn.classList.remove("hidden");
+  } else {
+    round++;
+    roundSpan.textContent = round;
+  }
+}
+
+// Reset everything
+function restartGame() {
+  score1 = 0;
+  score2 = 0;
+  round = 1;
+  score1Span.textContent = "0";
+  score2Span.textContent = "0";
+  roundSpan.textContent = "1";
+  resultDiv.textContent = "";
+  playBtn.disabled = false;
+  restartBtn.classList.add("hidden");
+}
+
+// Event Listeners
+startBtn.addEventListener("click", () => {
+  startScreen.classList.add("hidden");
+  gameScreen.classList.remove("hidden");
+  loadObjects();
+});
+
+playBtn.addEventListener("click", playRound);
+restartBtn.addEventListener("click", restartGame);

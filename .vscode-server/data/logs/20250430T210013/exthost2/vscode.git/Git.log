@@ -1,0 +1,50 @@
+2025-04-30 21:09:13.997 [info] [main] Log level: Info
+2025-04-30 21:09:13.998 [info] [main] Validating found git in: "git"
+2025-04-30 21:09:13.998 [info] [main] Using git "2.48.1" from "git"
+2025-04-30 21:09:13.998 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-30 21:09:13.998 [info] > git rev-parse --show-toplevel [51ms]
+2025-04-30 21:09:13.998 [info] > git rev-parse --git-dir --git-common-dir [7ms]
+2025-04-30 21:09:13.998 [info] [Model][openRepository] Opened repository: /home/abywu
+2025-04-30 21:09:14.014 [info] > git rev-parse --show-toplevel [5ms]
+2025-04-30 21:09:14.016 [info] > git config --get commit.template [12ms]
+2025-04-30 21:09:14.041 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [9ms]
+2025-04-30 21:09:14.065 [info] > git rev-parse --show-toplevel [43ms]
+2025-04-30 21:09:14.073 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-04-30 21:09:14.079 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [14ms]
+2025-04-30 21:09:14.583 [info] > git status -z -uall [528ms] (cancelled)
+2025-04-30 21:09:16.479 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [1912ms]
+2025-04-30 21:09:16.561 [info] > git check-ignore -v -z --stdin [1971ms]
+2025-04-30 21:09:16.567 [info] > git config --get --local branch.gh-pages.vscode-merge-base [80ms]
+2025-04-30 21:09:16.568 [warning] [Git][config] git config failed: Failed to execute git
+2025-04-30 21:09:16.583 [info] > git config --get commit.template [120ms]
+2025-04-30 21:09:16.592 [info] > git reflog gh-pages --grep-reflog=branch: Created from *. [11ms]
+2025-04-30 21:09:16.599 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [10ms]
+2025-04-30 21:09:16.612 [info] > git reflog HEAD --grep-reflog=checkout: moving from .* to gh-pages [15ms]
+2025-04-30 21:09:16.619 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2025-04-30 21:09:16.621 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2025-04-30 21:09:16.630 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [3ms]
+2025-04-30 21:09:16.630 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-04-30 21:09:16.631 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-04-30 21:09:17.125 [info] > git status -z -uall [521ms] (cancelled)
+2025-04-30 21:10:01.051 [info] > git check-ignore -v -z --stdin [2ms]
+2025-04-30 21:11:44.282 [info] > git show --textconv :vite-project/index.html [35ms]
+2025-04-30 21:11:44.283 [info] > git ls-files --stage -- vite-project/index.html [29ms]
+2025-04-30 21:11:44.302 [info] > git hash-object -t tree /dev/null [13ms]
+2025-04-30 21:11:44.303 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/vite-project/index.html.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Findex.html%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:11:44.311 [info] > git hash-object -t tree /dev/null [12ms]
+2025-04-30 21:11:44.312 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/vite-project/index.html.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Findex.html%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:12:00.708 [info] > git show --textconv :vite-project/package-lock.json [16ms]
+2025-04-30 21:12:00.715 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/vite-project/package-lock.json.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fpackage-lock.json%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:12:00.766 [info] > git ls-files --stage -- vite-project/package-lock.json [63ms]
+2025-04-30 21:12:00.767 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/vite-project/package-lock.json.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fpackage-lock.json%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:12:56.866 [info] > git check-ignore -v -z --stdin [4ms]
+2025-04-30 21:13:15.018 [info] > git show --textconv :vite-project/src/msg,tsx [10ms]
+2025-04-30 21:13:15.019 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/vite-project/src/msg%2Ctsx.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fsrc%2Fmsg%2Ctsx%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:13:15.020 [info] > git ls-files --stage -- vite-project/src/msg,tsx [3ms]
+2025-04-30 21:13:15.021 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/vite-project/src/msg%2Ctsx.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fsrc%2Fmsg%2Ctsx%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:13:15.278 [info] > git check-ignore -v -z --stdin [7ms]
+2025-04-30 21:13:41.629 [info] > git show --textconv :vite-project/src/message,tsx [11ms]
+2025-04-30 21:13:41.634 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/abywu/vite-project/src/message%2Ctsx.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fsrc%2Fmessage%2Ctsx%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:13:41.636 [info] > git ls-files --stage -- vite-project/src/message,tsx [8ms]
+2025-04-30 21:13:41.637 [warning] [GitFileSystemProvider][stat] File not found - git:/home/abywu/vite-project/src/message%2Ctsx.git?%7B%22path%22%3A%22%2Fhome%2Fabywu%2Fvite-project%2Fsrc%2Fmessage%2Ctsx%22%2C%22ref%22%3A%22%22%7D
+2025-04-30 21:13:41.886 [info] > git check-ignore -v -z --stdin [4ms]

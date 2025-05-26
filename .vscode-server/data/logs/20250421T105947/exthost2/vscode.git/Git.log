@@ -1,0 +1,52 @@
+2025-04-22 06:02:50.151 [info] [main] Log level: Info
+2025-04-22 06:02:50.151 [info] [main] Validating found git in: "git"
+2025-04-22 06:02:50.151 [info] [main] Using git "2.48.1" from "git"
+2025-04-22 06:02:50.151 [info] [Model][doInitialScan] Initial repository scan started
+2025-04-22 06:02:50.151 [info] > git rev-parse --show-toplevel [154ms]
+2025-04-22 06:02:50.151 [info] > git rev-parse --git-dir --git-common-dir [24ms]
+2025-04-22 06:02:50.151 [info] [Model][openRepository] Opened repository: /home/abywu/moringa/SDF-PT10/Phase-1/Destructuring-assignment/phase-1-destructuring-assignment
+2025-04-22 06:02:50.229 [info] > git config --get commit.template [87ms]
+2025-04-22 06:02:50.233 [info] > git rev-parse --show-toplevel [84ms]
+2025-04-22 06:02:50.254 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [13ms]
+2025-04-22 06:02:50.257 [info] > git rev-parse --show-toplevel [5ms]
+2025-04-22 06:02:50.285 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-04-22 06:02:50.304 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/abywu/moringa/SDF-PT10/Phase-1/Destructuring-assignment/phase-1-destructuring-assignment/.git/refs/remotes/origin/master'
+2025-04-22 06:02:50.310 [info] > git rev-parse refs/remotes/origin/master [7ms]
+2025-04-22 06:02:50.338 [info] > git status -z -uall [10ms]
+2025-04-22 06:02:50.341 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2025-04-22 06:02:50.494 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [50ms]
+2025-04-22 06:02:50.506 [info] > git config --get commit.template [41ms]
+2025-04-22 06:02:50.508 [info] > git config --get --local branch.master.vscode-merge-base [5ms]
+2025-04-22 06:02:50.509 [warning] [Git][config] git config failed: Failed to execute git
+2025-04-22 06:02:50.529 [info] > git reflog master --grep-reflog=branch: Created from *. [14ms]
+2025-04-22 06:02:50.537 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [11ms]
+2025-04-22 06:02:50.543 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/abywu/moringa/SDF-PT10/Phase-1/Destructuring-assignment/phase-1-destructuring-assignment/.git/refs/remotes/origin/master'
+2025-04-22 06:02:50.549 [info] > git rev-parse refs/remotes/origin/master [5ms]
+2025-04-22 06:02:50.571 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [36ms]
+2025-04-22 06:02:50.577 [info] > git status -z -uall [17ms]
+2025-04-22 06:02:50.577 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2025-04-22 06:02:50.593 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [8ms]
+2025-04-22 06:02:50.599 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [24ms]
+2025-04-22 06:02:50.610 [info] > git config --get --local branch.master.vscode-merge-base [11ms]
+2025-04-22 06:02:50.610 [warning] [Git][config] git config failed: Failed to execute git
+2025-04-22 06:02:50.627 [info] > git config --add --local branch.master.vscode-merge-base origin/master [20ms]
+2025-04-22 06:02:50.637 [info] > git reflog master --grep-reflog=branch: Created from *. [18ms]
+2025-04-22 06:02:50.644 [info] > git config --get commit.template [8ms]
+2025-04-22 06:02:50.647 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [5ms]
+2025-04-22 06:02:50.662 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [9ms]
+2025-04-22 06:02:50.673 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [13ms]
+2025-04-22 06:02:50.675 [info] > git config --add --local branch.master.vscode-merge-base origin/master [6ms]
+2025-04-22 06:02:50.684 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/abywu/moringa/SDF-PT10/Phase-1/Destructuring-assignment/phase-1-destructuring-assignment/.git/refs/remotes/origin/master'
+2025-04-22 06:02:50.699 [info] > git rev-parse refs/remotes/origin/master [16ms]
+2025-04-22 06:02:50.730 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [19ms]
+2025-04-22 06:02:50.737 [info] > git config --get commit.template [40ms]
+2025-04-22 06:02:50.745 [info] > git merge-base refs/heads/master refs/remotes/origin/master [26ms]
+2025-04-22 06:02:50.799 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [56ms]
+2025-04-22 06:02:50.800 [info] > git config --get --local branch.master.vscode-merge-base [64ms]
+2025-04-22 06:02:50.812 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/abywu/moringa/SDF-PT10/Phase-1/Destructuring-assignment/phase-1-destructuring-assignment/.git/refs/remotes/origin/master'
+2025-04-22 06:02:50.817 [info] > git diff --name-status -z --diff-filter=ADMR ff7f11b6811c05c4c4a16b82389f5b24531e1068...refs/remotes/origin/master [65ms]
+2025-04-22 06:02:50.823 [info] > git rev-parse refs/remotes/origin/master [11ms]
+2025-04-22 06:02:50.836 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [30ms]
+2025-04-22 06:02:50.839 [info] > git status -z -uall [11ms]
+2025-04-22 06:02:50.842 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2025-04-22 06:02:51.265 [info] > git check-ignore -v -z --stdin [5ms]

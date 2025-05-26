@@ -1,0 +1,13 @@
+2025-04-30 13:47:09.693 [info] Extension host with pid 3917 started
+2025-04-30 13:47:09.769 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-30 13:47:09.904 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/b956eff80c7c669487f5059479dc2c45/vscode.lock': Lock acquired.
+2025-04-30 13:47:10.052 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-04-30 13:47:10.078 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-04-30 13:47:10.079 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-04-30 13:47:10.636 [info] Eager extensions activated
+2025-04-30 13:47:10.637 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 13:47:10.638 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 13:47:10.639 [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 13:47:11.572 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-04-30 13:47:14.661 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-04-30 13:47:48.759 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'

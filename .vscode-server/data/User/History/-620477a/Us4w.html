@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RPS 101 Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    .screen {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      white-space: pre-line;
+    }
+    #scoreboard {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="start-screen" class="screen">
+    <h1>Welcome to RPS 101</h1>
+    <button id="start-btn">Start Game</button>
+  </div>
+
+  <div id="game-screen" class="screen hidden">
+    <h2>Round <span id="round-number">1</span></h2>
+
+    <div>
+      <label for="player1">Player 1:</label>
+      <select id="player1">
+        <option value="">Select</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="player2">Player 2:</label>
+      <select id="player2">
+        <option value="">Select</option>
+      </select>
+    </div>
+
+    <button id="play-btn" disabled>Play Round</button>
+
+    <div id="scoreboard">
+      Player 1: <span id="score1">0</span> |
+      Player 2: <span id="score2">0</span>
+    </div>
+
+    <div id="result"></div>
+
+    <button id="restart-btn" class="hidden">Restart Game</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

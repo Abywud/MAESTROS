@@ -1,0 +1,23 @@
+2025-05-26 19:44:45.814 [info] 
+
+
+
+
+2025-05-26 19:44:45.890 [info] Extension host agent started.
+2025-05-26 19:44:46.286 [info] [127.0.0.1][4c1f1f61][ManagementConnection] New connection established.
+2025-05-26 19:44:47.259 [info] [127.0.0.1][9d0377a5][ExtensionHostConnection] New connection established.
+2025-05-26 19:44:47.963 [info] [127.0.0.1][fc9f59ea][ManagementConnection] New connection established.
+2025-05-26 19:44:48.381 [info] [127.0.0.1][9d0377a5][ExtensionHostConnection] <1024> Launched Extension Host Process.
+2025-05-26 19:44:49.536 [info] [127.0.0.1][9af6433e][ExtensionHostConnection] New connection established.
+2025-05-26 19:44:49.559 [info] [127.0.0.1][9af6433e][ExtensionHostConnection] <1049> Launched Extension Host Process.
+2025-05-26 19:44:53.624 [info] Getting Manifest... rangav.vscode-thunder-client
+2025-05-26 19:44:54.215 [info] Installing extension: rangav.vscode-thunder-client {"productVersion":{"version":"1.99.3","date":"2025-04-15T23:18:46.076Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"donotVerifySignature":false,"context":{"clientTargetPlatform":"win32-x64"},"profileLocation":{"$mid":1,"fsPath":"/home/abywu/.vscode-server/extensions/extensions.json","external":"file:///home/abywu/.vscode-server/extensions/extensions.json","path":"/home/abywu/.vscode-server/extensions/extensions.json","scheme":"file"}}
+2025-05-26 19:45:01.124 [info] Extension signature verification result for rangav.vscode-thunder-client: Success. Internal Code: 0. Executed: true. Duration: 5014ms.
+2025-05-26 19:45:01.760 [info] Extracted extension to file:///home/abywu/.vscode-server/extensions/rangav.vscode-thunder-client-2.35.0: rangav.vscode-thunder-client
+2025-05-26 19:45:01.785 [info] Renamed to /home/abywu/.vscode-server/extensions/rangav.vscode-thunder-client-2.35.0
+2025-05-26 19:45:01.822 [info] Marked extension as removed rangav.vscode-thunder-client-2.34.3
+2025-05-26 19:45:01.829 [info] Extension installed successfully: rangav.vscode-thunder-client file:///home/abywu/.vscode-server/extensions/extensions.json
+2025-05-26 19:47:49.869 [info] [127.0.0.1][4c1f1f61][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-05-26 19:47:50.022 [info] [127.0.0.1][9d0377a5][ExtensionHostConnection] <1024> Extension Host Process exited with code: 0, signal: null.
+2025-05-26 19:47:52.361 [info] [127.0.0.1][fc9f59ea][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-05-26 19:47:52.473 [info] [127.0.0.1][9af6433e][ExtensionHostConnection] <1049> Extension Host Process exited with code: 0, signal: null.

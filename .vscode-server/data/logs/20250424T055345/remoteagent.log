@@ -1,0 +1,13 @@
+2025-04-24 05:53:45.601 [info] 
+
+
+
+
+2025-04-24 05:53:45.621 [info] Extension host agent started.
+2025-04-24 05:53:45.755 [info] [127.0.0.1][f1d5dd3a][ManagementConnection] New connection established.
+2025-04-24 05:53:46.162 [info] [127.0.0.1][a3fde7a9][ExtensionHostConnection] New connection established.
+2025-04-24 05:53:46.488 [info] [127.0.0.1][a3fde7a9][ExtensionHostConnection] <1289> Launched Extension Host Process.
+2025-04-24 06:06:02.439 [info] [127.0.0.1][a3fde7a9][ExtensionHostConnection] <1289> [0mGET /favicon.ico [33m404[0m 2.039 ms - 150[0m
+
+2025-04-24 06:52:41.201 [info] [127.0.0.1][f1d5dd3a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-24 06:52:41.524 [info] [127.0.0.1][a3fde7a9][ExtensionHostConnection] <1289> Extension Host Process exited with code: 0, signal: null.

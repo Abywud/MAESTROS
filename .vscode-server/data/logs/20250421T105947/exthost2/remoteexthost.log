@@ -1,0 +1,131 @@
+2025-04-22 06:02:48.403 [info] Extension host with pid 48253 started
+2025-04-22 06:02:48.497 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-22 06:02:48.639 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/d2bd75e80b2a90892a19367da9692fe1/vscode.lock': Lock acquired.
+2025-04-22 06:02:49.118 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-04-22 06:02:49.151 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2025-04-22 06:02:49.269 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-04-22 06:02:49.270 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-04-22 06:02:49.882 [info] Eager extensions activated
+2025-04-22 06:02:49.883 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-22 06:02:49.885 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-22 06:02:49.886 [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2025-04-22 06:02:55.266 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2025-04-22 06:02:55.267 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2025-04-22 06:02:55.268 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2025-04-22 06:03:00.009 [info] Extension host terminating: received terminate message from renderer
+2025-04-22 06:03:00.010 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/d2bd75e80b2a90892a19367da9692fe1/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2025-04-22 06:03:00.114 [error] Canceled: Canceled
+	at new HR (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:156308)
+	at i4.U (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:160919)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:158413)
+	at vw.g (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40983)
+	at vw.executeCommand (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40487)
+	at r.registerCommand.description (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:39817)
+	at vw.h (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:41503)
+	at vw.g (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40580)
+	at vw.executeCommand (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40487)
+	at Object.executeCommand (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:173:30346)
+	at Ah.L [as value] (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:511809)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.C (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2445)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2662)
+	at Object.g [as dispose] (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:534449)
+	at /home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:540767
+	at Array.forEach (<anonymous>)
+	at b.dispose (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:540753)
+	at iv.<anonymous> (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:107:8922)
+	at iv.dispose (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:107:9018)
+	at iv.<anonymous> (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:514293)
+	at iv.dispose (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:107:9018)
+	at pi (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:14994
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+	at Object.dispose (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+	at vV.eb (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:11921)
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:9876
+	at Array.map (<anonymous>)
+	at vV.$ (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:9864)
+	at vV.terminate (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:10107)
+	at oP.terminate (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:116:1434)
+	at es (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:197:5701)
+	at Ah.value (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:197:3862)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2593)
+	at Jn.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:9459)
+	at Km.A (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:12575)
+	at Ah.value (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:10995)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2593)
+	at M6.acceptChunk (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:7942)
+	at Ah.value (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:7228)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2593)
+	at AT.z (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:21747)
+	at AT.acceptFrame (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:21553)
+	at DT.n (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:20080)
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:17312
+	at Socket.t (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:15252)
+	at Socket.emit (node:events:518:28)
+	at addChunk (node:internal/streams/readable:561:12)
+	at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+	at Readable.push (node:internal/streams/readable:392:5)
+	at TCP.onStreamRead (node:internal/stream_base_commons:191:23) setContext undefined
+2025-04-22 06:03:00.127 [error] Canceled: Canceled
+	at new HR (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:156308)
+	at i4.U (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:160919)
+	at s.<computed>.n.charCodeAt.s.<computed> (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:158413)
+	at vw.g (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40983)
+	at vw.executeCommand (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40487)
+	at r.registerCommand.description (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:39817)
+	at vw.h (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:41503)
+	at vw.g (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40580)
+	at vw.executeCommand (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:111:40487)
+	at Object.executeCommand (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:173:30346)
+	at set hasGitHubRepositories [as hasGitHubRepositories] (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/github/dist/extension.js:2:217805)
+	at /home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/github/dist/extension.js:2:218764
+	at Ah.value (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:631688)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.C (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2445)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2662)
+	at Object.g [as dispose] (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:534449)
+	at /home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:540767
+	at Array.forEach (<anonymous>)
+	at b.dispose (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:540753)
+	at iv.<anonymous> (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:107:8922)
+	at iv.dispose (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:107:9018)
+	at iv.<anonymous> (/home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/main.js:2:514293)
+	at iv.dispose (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:107:9018)
+	at pi (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:25:701)
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:14994
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:25:1011
+	at Object.dispose (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:8:705)
+	at vV.eb (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:11921)
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:9876
+	at Array.map (<anonymous>)
+	at vV.$ (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:9864)
+	at vV.terminate (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:115:10107)
+	at oP.terminate (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:116:1434)
+	at es (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:197:5701)
+	at Ah.value (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:197:3862)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2593)
+	at Jn.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:9459)
+	at Km.A (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:12575)
+	at Ah.value (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:10995)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2593)
+	at M6.acceptChunk (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:7942)
+	at Ah.value (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:7228)
+	at P.B (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2375)
+	at P.fire (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:27:2593)
+	at AT.z (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:21747)
+	at AT.acceptFrame (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:21553)
+	at DT.n (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:20080)
+	at file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:17312
+	at Socket.t (file:///home/abywu/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/vs/workbench/api/node/extensionHostProcess.js:29:15252)
+	at Socket.emit (node:events:518:28)
+	at addChunk (node:internal/streams/readable:561:12)
+	at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+	at Readable.push (node:internal/streams/readable:392:5)
+	at TCP.onStreamRead (node:internal/stream_base_commons:191:23) setContext undefined
+2025-04-22 06:03:00.133 [info] Extension host with pid 48253 exiting with code 0

@@ -1,0 +1,23 @@
+ /* Set the background color of the whole document */
+ body {
+    background: #00b3e6;
+}
+
+/* Style the div elements */
+div {
+    width: 700px;
+    margin: auto;
+    font-family: "Helvetica Neue", sans-serif;
+    background: white;
+    padding: 30px;
+}
+
+/* Set the font size for the element with id "main-header" */
+#main-header {
+    font-size: 22px;
+}
+
+/* Set the font style to italic for elements with class "perspective-questions" */
+.perspective-questions {
+    font-style: italic;
+}

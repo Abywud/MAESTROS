@@ -1,0 +1,19 @@
+2025-04-30 21:09:12.669 [info] Extension host with pid 3016 started
+2025-04-30 21:09:12.726 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-04-30 21:09:12.908 [info] Lock '/home/abywu/.vscode-server/data/User/workspaceStorage/98461a67f959ba964e8b9a85cd4aa0d0/vscode.lock': Lock acquired.
+2025-04-30 21:09:13.039 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-04-30 21:09:13.060 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2025-04-30 21:09:13.137 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-04-30 21:09:13.138 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-04-30 21:09:13.515 [info] Eager extensions activated
+2025-04-30 21:09:13.516 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:09:13.518 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:09:13.519 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:09:13.520 [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2025-04-30 21:09:14.542 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-04-30 21:09:17.098 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2025-04-30 21:09:19.732 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2025-04-30 21:09:19.733 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2025-04-30 21:09:19.734 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2025-04-30 21:10:03.755 [info] ExtensionService#_doActivateExtension vscode.tunnel-forwarding, startup: false, activationEvent: 'onTunnel'
+2025-04-30 21:11:43.849 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
