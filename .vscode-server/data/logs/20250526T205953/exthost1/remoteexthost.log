@@ -24,3 +24,4 @@
     at Cpt.writeConfiguration (vscode-file://vscode-app/c:/Users/abywu/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:3235:3743)
     at RXs.Hb (vscode-file://vscode-app/c:/Users/abywu/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:3235:42634)
 2025-05-26 21:49:23.816 [warning] [Decorations] CAPPING events from decorations provider vscode.git 11626
+2025-05-26 21:51:46.907 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10010
