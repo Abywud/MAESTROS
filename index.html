@@ -9,19 +9,22 @@
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
+      background: linear-gradient(-45deg, #1d1d1d, #0d47a1, #1b5e20, #880e4f);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
 
-    /* Animated gradient background */
-    @keyframes gradientShift {
+    @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
     .login-container {
-      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1cb5e0, #000046);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
+      background-image: url('https://fantasy.premierleague.com/static/media/logo.9c960834.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
       height: 100vh;
       display: flex;
       justify-content: flex-end;
@@ -35,21 +38,23 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
-      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .main-content {
       display: none;
-      background: linear-gradient(45deg, #000428, #004e92, #283e51, #485563);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
       padding: 20px;
-      overflow-y: auto;
+      background-image: url('https://wallpapercave.com/wp/wp2599594.jpg');
+      background-size: cover;
+      background-position: center;
       height: 100vh;
+      overflow-y: auto;
     }
 
     h1, h2 {
       margin-top: 0;
+      text-shadow: 1px 1px 5px black;
     }
 
     ul {
@@ -62,6 +67,7 @@
       border-collapse: collapse;
       margin-top: 10px;
       color: white;
+      background-color: rgba(0,0,0,0.6);
     }
 
     th, td {
@@ -71,12 +77,12 @@
     }
 
     th {
-      background-color: #333;
+      background-color: #222;
     }
 
     .trophy {
-      display: inline-block;
       animation: bounce 1s infinite;
+      display: inline-block;
     }
 
     @keyframes bounce {
@@ -85,14 +91,15 @@
     }
 
     a {
-      color: #fffd77;
-      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
+
   <div class="login-container" id="login">
-    <a href="#" onclick="login()">Login</a>
+    <a onclick="playClick(); login()">Login</a>
   </div>
 
   <div class="main-content" id="main">
@@ -100,15 +107,15 @@
 
     <h2>Maestros Rules</h2>
     <ul>
-      <li>Participants can register multiple squads, each with the league.</li>
-      <li>Registration fee: KES 300 per participant.</li>
-      <li>Weekly champion receives KES 50 from each participant by next gameweek.</li>
-      <li>Ties in points: winner is highest in overall points.</li>
-      <li>Unlimited transfers allowed.</li>
-      <li>New participants pay KES 400 after start.</li>
-      <li>Registration fees are non-refundable.</li>
-      <li>3 missed weekly payments = disqualification.</li>
-      <li>Only registered teams participate.</li>
+      <li>Participants are allowed to register multiple squads, provided that each squad is officially registered with the league.</li>
+      <li>A registration fee of KES 300 is required per participant.</li>
+      <li>At the end of each gameweek, the weekly champion shall receive KES 50 from each participant. This payment must be completed before the start of the next gameweek.</li>
+      <li>In the event of a tie in gameweek points, the participant with the highest overall points will be declared the winner.</li>
+      <li>There is no limit to the number of transfers allowed during the league.</li>
+      <li>New participants joining after the league has commenced must pay a registration fee of KES 400.</li>
+      <li>Registration fees are non-refundable under any circumstances.</li>
+      <li>Failure to remit payment to three consecutive weekly champions will result in disqualification from the league.</li>
+      <li>Only registered teams will be allowed to participate.</li>
     </ul>
 
     <h2>Participating Teams</h2>
@@ -152,15 +159,45 @@
         <tr><td>6</td><td>MZEE WENGER</td><td></td></tr>
         <tr><td>7</td><td>BEDROOM MASTER FC</td><td></td></tr>
         <tr><td>8</td><td>BEDROOM MASTER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <!-- (Add more rows as needed) -->
+        <tr><td>9</td><td>GEN Z</td><td></td></tr>
+        <tr><td>10</td><td>ELEVATION</td><td></td></tr>
+        <tr><td>11</td><td>RED THUNDER FC</td><td></td></tr>
+        <tr><td>12</td><td>RETIRED G</td><td></td></tr>
+        <tr><td>13</td><td>SOLIDARITY <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>14</td><td>RED THUNDER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>15</td><td>MEDELEIN’S</td><td></td></tr>
+        <tr><td>16</td><td>EASTERN SNIPER <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>17</td><td>ENGOGE</td><td></td></tr>
+        <tr><td>18</td><td>MADELEINES <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>19</td><td>CASSAVA FARMER</td><td></td></tr>
+        <tr><td>20</td><td>MADELEINES <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>21</td><td>CASSAVA FARMER <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>22</td><td>ELEVATION <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>23</td><td>JEDDY KEVOH</td><td></td></tr>
+        <tr><td>24</td><td>ELEVATION <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>25</td><td>RETIRED G <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>26</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>27</td><td>RETIRED G <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>28</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>29</td><td>OVERWHELMING <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>30</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>31</td><td>GEN Z <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>32</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>33</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>34</td><td>MZEE WENGER <span class="trophy">🏆🏆</span></td><td></td></tr>
+        <tr><td>35</td><td>GEN Z <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>36</td><td>GEN Z <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
+        <tr><td>37</td><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
+        <tr><td rowspan="2">38</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆🏆</span> (Super GW Champion)</td><td></td></tr>
+        <tr><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
       </tbody>
     </table>
 
     <h2>FPL Table</h2>
-    <a href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank">View Our FPL Table</a>
+    <a onclick="playClick()" href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank" style="color: yellow; text-decoration: underline;">View Our FPL Table</a>
 
     <h2>Join Our WhatsApp Group</h2>
-    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank">Click here to join the Maestros WhatsApp Group</a>
+    <a onclick="playClick()" href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen; text-decoration: underline;">Click here to join the Maestros WhatsApp Group</a>
   </div>
 
   <script>
@@ -168,6 +205,14 @@
       document.getElementById('login').style.display = 'none';
       document.getElementById('main').style.display = 'block';
     }
+
+    function playClick() {
+      document.getElementById('clickSound').play();
+    }
+
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', playClick);
+    });
   </script>
 </body>
 </html>
