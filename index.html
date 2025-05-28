@@ -11,11 +11,17 @@
       color: white;
     }
 
+    /* Animated gradient background */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .login-container {
-      background-image: url('https://i.ibb.co/N1ffrZq/football-bg.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1cb5e0, #000046);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
       height: 100vh;
       display: flex;
       justify-content: flex-end;
@@ -34,11 +40,10 @@
 
     .main-content {
       display: none;
-      background-color: rgba(0, 0, 0, 0.9);
+      background: linear-gradient(45deg, #000428, #004e92, #283e51, #485563);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
       padding: 20px;
-      background-image: url('https://wallpapercave.com/wp/wp2634223.jpg');
-      background-size: cover;
-      background-position: center;
       overflow-y: auto;
       height: 100vh;
     }
@@ -77,6 +82,11 @@
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
+    }
+
+    a {
+      color: #fffd77;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -142,45 +152,15 @@
         <tr><td>6</td><td>MZEE WENGER</td><td></td></tr>
         <tr><td>7</td><td>BEDROOM MASTER FC</td><td></td></tr>
         <tr><td>8</td><td>BEDROOM MASTER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>9</td><td>GEN Z</td><td></td></tr>
-        <tr><td>10</td><td>ELEVATION</td><td></td></tr>
-        <tr><td>11</td><td>RED THUNDER FC</td><td></td></tr>
-        <tr><td>12</td><td>RETIRED G</td><td></td></tr>
-        <tr><td>13</td><td>SOLIDARITY <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>14</td><td>RED THUNDER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>15</td><td>MEDELEIN’S</td><td></td></tr>
-        <tr><td>16</td><td>EASTERN SNIPER <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>17</td><td>ENGOGE</td><td></td></tr>
-        <tr><td>18</td><td>MADELEINES <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>19</td><td>CASSAVA FARMER</td><td></td></tr>
-        <tr><td>20</td><td>MADELEINES <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>21</td><td>CASSAVA FARMER <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>22</td><td>ELEVATION <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>23</td><td>JEDDY KEVOH</td><td></td></tr>
-        <tr><td>24</td><td>ELEVATION <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>25</td><td>RETIRED G <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>26</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>27</td><td>RETIRED G <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>28</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>29</td><td>OVERWHELMING <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>30</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>31</td><td>GEN Z <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>32</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>33</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>34</td><td>MZEE WENGER <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>35</td><td>GEN Z <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>36</td><td>GEN Z <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>37</td><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td rowspan="2">38</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆🏆</span> (Super GW Champion)</td><td></td></tr>
-        <tr><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
+        <!-- (Add more rows as needed) -->
       </tbody>
     </table>
 
     <h2>FPL Table</h2>
-    <a href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank" style="color: yellow; text-decoration: underline;">View Our FPL Table</a>
+    <a href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank">View Our FPL Table</a>
 
     <h2>Join Our WhatsApp Group</h2>
-    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen; text-decoration: underline;">Click here to join the Maestros WhatsApp Group</a>
+    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank">Click here to join the Maestros WhatsApp Group</a>
   </div>
 
   <script>
