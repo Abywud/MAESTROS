@@ -9,3 +9,7 @@
 2025-05-26 20:59:54.439 [info] [127.0.0.1][a9d7ed73][ExtensionHostConnection] New connection established.
 2025-05-26 20:59:55.120 [info] [127.0.0.1][a9d7ed73][ExtensionHostConnection] <17492> Launched Extension Host Process.
 2025-05-26 20:59:57.424 [info] ComputeTargetPlatform: linux-x64
+2025-05-26 22:07:54.674 [info] [127.0.0.1][73112083][ManagementConnection] The client has reconnected.
+2025-05-26 22:07:56.519 [info] [127.0.0.1][a9d7ed73][ExtensionHostConnection] The client has reconnected.
+2025-05-26 22:35:24.088 [info] [127.0.0.1][73112083][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-05-26 22:35:24.754 [info] [127.0.0.1][a9d7ed73][ExtensionHostConnection] <17492> Extension Host Process exited with code: 0, signal: null.

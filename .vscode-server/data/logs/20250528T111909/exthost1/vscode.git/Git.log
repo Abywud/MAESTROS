@@ -1,0 +1,41 @@
+2025-05-28 11:19:25.583 [info] [main] Log level: Info
+2025-05-28 11:19:25.583 [info] [main] Validating found git in: "git"
+2025-05-28 11:19:25.583 [info] [main] Using git "2.48.1" from "git"
+2025-05-28 11:19:25.583 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-28 11:19:25.583 [info] > git rev-parse --show-toplevel [48ms]
+2025-05-28 11:19:25.811 [info] > git rev-parse --git-dir --git-common-dir [808ms]
+2025-05-28 11:19:25.927 [info] [Model][openRepository] Opened repository (path): /home/abywu
+2025-05-28 11:19:25.927 [info] [Model][openRepository] Opened repository (real path): /home/abywu
+2025-05-28 11:19:25.974 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-28 11:19:26.067 [info] > git config --get commit.template [47ms]
+2025-05-28 11:19:26.161 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [55ms]
+2025-05-28 11:19:26.291 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [57ms]
+2025-05-28 11:19:26.699 [info] > git show --textconv :Abiud/maestros/v [215ms]
+2025-05-28 11:19:26.703 [info] > git ls-files --stage -- Abiud/maestros/v [171ms]
+2025-05-28 11:19:26.751 [info] > git cat-file -s cd65968f8d168276f86a9b97f2837094097f15f9 [19ms]
+2025-05-28 11:19:26.982 [info] > git check-ignore -v -z --stdin [180ms]
+2025-05-28 11:19:27.415 [info] > git blame --root --incremental 2693e4fce1aebd3b8829fc1b13d04b4398b77b21 -- Abiud/maestros/v [444ms]
+2025-05-28 11:19:31.073 [info] > git status -z -uall [4885ms]
+2025-05-28 11:19:31.366 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [191ms]
+2025-05-28 11:19:31.385 [info] > git config --get commit.template [80ms]
+2025-05-28 11:19:31.466 [info] > git config --get --local branch.gh-pages.vscode-merge-base [84ms]
+2025-05-28 11:19:31.467 [warning] [Git][config] git config failed: Failed to execute git
+2025-05-28 11:19:31.482 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [78ms]
+2025-05-28 11:19:32.318 [info] > git reflog gh-pages --grep-reflog=branch: Created from *. [838ms]
+2025-05-28 11:19:32.340 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [836ms]
+2025-05-28 11:19:32.345 [info] > git reflog HEAD --grep-reflog=checkout: moving from .* to gh-pages [19ms]
+2025-05-28 11:19:32.362 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2025-05-28 11:19:32.404 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [12ms]
+2025-05-28 11:19:32.404 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-05-28 11:19:32.405 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-05-28 11:19:32.451 [info] > git merge-base refs/heads/gh-pages refs/remotes/origin/gh-pages [25ms]
+2025-05-28 11:19:32.485 [info] > git diff --name-status -z --diff-filter=ADMR 2693e4fce1aebd3b8829fc1b13d04b4398b77b21...refs/remotes/origin/gh-pages [17ms]
+2025-05-28 11:19:32.500 [info] > git status -z -uall [1003ms]
+2025-05-28 11:21:24.312 [info] > git config --get commit.template [11ms]
+2025-05-28 11:21:24.314 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [7ms]
+2025-05-28 11:21:24.336 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [5ms]
+2025-05-28 11:21:24.839 [info] > git status -z -uall [518ms]
+2025-05-28 12:26:28.439 [info] > git config --get commit.template [27ms]
+2025-05-28 12:26:28.455 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/gh-pages refs/remotes/gh-pages [36ms]
+2025-05-28 12:26:28.482 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2025-05-28 12:26:33.762 [info] > git status -z -uall [5298ms]
