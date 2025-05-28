@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maestros</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       color: white;
-      background-color: #121212;
+      background: linear-gradient(135deg, #004080, #0080ff);
     }
-
     .login-container {
       background-image: url('https://fantasy.premierleague.com/static/media/logo.9c960834.svg');
       background-repeat: no-repeat;
@@ -24,106 +23,88 @@
       align-items: flex-start;
       padding: 20px;
     }
-
     .login-container a {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: yellow;
-      font-weight: bold;
-      padding: 12px 24px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 20px;
       text-decoration: none;
-      border-radius: 8px;
-      border: 2px solid yellow;
-      transition: 0.3s;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
-
     .login-container a:hover {
-      background-color: yellow;
-      color: black;
+      background-color: #0066cc;
     }
-
     .main-content {
       display: none;
-      background-color: rgba(0, 0, 0, 0.95);
+      background-color: rgba(0, 0, 0, 0.85);
       padding: 20px;
       min-height: 100vh;
-      background-image: url('https://cdn.wallpapersafari.com/91/77/UK4hVv.jpg');
+      background-image: url('https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
       background-size: cover;
       background-position: center;
       overflow-y: auto;
+      box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     }
-
     h1, h2 {
       margin-top: 0;
-      color: gold;
-      text-shadow: 1px 1px 2px black;
+      text-shadow: 2px 2px 4px #000;
     }
-
     ul {
       list-style-type: decimal;
       padding-left: 20px;
+      text-shadow: 1px 1px 2px #000;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
       color: white;
+      box-shadow: 0 0 10px #00bfff;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      overflow: hidden;
     }
-
     th, td {
-      border: 1px solid white;
+      border: 1px solid #00bfff;
       padding: 8px;
       text-align: left;
     }
-
     th {
-      background-color: #222;
+      background: linear-gradient(90deg, #0066cc, #00bfff);
+      font-weight: bold;
     }
-
-    tbody tr:hover {
-      background-color: rgba(255, 255, 0, 0.15);
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
     a {
-      color: lightgreen;
-      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.3s;
     }
-
-    .trophy {
-      animation: bounce 1.5s infinite;
-      display: inline-block;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+    a:hover {
+      color: #ffdd00;
     }
   </style>
 </head>
 <body>
   <div class="login-container" id="login">
-    <a href="#" onclick="login()">Enter Maestros League</a>
+    <a href="#" onclick="login()">Login</a>
   </div>
 
   <div class="main-content" id="main">
-    <h1>⚽ Welcome to Maestros ⚽</h1>
+    <h1>Welcome to Maestros</h1>
 
-    <h2>📋 Maestros Rules</h2>
+    <h2>Maestros Rules</h2>
     <ul>
-      <li>Participants may register multiple squads if officially registered.</li>
-      <li>Registration fee: KES 300 per participant.</li>
-      <li>Weekly champion receives KES 50 from each participant.</li>
-      <li>Tie in points: higher overall points wins.</li>
-      <li>No limit to number of transfers.</li>
-      <li>New participant fee: KES 400.</li>
-      <li>Fees are non-refundable.</li>
-      <li>Missed payments for 3 weeks = disqualification.</li>
-      <li>Only registered teams can play.</li>
+      <li>Participants are allowed to register multiple squads, provided that each squad is officially registered with the league.</li>
+      <li>A registration fee of KES 300 is required per participant.</li>
+      <li>At the end of each gameweek, the weekly champion shall receive KES 50 from each participant. This payment must be completed before the start of the next gameweek.</li>
+      <li>In the event of a tie in gameweek points, the participant with the highest overall points will be declared the winner.</li>
+      <li>There is no limit to the number of transfers allowed during the league.</li>
+      <li>New participants joining after the league has commenced must pay a registration fee of KES 400.</li>
+      <li>Registration fees are non-refundable under any circumstances.</li>
+      <li>Failure to remit payment to three consecutive weekly champions will result in disqualification from the league.</li>
+      <li>Only registered teams will be allowed to participate.</li>
     </ul>
 
-    <h2>📝 Participating Teams</h2>
+    <h2>Participating Teams</h2>
     <ul>
       <li>Afc</li>
       <li>Bedroom master fc</li>
@@ -145,7 +126,7 @@
       <li>Planned With Time</li>
     </ul>
 
-    <h2>🏆 Weekly Champions</h2>
+    <h2>Weekly Champions</h2>
     <table>
       <thead>
         <tr>
@@ -155,32 +136,52 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>1</td><td>EASTERN SNIPER <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>2</td><td>SOLIDARITY <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>3</td><td>OVERWHELMING <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>4</td><td>OVERWHELMING <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>5</td><td>BEDROOM MASTER FC <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>6</td><td>GEN Z <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>7</td><td>MZEE WENGER <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>8</td><td>I AM JOSE MOURINHO <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>9</td><td>RED THUNDER FC <span class="trophy">🏆</span></td><td></td></tr>
-        <tr><td>10</td><td>ELEVATION <span class="trophy">🏆</span></td><td></td></tr>
+        <tr><td>1</td><td>EASTERN SNIPER</td><td>56</td></tr>
+        <tr><td>2</td><td>SOLIDARITY</td><td>54</td></tr>
+        <tr><td>3</td><td>I AM JOSE MOURINHO</td><td>59</td></tr>
+        <tr><td>4</td><td>OVERWHELMING</td><td>58</td></tr>
+        <tr><td>5</td><td>OVERWHELMING 🏆🏆</td><td>60</td></tr>
+        <tr><td>6</td><td>MZEE WENGER</td><td>55</td></tr>
+        <tr><td>7</td><td>BEDROOM MASTER FC</td><td>57</td></tr>
+        <tr><td>8</td><td>BEDROOM MASTER FC 🏆🏆</td><td>61</td></tr>
+        <tr><td>9</td><td>GEN Z</td><td>53</td></tr>
+        <tr><td>10</td><td>ELEVATION</td><td>54</td></tr>
+        <tr><td>11</td><td>RED THUNDER FC</td><td>52</td></tr>
+        <tr><td>12</td><td>RETIRED G</td><td>50</td></tr>
+        <tr><td>13</td><td>SOLIDARITY 🏆🏆</td><td>62</td></tr>
+        <tr><td>14</td><td>RED THUNDER FC 🏆🏆</td><td>59</td></tr>
+        <tr><td>15</td><td>MEDELEIN’S</td><td>51</td></tr>
+        <tr><td>16</td><td>EASTERN SNIPER 🏆🏆</td><td>63</td></tr>
+        <tr><td>17</td><td>ENGOGE</td><td>52</td></tr>
+        <tr><td>18</td><td>MADELEINES 🏆🏆</td><td>60</td></tr>
+        <tr><td>19</td><td>CASSAVA FARMER</td><td>49</td></tr>
+        <tr><td>20</td><td>MADELEINES 🏆🏆🏆</td><td>64</td></tr>
+        <tr><td>21</td><td>CASSAVA FARMER 🏆🏆</td><td>61</td></tr>
+        <tr><td>22</td><td>ELEVATION 🏆🏆</td><td>63</td></tr>
+        <tr><td>23</td><td>JEDDY KEVOH</td><td>55</td></tr>
+        <tr><td>24</td><td>ELEVATION 🏆🏆🏆</td><td>65</td></tr>
+        <tr><td>25</td><td>RETIRED G 🏆🏆</td><td>62</td></tr>
+        <tr><td>26</td><td>ELEVATION 🏆🏆🏆🏆</td><td>66</td></tr>
+        <tr><td>27</td><td>RETIRED G 🏆🏆🏆</td><td>63</td></tr>
+        <tr><td>28</td><td>ELEVATION 🏆🏆🏆🏆🏆</td><td>68</td></tr>
+        <tr><td>29</td><td>OVERWHELMING 🏆🏆🏆</td><td>64</td></tr>
+        <tr><td>30</td><td>I AM JOSE MOURINHO 🏆🏆</td><td>67</td></tr>
+        <tr><td>31</td><td>GEN Z 🏆🏆</td><td>62</td></tr>
+        <tr><td>32</td><td>I AM JOSE MOURINHO 🏆🏆🏆</td><td>69</td></tr>
+        <tr><td>33</td><td>I AM JOSE MOURINHO 🏆🏆🏆🏆</td><td>70</td></tr>
+        <tr><td>34</td><td>MZEE WENGER 🏆🏆</td><td>63</td></tr>
+        <tr><td>35</td><td>GEN Z 🏆🏆🏆</td><td>65</td></tr>
+        <tr><td>36</td><td>RED THUNDER FC 🏆🏆🏆</td><td>66</td></tr>
+        <tr><td>37</td><td>RED THUNDER FC 🏆🏆🏆🏆</td><td>68</td></tr>
+        <tr><td>38</td><td>PLANNED WITH TIME 🏆🏆</td><td>67</td></tr>
       </tbody>
     </table>
-
-    <h2>📊 FPL Table</h2>
-    <a href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank">View Our FPL Table</a>
-
-    <h2>📱 Join Our WhatsApp Group</h2>
-    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank">Click here to join the Maestros WhatsApp Group</a>
   </div>
 
-  <audio id="goalSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto"></audio>
   <script>
     function login() {
       document.getElementById('login').style.display = 'none';
       document.getElementById('main').style.display = 'block';
-      document.getElementById('goalSound').play();
     }
   </script>
 </body>
