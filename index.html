@@ -1,224 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, ini<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maestros - Football League</title>
-
-  <!-- Google Fonts for sporty look -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maestros</title>
   <style>
-    /* Base resets */
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Oswald', sans-serif;
-      background: #0B3D0B; /* Dark green pitch color */
-      color: #f0f0f0;
-      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
     }
-
-    /* Subtle football pitch lines background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: 
-        repeating-linear-gradient(0deg, transparent, transparent 18px, rgba(255,255,255,0.07) 20px),
-        repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(255,255,255,0.07) 20px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Container for login screen */
     .login-container {
       background-image: url('https://fantasy.premierleague.com/static/media/logo.9c960834.svg');
       background-repeat: no-repeat;
-      background-size: 250px 250px;
-      background-position: center center;
+      background-size: contain;
+      background-position: center;
+      background-color: #1d1d1d;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1;
-      position: relative;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 20px;
     }
-
     .login-container a {
-      background: #A6CE39; /* Football bright green */
-      padding: 15px 40px;
-      font-size: 1.5rem;
-      color: #0B3D0B;
-      font-weight: 700;
-      border-radius: 50px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 20px;
       text-decoration: none;
-      box-shadow: 0 6px 0 #739F18;
-      transition: background 0.3s ease, transform 0.2s ease;
-      user-select: none;
+      border-radius: 5px;
     }
-    .login-container a:hover {
-      background: #739F18;
-      box-shadow: 0 2px 0 #A6CE39;
-      transform: translateY(2px);
-    }
-
-    /* Main content styles */
     .main-content {
       display: none;
-      position: relative;
-      padding: 40px 60px;
-      min-height: 100vh;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-                  url('https://images.unsplash.com/photo-1509228627152-c69e9c63b3e7?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-      box-sizing: border-box;
-      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      height: 100vh;
+      background-image: url('epl-players-background.jpg');
+      background-size: cover;
+      background-position: center;
+      overflow-y: auto;
     }
-
-    /* Overlay to darken background */
-    .main-content::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
+    h1, h2 {
+      margin-top: 0;
     }
-
-    /* Ensure text sits above overlay */
-    .main-content > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 3.5rem;
-      margin-bottom: 0.2em;
-      color: #A6CE39;
-      text-shadow: 2px 2px 5px black;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-top: 1.5em;
-      margin-bottom: 0.7em;
-      border-bottom: 3px solid #A6CE39;
-      padding-bottom: 0.3em;
-      color: #D4AF37; /* gold accent */
-      text-shadow: 1px 1px 2px black;
-    }
-
     ul {
-      padding-left: 20px;
       list-style-type: decimal;
-      color: #eee;
-      line-height: 1.6;
-      font-size: 1.1rem;
-      max-width: 720px;
+      padding-left: 20px;
     }
-
-    /* Highlight important list items on hover */
-    ul li:hover {
-      color: #A6CE39;
-      cursor: default;
-    }
-
     table {
-      border-collapse: collapse;
       width: 100%;
-      max-width: 720px;
-      margin-top: 15px;
-      color: #eee;
-      font-size: 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      box-shadow: 0 0 10px #A6CE39;
-      border-radius: 8px;
-      overflow: hidden;
+      border-collapse: collapse;
+      margin-top: 10px;
+      color: white;
     }
     th, td {
-      padding: 10px 15px;
-      border: 1px solid #A6CE39;
+      border: 1px solid white;
+      padding: 8px;
       text-align: left;
     }
     th {
-      background-color: #1C5F1C;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    tbody tr:hover {
-      background-color: #274927;
-      color: #D4AF37;
-      cursor: default;
-      transition: background-color 0.3s ease;
-    }
-
-    /* Links container */
-    .links {
-      margin-bottom: 20px;
-      max-width: 720px;
-      font-size: 1.2rem;
-    }
-    .links a {
-      color: #A6CE39;
-      text-decoration: none;
-      font-weight: 700;
-      margin-right: 20px;
-    }
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 800px) {
-      .main-content {
-        padding: 30px 20px;
-      }
-      h1 {
-        font-size: 2.5rem;
-      }
-      h2 {
-        font-size: 1.4rem;
-      }
-      ul {
-        font-size: 1rem;
-      }
-      table {
-        font-size: 0.9rem;
-      }
-      .login-container a {
-        font-size: 1.2rem;
-        padding: 12px 30px;
-      }
-      .links {
-        font-size: 1rem;
-      }
+      background-color: #333;
     }
   </style>
 </head>
 <body>
-
   <div class="login-container" id="login">
     <a href="#" onclick="login()">Login</a>
   </div>
 
   <div class="main-content" id="main">
-
-    <div class="links">
-      <a href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank" rel="noopener noreferrer">Maestros FPL League Table</a>
-      <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" rel="noopener noreferrer">Join WhatsApp Group</a>
-    </div>
-
-    <h1>Maestros</h1>
+    <h1>Welcome to Maestros</h1>
 
     <h2>Maestros Rules</h2>
     <ul>
@@ -252,263 +102,7 @@
       <li>Red Thunder Fc</li>
       <li>Rio Kise</li>
       <li>Solidarity</li>
-      <li>planned with time</li>
-    </ul>
-
-    <h2>Weekly Champions</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Game Week</th>
-          <th>Team</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>EASTERN SNIPER</td><td></td></tr>
-        <tr><td>2</td><td>SOLIDARITY</td><td></td></tr>
-        <tr><td rowspan="2">3</td><td>IAM JOSE MOURINHO</td><td></td></tr>
-        <tr><td>OVERWHELMING</td><td></td></tr>
-        <tr><td>4</td><td>OVERWHELMING</td><td></td></tr>
-        <tr><td>5</td><td>OVERWHELMING 🏆🏆</td><td></td></tr>
-        <tr><td>6</td><td>MZEE WENGER</td><td></td></tr>
-        <tr><td>7</td><td>MZEE WENGER</td><td></td></tr>
-      </tbody>
-    </table>
-
-  </div>
-
-  <script>
-    function login() {
-      document.getElementById('login').style.display = 'none';
-      document.getElementById('main').style.display = 'block';
-    }
-  </script>
-
-</body>
-</html>
-tial-scale=1" />
-  <title>Maestros - Football League</title>
-
-  <!-- Google Fonts for sporty look -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* Base resets */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Oswald', sans-serif;
-      background: #0B3D0B; /* Dark green pitch color */
-      color: #f0f0f0;
-      overflow-x: hidden;
-    }
-
-    /* Subtle football pitch lines background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: 
-        repeating-linear-gradient(0deg, transparent, transparent 18px, rgba(255,255,255,0.07) 20px),
-        repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(255,255,255,0.07) 20px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Container for login screen */
-    .login-container {
-      background-image: url('https://fantasy.premierleague.com/static/media/logo.9c960834.svg');
-      background-repeat: no-repeat;
-      background-size: 250px 250px;
-      background-position: center center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1;
-      position: relative;
-    }
-
-    .login-container a {
-      background: #A6CE39; /* Football bright green */
-      padding: 15px 40px;
-      font-size: 1.5rem;
-      color: #0B3D0B;
-      font-weight: 700;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 6px 0 #739F18;
-      transition: background 0.3s ease, transform 0.2s ease;
-      user-select: none;
-    }
-    .login-container a:hover {
-      background: #739F18;
-      box-shadow: 0 2px 0 #A6CE39;
-      transform: translateY(2px);
-    }
-
-    /* Main content styles */
-    .main-content {
-      display: none;
-      position: relative;
-      padding: 40px 60px;
-      min-height: 100vh;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-                  url('https://images.unsplash.com/photo-1509228627152-c69e9c63b3e7?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-      box-sizing: border-box;
-      z-index: 1;
-    }
-
-    /* Overlay to darken background */
-    .main-content::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
-
-    /* Ensure text sits above overlay */
-    .main-content > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 3.5rem;
-      margin-bottom: 0.2em;
-      color: #A6CE39;
-      text-shadow: 2px 2px 5px black;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-top: 1.5em;
-      margin-bottom: 0.7em;
-      border-bottom: 3px solid #A6CE39;
-      padding-bottom: 0.3em;
-      color: #D4AF37; /* gold accent */
-      text-shadow: 1px 1px 2px black;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style-type: decimal;
-      color: #eee;
-      line-height: 1.6;
-      font-size: 1.1rem;
-      max-width: 720px;
-    }
-
-    /* Highlight important list items on hover */
-    ul li:hover {
-      color: #A6CE39;
-      cursor: default;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 720px;
-      margin-top: 15px;
-      color: #eee;
-      font-size: 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      box-shadow: 0 0 10px #A6CE39;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 10px 15px;
-      border: 1px solid #A6CE39;
-      text-align: left;
-    }
-    th {
-      background-color: #1C5F1C;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    tbody tr:hover {
-      background-color: #274927;
-      color: #D4AF37;
-      cursor: default;
-      transition: background-color 0.3s ease;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 800px) {
-      .main-content {
-        padding: 30px 20px;
-      }
-      h1 {
-        font-size: 2.5rem;
-      }
-      h2 {
-        font-size: 1.4rem;
-      }
-      ul {
-        font-size: 1rem;
-      }
-      table {
-        font-size: 0.9rem;
-      }
-      .login-container a {
-        font-size: 1.2rem;
-        padding: 12px 30px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="login-container" id="login">
-    <a href="#" onclick="login()">Login</a>
-  </div>
-
-  <div class="main-content" id="main">
-    <h1>Maestros</h1>
-
-    <h2>Maestros Rules</h2>
-    <ul>
-      <li>Participants are allowed to register multiple squads, provided that each squad is officially registered with the league.</li>
-      <li>A registration fee of KES 300 is required per participant.</li>
-      <li>At the end of each gameweek, the weekly champion shall receive KES 50 from each participant. This payment must be completed before the start of the next gameweek.</li>
-      <li>In the event of a tie in gameweek points, the participant with the highest overall points will be declared the winner.</li>
-      <li>There is no limit to the number of transfers allowed during the league.</li>
-      <li>New participants joining after the league has commenced must pay a registration fee of KES 400.</li>
-      <li>Registration fees are non-refundable under any circumstances.</li>
-      <li>Failure to remit payment to three consecutive weekly champions will result in disqualification from the league.</li>
-      <li>Only registered teams will be allowed to participate.</li>
-    </ul>
-
-    <h2>Participating Teams</h2>
-    <ul>
-      <li>Afc</li>
-      <li>Bedroom master fc</li>
-      <li>Cassava farmer</li>
-      <li>EASTERN SNIPER</li>
-      <li>Elevation</li>
-      <li>Engoge</li>
-      <li>GEN Z</li>
-      <li>I am Jose Mourinho.</li>
-      <li>Jeddykevoh4</li>
-      <li>MZEE WENGER</li>
-      <li>Madeleine's</li>
-      <li>Mali safi fc</li>
-      <li>NATEMBEA</li>
-      <li>Overwhelming</li>
-      <li>Red Thunder Fc</li>
-      <li>Rio Kise</li>
-      <li>Solidarity</li>
-      <li>planned with time</li>
+      <li>Planned With Time</li>
     </ul>
 
     <h2>Weekly Champions</h2>
@@ -557,16 +151,24 @@ tial-scale=1" />
         <tr><td>33</td><td>I AM JOSE MOURINHO 🏆🏆🏆🏆</td><td></td></tr>
         <tr><td>34</td><td>MZEE WENGER 🏆🏆</td><td></td></tr>
         <tr><td>35</td><td>GEN Z 🏆🏆🏆</td><td></td></tr>
-        <tr><td>36</td><td>MZEE WENGER 🏆🏆🏆🏆</td><td></td></tr>
+        <tr><td>36</td><td>GEN Z 🏆🏆🏆🏆</td><td></td></tr>
+        <tr><td>37</td><td>EASTERN SNIPER 🏆🏆🏆</td><td></td></tr>
+        <tr><td rowspan="2">38</td><td>ELEVATION 🏆🏆🏆🏆🏆🏆 (Super GW Champion)</td><td></td></tr>
+        <tr><td>EASTERN SNIPER 🏆🏆🏆🏆</td><td></td></tr>
       </tbody>
     </table>
+
+    <h2>FPL Table</h2>
+    <a href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank" style="color: yellow; text-decoration: underline;">View Our FPL Table</a>
+
+    <h2>Join Our WhatsApp Group</h2>
+    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen; text-decoration: underline;">Click here to join the Maestros WhatsApp Group</a>
   </div>
 
   <script>
     function login() {
       document.getElementById('login').style.display = 'none';
       document.getElementById('main').style.display = 'block';
-      window.scrollTo(0,0);
     }
   </script>
 </body>
