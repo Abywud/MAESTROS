@@ -7,13 +7,16 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       color: white;
-      background-color: #0a0a0a;
+      background-color: #0f0f0f;
     }
 
     .login-container {
-      background-image: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+      background-image: linear-gradient(to bottom right, #1e3c72, #2a5298), url('https://wallpapercave.com/wp/wp11231841.jpg');
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center;
       height: 100vh;
       display: flex;
       justify-content: flex-end;
@@ -22,34 +25,34 @@
     }
 
     .login-container a {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff200;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 12px 25px;
       font-weight: bold;
-      padding: 12px 24px;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 18px;
-      box-shadow: 0 0 10px #fff200;
-      transition: background 0.3s;
+      transition: background-color 0.3s;
     }
 
     .login-container a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     .main-content {
       display: none;
-      background-color: #111;
-      padding: 20px;
-      min-height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1595341106020-3b84d9c6f3e1?fit=crop&w=1350&q=80');
+      background-image: url('https://i.pinimg.com/originals/7a/5d/ee/7a5dee20e1dc8c345f5dbaefc1b6dfb0.jpg');
       background-size: cover;
       background-position: center;
+      height: 100vh;
       overflow-y: auto;
+      padding: 30px;
+      backdrop-filter: blur(4px);
     }
 
     h1, h2 {
-      color: #ffe600;
+      margin-top: 0;
+      color: #f2f2f2;
     }
 
     ul {
@@ -57,64 +60,65 @@
       padding-left: 20px;
     }
 
-    ul li {
-      margin-bottom: 6px;
-    }
-
     table {
       width: 100%;
       border-collapse: collapse;
-      color: white;
       margin-top: 10px;
+      color: white;
     }
 
     th, td {
-      border: 1px solid #fff;
-      padding: 10px;
+      border: 1px solid white;
+      padding: 8px;
       text-align: left;
     }
 
     th {
-      background-color: #222;
-    }
-
-    .trophy-animated {
-      animation: bounce 1s infinite alternate;
-    }
-
-    @keyframes bounce {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.15); }
+      background-color: #333;
     }
 
     a {
-      color: #00ff90;
-      text-decoration: underline;
+      color: yellow;
+    }
+
+    .trophy-animated::after {
+      content: " 🏆";
+      animation: bounce 1s infinite alternate;
+      display: inline-block;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+
+    ol li {
+      margin-bottom: 6px;
     }
   </style>
 </head>
 <body>
   <div class="login-container" id="login">
-    <a href="#" onclick="login()">Enter the League ⚽</a>
+    <a href="#" onclick="login()">Login</a>
   </div>
 
   <div class="main-content" id="main">
-    <h1>Welcome to Maestros ⚽</h1>
+    <h1>Welcome to Maestros</h1>
 
-    <h2>Maestros Rules 📜</h2>
+    <h2>Maestros Rules</h2>
     <ul>
-      <li>Each participant may register multiple squads as long as they're official.</li>
+      <li>Participants may register multiple squads, each officially listed.</li>
       <li>Registration fee: KES 300 per participant.</li>
-      <li>Weekly champion receives KES 50 from each participant (paid before next gameweek).</li>
-      <li>If tied, highest overall points wins.</li>
-      <li>No transfer limit.</li>
-      <li>New members after kickoff: KES 400 fee.</li>
+      <li>Each gameweek champion earns KES 50 from every participant.</li>
+      <li>In case of tie, highest overall points wins.</li>
+      <li>No transfer limit during the league.</li>
+      <li>Late joiners pay KES 400 registration fee.</li>
       <li>Fees are non-refundable.</li>
-      <li>3 missed payments = disqualification.</li>
-      <li>Only registered teams participate.</li>
+      <li>Failure to pay three weekly winners leads to disqualification.</li>
+      <li>Only registered teams can participate.</li>
     </ul>
 
-    <h2>Participating Teams 👥</h2>
+    <h2>Participating Teams</h2>
     <ul>
       <li>Afc</li>
       <li>Bedroom master fc</li>
@@ -136,64 +140,54 @@
       <li>Planned With Time</li>
     </ul>
 
-    <h2>Weekly Champions 🏆</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Game Week</th>
-          <th>Team</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>EASTERN SNIPER</td><td></td></tr>
-        <tr><td>2</td><td>SOLIDARITY</td><td></td></tr>
-        <tr><td rowspan="2">3</td><td>IAM JOSE MOURINHO</td><td></td></tr>
-        <tr><td>OVERWHELMING</td><td></td></tr>
-        <tr><td>4</td><td>OVERWHELMING</td><td></td></tr>
-        <tr><td>5</td><td class="trophy-animated">OVERWHELMING 🏆🏆</td><td></td></tr>
-        <tr><td>6</td><td>MZEE WENGER</td><td></td></tr>
-        <tr><td>7</td><td>BEDROOM MASTER FC</td><td></td></tr>
-        <tr><td>8</td><td class="trophy-animated">BEDROOM MASTER FC 🏆🏆</td><td></td></tr>
-        <tr><td>9</td><td>GEN Z</td><td></td></tr>
-        <tr><td>10</td><td>ELEVATION</td><td></td></tr>
-        <tr><td>11</td><td>RED THUNDER FC</td><td></td></tr>
-        <tr><td>12</td><td>RETIRED G</td><td></td></tr>
-        <tr><td>13</td><td class="trophy-animated">SOLIDARITY 🏆🏆</td><td></td></tr>
-        <tr><td>14</td><td class="trophy-animated">RED THUNDER FC 🏆🏆</td><td></td></tr>
-        <tr><td>15</td><td>MEDELEIN’S</td><td></td></tr>
-        <tr><td>16</td><td class="trophy-animated">EASTERN SNIPER 🏆🏆</td><td></td></tr>
-        <tr><td>17</td><td>ENGOGE</td><td></td></tr>
-        <tr><td>18</td><td class="trophy-animated">MADELEINES 🏆🏆</td><td></td></tr>
-        <tr><td>19</td><td>CASSAVA FARMER</td><td></td></tr>
-        <tr><td>20</td><td class="trophy-animated">MADELEINES 🏆🏆🏆</td><td></td></tr>
-        <tr><td>21</td><td class="trophy-animated">CASSAVA FARMER 🏆🏆</td><td></td></tr>
-        <tr><td>22</td><td class="trophy-animated">ELEVATION 🏆🏆</td><td></td></tr>
-        <tr><td>23</td><td>JEDDY KEVOH</td><td></td></tr>
-        <tr><td>24</td><td class="trophy-animated">ELEVATION 🏆🏆🏆</td><td></td></tr>
-        <tr><td>25</td><td class="trophy-animated">RETIRED G 🏆🏆</td><td></td></tr>
-        <tr><td>26</td><td class="trophy-animated">ELEVATION 🏆🏆🏆🏆</td><td></td></tr>
-        <tr><td>27</td><td class="trophy-animated">RETIRED G 🏆🏆🏆</td><td></td></tr>
-        <tr><td>28</td><td class="trophy-animated">ELEVATION 🏆🏆🏆🏆🏆</td><td></td></tr>
-        <tr><td>29</td><td class="trophy-animated">OVERWHELMING 🏆🏆🏆</td><td></td></tr>
-        <tr><td>30</td><td class="trophy-animated">I AM JOSE MOURINHO 🏆🏆</td><td></td></tr>
-        <tr><td>31</td><td class="trophy-animated">GEN Z 🏆🏆</td><td></td></tr>
-        <tr><td>32</td><td class="trophy-animated">I AM JOSE MOURINHO 🏆🏆🏆</td><td></td></tr>
-        <tr><td>33</td><td class="trophy-animated">I AM JOSE MOURINHO 🏆🏆🏆🏆</td><td></td></tr>
-        <tr><td>34</td><td class="trophy-animated">MZEE WENGER 🏆🏆</td><td></td></tr>
-        <tr><td>35</td><td class="trophy-animated">GEN Z 🏆🏆🏆</td><td></td></tr>
-        <tr><td>36</td><td class="trophy-animated">GEN Z 🏆🏆🏆🏆</td><td></td></tr>
-        <tr><td>37</td><td class="trophy-animated">EASTERN SNIPER 🏆🏆🏆</td><td></td></tr>
-        <tr><td rowspan="2">38</td><td class="trophy-animated">ELEVATION 🏆🏆🏆🏆🏆🏆 (Super GW Champion)</td><td></td></tr>
-        <tr><td class="trophy-animated">EASTERN SNIPER 🏆🏆🏆🏆</td><td></td></tr>
-      </tbody>
-    </table>
+    <h2>Weekly Champions</h2>
+    <ol>
+      <li>EASTERN SNIPER</li>
+      <li>SOLIDARITY</li>
+      <li>IAM JOSE MOURINHO / OVERWHELMING</li>
+      <li>OVERWHELMING</li>
+      <li class="trophy-animated">OVERWHELMING 🏆🏆</li>
+      <li>MZEE WENGER</li>
+      <li>BEDROOM MASTER FC</li>
+      <li class="trophy-animated">BEDROOM MASTER FC 🏆🏆</li>
+      <li>GEN Z</li>
+      <li>ELEVATION</li>
+      <li>RED THUNDER FC</li>
+      <li>RETIRED G</li>
+      <li class="trophy-animated">SOLIDARITY 🏆🏆</li>
+      <li class="trophy-animated">RED THUNDER FC 🏆🏆</li>
+      <li>MEDELEIN’S</li>
+      <li class="trophy-animated">EASTERN SNIPER 🏆🏆</li>
+      <li>ENGOGE</li>
+      <li class="trophy-animated">MADELEINES 🏆🏆</li>
+      <li><b>CASSAVA FARMER</b></li>
+      <li class="trophy-animated">MADELEINES 🏆🏆🏆</li>
+      <li class="trophy-animated">CASSAVA FARMER 🏆🏆</li>
+      <li class="trophy-animated">ELEVATION 🏆🏆</li>
+      <li>JEDDY KEVOH</li>
+      <li class="trophy-animated">ELEVATION 🏆🏆🏆</li>
+      <li class="trophy-animated">RETIRED G 🏆🏆</li>
+      <li class="trophy-animated">ELEVATION 🏆🏆🏆🏆</li>
+      <li class="trophy-animated">RETIRED G 🏆🏆🏆</li>
+      <li class="trophy-animated">ELEVATION 🏆🏆🏆🏆🏆</li>
+      <li class="trophy-animated">OVERWHELMING 🏆🏆🏆</li>
+      <li class="trophy-animated">I AM JOSE MOURINHO 🏆🏆</li>
+      <li class="trophy-animated">GEN Z 🏆🏆</li>
+      <li class="trophy-animated">I AM JOSE MOURINHO 🏆🏆🏆</li>
+      <li class="trophy-animated">I AM JOSE MOURINHO 🏆🏆🏆🏆</li>
+      <li class="trophy-animated">MZEE WENGER 🏆🏆</li>
+      <li class="trophy-animated">GEN Z 🏆🏆🏆</li>
+      <li class="trophy-animated">GEN Z 🏆🏆🏆🏆</li>
+      <li class="trophy-animated">EASTERN SNIPER 🏆🏆🏆</li>
+      <li class="trophy-animated">ELEVATION 🏆🏆🏆🏆🏆🏆 (Super GW Champion)</li>
+      <li class="trophy-animated">EASTERN SNIPER 🏆🏆🏆🏆</li>
+    </ol>
 
-    <h2>FPL Table 🔗</h2>
+    <h2>FPL Table</h2>
     <a href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank">View Our FPL Table</a>
 
-    <h2>WhatsApp Group 📲</h2>
-    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank">Join Maestros WhatsApp Group</a>
+    <h2>Join Our WhatsApp Group</h2>
+    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen;">Click here to join the Maestros WhatsApp Group</a>
   </div>
 
   <script>
