@@ -287,18 +287,28 @@
   </div>
 
   <script>
-    function login() {
+  function login() {
+    localStorage.setItem('loggedIn', 'true'); // Save login state
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+  }
+
+  function playClick() {
+    document.getElementById('clickSound').play();
+  }
+
+  // Show main content if already logged in
+  window.onload = function () {
+    if (localStorage.getItem('loggedIn') === 'true') {
       document.getElementById('login').style.display = 'none';
       document.getElementById('main').style.display = 'block';
     }
+  }
 
-    function playClick() {
-      document.getElementById('clickSound').play();
-    }
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', playClick);
+  });
+</script>
 
-    document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', playClick);
-    });
-  </script>
 </body>
 </html>
