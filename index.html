@@ -27,19 +27,47 @@
       background-position: center;
       height: 100vh;
       display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      padding: 20px;
+      justify-content: center;
+      align-items: center;
     }
 
-    .login-container a {
+    .login-box {
       background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .login-box h1 {
+      font-size: 32px;
       font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .login-box p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .login-box a {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #0d47a1;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
       cursor: pointer;
+    }
+
+    .login-box a:hover {
+      background-color: #1565c0;
     }
 
     .main-content {
@@ -98,37 +126,14 @@
 <body>
   <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
 
- <div class="login-container" id="login">
-  <div style="
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 400px;
-    margin: auto;
-    margin-top: 100px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  ">
-    <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">MAESTROS Login</h1>
-    <p style="font-size: 16px; margin-bottom: 30px;">Welcome to MAESTROS web page</p>
-    
-    <a onclick="playClick(); login()" style="
-      display: inline-block;
-      padding: 12px 30px;
-      background-color: #0d47a1;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    "
-    onmouseover="this.style.backgroundColor='#1565c0'"
-    onmouseout="this.style.backgroundColor='#0d47a1'"
-    >Enter</a>
+  <!-- LOGIN PAGE -->
+  <div class="login-container" id="login">
+    <div class="login-box">
+      <h1>MAESTROS Login</h1>
+      <p>Welcome to MAESTROS web page</p>
+      <a onclick="playClick(); login()">Enter</a>
+    </div>
   </div>
-</div>
     <h2>Maestros Rules</h2>
     <ol>
     <li><strong>Multiple Squads</strong><br>
