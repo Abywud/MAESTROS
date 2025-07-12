@@ -289,7 +289,7 @@
       </tbody>
     </table>
 
-   <h2 style="margin-top: 60px;">FPL Table</h2>
+   
 <h2 style="margin-top: 60px;">FPL Table</h2>
 <div class="fpl-table-section">
   <a onclick="playClick()" href="https://fantasy.premierleague.com/leagues/503986/standings/c" target="_blank">
@@ -303,7 +303,8 @@
 
   <script>
   function login() {
-    localStorage.setItem('loggedIn', 'true'); // Save login state
+    // Set login flag when user clicks Enter
+    localStorage.setItem('loggedIn', 'true');
     document.getElementById('login').style.display = 'none';
     document.getElementById('main').style.display = 'block';
   }
@@ -312,18 +313,24 @@
     document.getElementById('clickSound').play();
   }
 
-  // Show main content if already logged in
+  // When page loads, check if logged in
   window.onload = function () {
-    if (localStorage.getItem('loggedIn') === 'true') {
+    const isLoggedIn = localStorage.getItem('loggedIn');
+    if (isLoggedIn === 'true') {
       document.getElementById('login').style.display = 'none';
       document.getElementById('main').style.display = 'block';
     }
-  }
+  };
 
+  // When tab or browser is closed or refreshed, log out automatically
+  window.onbeforeunload = function () {
+    localStorage.removeItem('loggedIn');
+  };
+
+  // Optional: Play click sound on all <a> clicks
   document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', playClick);
   });
 </script>
-
 </body>
 </html>
