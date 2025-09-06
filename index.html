@@ -5,155 +5,230 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maestros</title>
   <style>
-    /* ======= Base styles ======= */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
-      background: linear-gradient(-45deg, #1d1d1d, #0d47a1, #1b5e20, #880e4f);
+      background: linear-gradient(-45deg, #0d0d0d, #1a237e, #004d40, #4a148c);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
     }
+
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* ======= LOGIN PAGE ======= */
     .login-container {
-      position: relative;
-      overflow: hidden;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(-45deg, #1d1d1d, #0d47a1, #1b5e20, #880e4f);
+      text-align: center;
+      flex-direction: column;
+      background: linear-gradient(-45deg, #0d47a1, #1b5e20, #880e4f, #1d1d1d);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      animation: gradientBG 20s ease infinite;
     }
 
-    /* Floating Balls */
-    .ball {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(0,0,0,0.3));
-      opacity: 0.6;
-      animation: floatUp 12s linear infinite;
-    }
-    .ball:nth-child(1) { width: 60px; height: 60px; left: 15%; bottom: -80px; animation-duration: 18s; }
-    .ball:nth-child(2) { width: 40px; height: 40px; left: 40%; bottom: -100px; animation-duration: 12s; }
-    .ball:nth-child(3) { width: 80px; height: 80px; left: 70%; bottom: -120px; animation-duration: 20s; }
-    .ball:nth-child(4) { width: 30px; height: 30px; left: 85%; bottom: -60px; animation-duration: 10s; }
-    .ball:nth-child(5) { width: 50px; height: 50px; left: 55%; bottom: -90px; animation-duration: 15s; }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
-      50% { opacity: 0.8; }
-      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
-    }
-
-    /* Login Card */
-    .login-card {
-      position: relative;
-      background: rgba(255, 255, 255, 0.9);
+    .login-box {
+      background-color: rgba(0, 0, 0, 0.75);
       padding: 40px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      text-align: center;
-      z-index: 2;
-      width: 300px;
-    }
-    .login-card h2 {
-      margin-bottom: 10px;
-      color: #0d47a1;
-    }
-    .login-card p {
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #333;
-    }
-    .login-card input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    .login-card button {
-      width: 100%;
-      padding: 10px;
-      background: #0d47a1;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .login-card button:hover {
-      background: #1565c0;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
     }
 
-    /* ======= MAIN PAGE ======= */
+    .login-box h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .login-box p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .login-box a {
+      background-color: #1565c0;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .login-box a:hover {
+      background-color: #1976d2;
+    }
+
     .main-content {
       display: none;
       padding: 20px;
+      background-color: #111;
       background-image: url('https://wallpapercave.com/wp/wp2599594.jpg');
       background-size: cover;
       background-position: center;
       min-height: 100vh;
       overflow-y: auto;
     }
-    h1, h2 { margin-top: 0; text-shadow: 1px 1px 5px black; }
-    table {
-      width: 100%; border-collapse: collapse; margin-top: 10px;
-      color: white; background-color: rgba(0,0,0,0.6);
+
+    h1, h2 {
+      margin-top: 0;
+      text-shadow: 1px 1px 5px black;
     }
-    th, td { border: 1px solid white; padding: 8px; text-align: left; }
-    th { background-color: #222; }
-    .trophy { animation: bounce 1s infinite; display: inline-block; }
-    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    ul.subpoints {
+      list-style-type: disc;
+      padding-left: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      color: white;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    th, td {
+      border: 1px solid white;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #222;
+    }
+
+    .trophy {
+      animation: bounce 1s infinite;
+      display: inline-block;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .fpl-section {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .whatsapp-section {
+      margin-top: 80px;
+    }
   </style>
 </head>
 <body>
-  <!-- ========= LOGIN PAGE ========= -->
-  <div class="login-container" id="login">
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
+  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
 
-    <div class="login-card">
-      <h2>Maestros Login</h2>
-      <p>Welcome to Maestroes Web Page</p>
-      <form onsubmit="event.preventDefault(); showMain();">
-        <input type="text" placeholder="Enter Username" required>
-        <input type="password" placeholder="Enter Password" required>
-        <button type="submit">Login</button>
-      </form>
+  <!-- Login Page -->
+  <div class="login-container" id="login">
+    <div class="login-box">
+      <h1>MAESTROS Login</h1>
+      <p>Welcome to the Maestros Web Page</p>
+      <a onclick="playClick(); login()">Enter</a>
     </div>
   </div>
 
-  <!-- ========= MAIN CONTENT ========= -->
+  <!-- Main Content -->
   <div class="main-content" id="main">
     <h1>Welcome to Maestros</h1>
+
     <h2>Maestros Rules</h2>
     <ol>
-      <li>Multiple Squads: Participants may register multiple teams, provided each squad is officially registered with the league.</li>
-      <li>Registration Fee & Prize Distribution: A fee of KES 400 per team. Payouts: 1st – 50%, 2nd – 25%, 3rd – 15%, 4th – 10%.</li>
-      <li>Weekly Champion Reward: Each gameweek, the winner receives KES 50 from every other team.</li>
-      <!-- You can paste all your rules and tables here -->
+      <li><strong>Multiple Squads</strong><br>
+        Participants may register multiple squads, as long as each is officially registered with the league.
+      </li>
+
+      <li><strong>Registration Fee</strong><br>
+        A <strong>registration fee of KES 400</strong> has been paid by <strong>23 participants</strong>.<br>
+        <strong>Total collected = KES 9,200</strong>.<br>
+        This amount is strictly reserved for awarding the <strong>top 4 teams at the end of the season</strong> based on final league standings.<br>
+        The prize pool will be distributed as follows:
+        <ul class="subpoints">
+          <li><strong>1st place</strong> – 40% (KES 3,680)</li>
+          <li><strong>2nd place</strong> – 30% (KES 2,760)</li>
+          <li><strong>3rd place</strong> – 20% (KES 1,840)</li>
+          <li><strong>4th place</strong> – 10% (KES 920)</li>
+        </ul>
+      </li>
+
+      <li><strong>Weekly Champion Reward</strong><br>
+        At the end of each gameweek, the weekly champion shall receive <strong>KES 50 from each participant</strong>.
+      </li>
+
+      <li><strong>Payment Method & Records</strong><br>
+        The <strong>weekly winner</strong> shall decide whether payments will be sent <strong>directly to them</strong> or <strong>to the treasurer</strong>.<br>
+        If sent to the treasurer, they will handle collection, keep official records, and update the group.<br>
+        In such cases, the <strong>treasurer shall retain KES 100 per gameweek</strong> as a service fee.<br>
+        If sent directly to the winner, the <strong>winner must confirm all receipts with the treasurer</strong> for record-keeping.
+      </li>
+
+      <li><strong>Points Tie</strong><br>
+        In the event of a tie in gameweek points, the winning amount will be <strong>shared equally among the tied participants</strong>.
+      </li>
+
+      <li><strong>Transfers</strong><br>
+        A maximum of <strong>–8 points</strong> is allowed in transfers per gameweek.<br>
+        <strong>Free transfers, Free Hit, and Wildcard</strong> are permitted as per official game rules.
+      </li>
+
+      <li><strong>Late Joiners</strong><br>
+        New participants joining after the league has started must pay a <strong>registration fee of KES 500</strong>.
+      </li>
+
+      <li><strong>Refund Policy</strong><br>
+        Registration fees are <strong>non-refundable</strong> under any circumstances.
+      </li>
+
+      <li><strong>Disqualification Clause</strong><br>
+        <strong>Failure to remit payments on time</strong> to three consecutive weekly champions will result in <strong>disqualification</strong> from the league.<br>
+        <strong>There is no appeal once disqualified.</strong>
+      </li>
+
+      <li><strong>Eligibility</strong><br>
+        Only <strong>registered teams</strong> are allowed to participate in the league.
+      </li>
+
+      <li><strong>Group Engagement</strong><br>
+        Every member is expected to <strong>at least react to messages</strong> in the group to promote active engagement and communication.
+      </li>
     </ol>
+
+    <div class="fpl-section">
+      <h2>View Our 2025/26 Maestroes Classic League Table</h2>
+      <a onclick="playClick()" href="https://fantasy.premierleague.com/leagues/403426/standings/c" target="_blank" style="color: yellow; text-decoration: underline;">Click here to view</a>
+    </div>
+
+    <div class="whatsapp-section">
+      <h2>Join Our WhatsApp Group</h2>
+      <a onclick="playClick()" href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen; text-decoration: underline;">Click here to join</a>
+    </div>
   </div>
 
   <script>
-    function showMain() {
-      document.getElementById("login").style.display = "none";
-      document.getElementById("main").style.display = "block";
+    function login() {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
     }
+
+    function playClick() {
+      document.getElementById('clickSound').play();
+    }
+
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', playClick);
+    });
   </script>
 </body>
 </html>
+
