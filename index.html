@@ -21,6 +21,21 @@
     }
 
     /* ======= LOGIN PAGE (enhanced, colorful, slideshow) ======= */
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maestroes Login</title>
+  <style>
+    /* ======= Reset & Font ======= */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+    }
+
+    /* ======= Background Animation ======= */
     .login-container {
       position: relative;
       overflow: hidden;
@@ -28,85 +43,112 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(-45deg, #1d1d1d, #0d47a1, #1b5e20, #880e4f);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
-    /* Background image layer that we rotate */
-    #login-bg {
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ======= Floating Balls ======= */
+    .ball {
       position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-      opacity: 0.35; /* let the gradient/body show through */
-      transition: background-image 1s ease-in-out, opacity 0.6s ease-in-out;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(0,0,0,0.3));
+      opacity: 0.6;
+      animation: floatUp 12s linear infinite;
     }
-    /* Subtle animated gradient overlay on top of images */
-    #login-gradient {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient( circle at 20% 20%, rgba(255,255,255,0.08), rgba(0,0,0,0.5) ),
-                  linear-gradient(135deg, rgba(13,71,161,0.55), rgba(136,14,79,0.55));
-      mix-blend-mode: overlay;
-      z-index: 0;
-      pointer-events: none;
+
+    .ball:nth-child(1) { width: 60px; height: 60px; left: 15%; bottom: -80px; animation-duration: 18s; }
+    .ball:nth-child(2) { width: 40px; height: 40px; left: 40%; bottom: -100px; animation-duration: 12s; }
+    .ball:nth-child(3) { width: 80px; height: 80px; left: 70%; bottom: -120px; animation-duration: 20s; }
+    .ball:nth-child(4) { width: 30px; height: 30px; left: 85%; bottom: -60px; animation-duration: 10s; }
+    .ball:nth-child(5) { width: 50px; height: 50px; left: 55%; bottom: -90px; animation-duration: 15s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
     }
-    /* Login card */
+
+    /* ======= Login Card ======= */
     .login-card {
       position: relative;
-      z-index: 1;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 32px 28px;
-      border-radius: 16px;
-      width: 92%;
-      max-width: 420px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(2px);
+      z-index: 2;
+      width: 300px;
     }
-    .login-title {
-      font-size: 32px; 
-      font-weight: 800; 
-      margin: 0 0 8px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
+
+    .login-card h2 {
+      margin-bottom: 10px;
+      color: #0d47a1;
     }
-    .login-sub {
-      font-size: 15px; 
-      margin: 0 0 20px; 
-      opacity: 0.9;
-    }
-    .btn-primary {
-      background-color: #0d47a1;
-      color: white;
-      padding: 12px 28px;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      display: inline-block;
-      transition: transform 0.08s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-      box-shadow: 0 8px 18px rgba(13,71,161,0.45);
-      border: 1px solid rgba(255,255,255,0.15);
-      cursor: pointer;
-    }
-    .btn-primary:hover { background-color: #1565c0; transform: translateY(-1px); }
-    .btn-primary:active { transform: translateY(0); }
-    .btn-ghost {
-      display: inline-block;
-      margin-top: 12px;
+
+    .login-card p {
+      margin-bottom: 20px;
       font-size: 14px;
-      text-decoration: none;
-      color: #fff;
-      opacity: 0.9;
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px dashed rgba(255,255,255,0.25);
-      transition: background 0.25s ease, opacity 0.25s ease;
+      color: #333;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,0.08); opacity: 1; }
+
+    .login-card input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .login-card button {
+      width: 100%;
+      padding: 10px;
+      background: #0d47a1;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-card button:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <!-- Floating Background Balls -->
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+
+    <!-- Login Box -->
+    <div class="login-card">
+      <h2>Maestroes Login</h2>
+      <p>Welcome to Maestroes Web Page</p>
+      <form>
+        <input type="text" placeholder="Enter Username" required>
+        <input type="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
+
 
     /* ======= MAIN PAGE you already had ======= */
     .main-content {
