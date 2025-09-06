@@ -1,234 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maestros</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maestros FPL</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-      background: linear-gradient(-45deg, #0d0d0d, #1a237e, #004d40, #4a148c);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+    /* ================= GLOBAL ================= */
+    :root{
+      --accent:#0d47a1;
+      --accent-2:#1565c0;
+      --card-bg: rgba(0,0,0,0.65);
+      --muted: #e6eef2;
+    }
+    html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;box-sizing:border-box}
+    /* professional animated dark gradient background */
+    body{
+      margin:0;
+      color:var(--muted);
+      background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      background-size:400% 400%;
+      animation: gradientShift 18s ease infinite;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    @keyframes gradientShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    h1,h2,h3{margin:0 0 12px 0; text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+    .container{max-width:1180px;margin:0 auto;padding:18px}
+
+    /* ================= LOGIN HERO ================= */
+    .login-hero{
+      position:relative;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    /* slideshow layer behind the card (subtle, lets gradient show through) */
+    #login-bg{
+      position:absolute; inset:0; z-index:0;
+      background-size:cover; background-position:center;
+      opacity:0.22; transition:background-image 900ms ease;
+      filter:contrast(0.9) saturate(0.95);
+    }
+    /* gradient overlay on top of slideshow */
+    #login-overlay{
+      position:absolute; inset:0; z-index:1;
+      background: linear-gradient(135deg, rgba(13,71,161,0.25), rgba(32,58,84,0.28));
+      pointer-events:none;
     }
 
-    .login-container {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-      background: linear-gradient(-45deg, #0d47a1, #1b5e20, #880e4f, #1d1d1d);
-      background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
+    /* floating orbs for subtle animation */
+    .orb{ position:absolute; border-radius:50%; filter: blur(8px); opacity:0.45; z-index:0; mix-blend-mode:screen }
+    .orb.o1{ width:100px;height:100px; left:6%; bottom:-120px; background:radial-gradient(circle,#ffffff66,#ffffff00); animation:rise1 20s linear infinite }
+    .orb.o2{ width:60px;height:60px; left:35%; bottom:-100px; background:radial-gradient(circle,#b3e5fc55,#ffffff00); animation:rise2 14s linear infinite }
+    .orb.o3{ width:120px;height:120px; left:64%; bottom:-160px; background:radial-gradient(circle,#ffeb3b55,#ffffff00); animation:rise3 22s linear infinite }
+    .orb.o4{ width:40px;height:40px; left:86%; bottom:-80px; background:radial-gradient(circle,#ffcdd2aa,#ffffff00); animation:rise4 11s linear infinite }
+    .orb.o5{ width:70px;height:70px; left:55%; bottom:-120px; background:radial-gradient(circle,#c8e6c977,#ffffff00); animation:rise5 16s linear infinite }
+    @keyframes rise1{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-120vh) rotate(360deg)}}
+    @keyframes rise2{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-110vh) rotate(360deg)}}
+    @keyframes rise3{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-125vh) rotate(360deg)}}
+    @keyframes rise4{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-105vh) rotate(360deg)}}
+    @keyframes rise5{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-115vh) rotate(360deg)}}
+
+    /* login card */
+    .login-card{
+      position:relative; z-index:2;
+      width:420px; max-width:92%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,245,245,0.95));
+      color:#0a1a2a;
+      border-radius:14px;
+      padding:28px;
+      box-shadow:0 10px 40px rgba(17,24,39,0.5);
+      text-align:center;
+    }
+    .login-card h1{font-size:28px; color:var(--accent); letter-spacing:0.8px}
+    .login-card p{color:#333;margin-bottom:18px}
+    .btn{
+      display:inline-block;padding:12px 20px;border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:white;font-weight:700;border:0;cursor:pointer;
+      box-shadow:0 8px 18px rgba(13,71,161,0.22);
+    }
+    .btn.ghost{ background:transparent;color:#fff;border:1px dashed rgba(255,255,255,0.2); padding:10px 14px; margin-top:12px; display:inline-block }
+    .btn:active{ transform:translateY(1px) }
+
+    /* ================= MAIN UI ================= */
+    main#main{ display:none; min-height:100vh; padding:28px 18px; }
+    .topbar{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:18px; flex-wrap:wrap }
+    .title{ font-size:20px; font-weight:700; color:white }
+    .controls{ display:flex; gap:10px; align-items:center }
+
+    .logout-btn{
+      background:transparent;border:1px solid rgba(255,255,255,0.12);
+      color:white;padding:8px 12px;border-radius:8px;cursor:pointer;
     }
 
-    .login-box {
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    /* sections & cards */
+    .card{
+      background: rgba(255,255,255,0.03);
+      border-radius:10px;
+      padding:16px;
+      margin-bottom:20px;
+      border:1px solid rgba(255,255,255,0.04);
+      max-width:1100px;
     }
+    .card h2{ color: #fff; margin-bottom:10px }
 
-    .login-box h1 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
+    ol{ padding-left:20px; margin:0 }
+    ul{ margin:0; padding-left:18px }
 
-    .login-box p {
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
+    /* tables */
+    table{ width:100%; border-collapse:collapse; margin-top:10px; color:#fff; }
+    table th, table td{ padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.06); text-align:left }
+    thead th{ background: rgba(0,0,0,0.45); font-size:13px; text-transform:uppercase }
+    .small{ font-size:13px; color:#d7e7ef }
 
-    .login-box a {
-      background-color: #1565c0;
-      padding: 14px 30px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 16px;
-      text-decoration: none;
-      color: white;
-      transition: background-color 0.3s;
-    }
+    /* fpl big section */
+    .fpl-section{ padding:20px; text-align:center; margin:28px 0; background:rgba(255,255,255,0.02); border-radius:10px }
+    .fpl-btn{ display:inline-block; padding:14px 22px; background:var(--accent); color:white; border-radius:10px; font-weight:700; text-decoration:none }
 
-    .login-box a:hover {
-      background-color: #1976d2;
-    }
+    .pay-box{ margin-top:10px; padding:12px; background:rgba(0,0,0,0.45); border-radius:10px; border:1px solid rgba(255,255,255,0.04) }
+    .pay-actions{ margin-top:10px; display:flex; gap:10px; flex-wrap:wrap }
+    .pay-btn{ background:#2e7d32; color:white; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700 }
+    .copy-btn{ background:#455a64; color:white; padding:10px 12px; border-radius:8px; cursor:pointer; border:0 }
 
-    .main-content {
-      display: none;
-      padding: 20px;
-      background-color: #111;
-      background-image: url('https://wallpapercave.com/wp/wp2599594.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      overflow-y: auto;
-    }
+    .spacer{ height:80px }
 
-    h1, h2 {
-      margin-top: 0;
-      text-shadow: 1px 1px 5px black;
-    }
-
-    ol {
-      padding-left: 20px;
-    }
-
-    ul.subpoints {
-      list-style-type: disc;
-      padding-left: 40px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      color: white;
-      background-color: rgba(0,0,0,0.6);
-    }
-
-    th, td {
-      border: 1px solid white;
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #222;
-    }
-
-    .trophy {
-      animation: bounce 1s infinite;
-      display: inline-block;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    .fpl-section {
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
-
-    .whatsapp-section {
-      margin-top: 80px;
+    /* responsiveness */
+    @media (max-width:860px){
+      .login-card{ width:92% }
+      .topbar{ flex-direction:column; align-items:flex-start; gap:8px }
+      .fpl-section{ margin:18px 0 }
+      table th, table td { padding:8px }
     }
   </style>
 </head>
 <body>
+  <!-- click sound -->
   <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
 
-  <!-- Login Page -->
-  <div class="login-container" id="login">
-    <div class="login-box">
+  <!-- ========== LOGIN HERO ========== -->
+  <section class="login-hero" id="login">
+    <div id="login-bg" aria-hidden="true"></div>
+    <div id="login-overlay" aria-hidden="true"></div>
+
+    <div class="orb o1" aria-hidden="true"></div>
+    <div class="orb o2" aria-hidden="true"></div>
+    <div class="orb o3" aria-hidden="true"></div>
+    <div class="orb o4" aria-hidden="true"></div>
+    <div class="orb o5" aria-hidden="true"></div>
+
+    <div class="login-card" role="region" aria-label="Maestros login">
       <h1>MAESTROS Login</h1>
-      <p>Welcome to the Maestros Web Page</p>
-      <a onclick="playClick(); login()">Enter</a>
+      <p class="small">Welcome to the Maestros FPL official portal — sign in to view league details.</p>
+
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn" id="enterBtn" onclick="playClick(); login()">Enter</button>
+        <!-- public-only quick access to the live FPL standings (restricts access to only the external table) -->
+        <a class="btn ghost" href="https://fantasy.premierleague.com/leagues/403426/standings/c" target="_blank" rel="noopener" onclick="playClick()">View Live Standings (Public)</a>
+      </div>
+
+      <p class="small" style="margin-top:12px">Don't have access? Use the public link above to view only the live standings page.</p>
     </div>
-  </div>
+  </section>
 
-  <!-- Main Content -->
-  <div class="main-content" id="main">
-    <h1>Welcome to Maestros</h1>
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="main" aria-live="polite" role="main">
+    <div class="container">
+      <div class="topbar">
+        <div class="title">Maestros FPL — League Portal</div>
+        <div class="controls">
+          <a class="fpl-btn" href="https://photos.app.goo.gl/y59SZi7NDxvepp9P9" target="_blank" rel="noopener" onclick="playClick()">📸 2024/25 Final Table</a>
+          <button class="logout-btn" onclick="logout(); playClick()">Logout</button>
+        </div>
+      </div>
 
-    <h2>Maestros Rules</h2>
-    <ol>
-      <li><strong>Multiple Squads</strong><br>
-        Participants may register multiple squads, as long as each is officially registered with the league.
-      </li>
+      <!-- Rules card -->
+      <section class="card" aria-label="League rules">
+        <h2>Maestros Rules</h2>
+        <ol>
+          <li><strong>Multiple Squads</strong><br>Participants may register multiple squads, provided each squad is officially registered with the league.</li>
 
-      <li><strong>Registration Fee</strong><br>
-        A <strong>registration fee of KES 400</strong> has been paid by <strong>23 participants</strong>.<br>
-        <strong>Total collected = KES 9,200</strong>.<br>
-        This amount is strictly reserved for awarding the <strong>top 4 teams at the end of the season</strong> based on final league standings.<br>
-        The prize pool will be distributed as follows:
-        <ul class="subpoints">
-          <li><strong>1st place</strong> – 40% (KES 3,680)</li>
-          <li><strong>2nd place</strong> – 30% (KES 2,760)</li>
-          <li><strong>3rd place</strong> – 20% (KES 1,840)</li>
-          <li><strong>4th place</strong> – 10% (KES 920)</li>
-        </ul>
-      </li>
+          <li><strong>Registration Fee & Prize Distribution</strong><br>
+            All participants have paid a registration fee of <strong>KES 400</strong> each. <br>
+            <strong>Number of paid participants:</strong> <strong>23</strong>.<br>
+            <strong>Total collected:</strong> <strong>KES 9,200</strong>.<br>
+            The pool will be distributed to the top 4 with percentages & amounts shown:
+            <ul>
+              <li><strong>1st place</strong> — 40% = <strong>KES 3,680</strong></li>
+              <li><strong>2nd place</strong> — 30% = <strong>KES 2,760</strong></li>
+              <li><strong>3rd place</strong> — 20% = <strong>KES 1,840</strong></li>
+              <li><strong>4th place</strong> — 10% = <strong>KES 920</strong></li>
+            </ul>
 
-      <li><strong>Weekly Champion Reward</strong><br>
-        At the end of each gameweek, the weekly champion shall receive <strong>KES 50 from each participant</strong>.
-      </li>
+            <!-- Payment prompt -->
+            <div class="pay-box" aria-label="Registration payment">
+              <div class="small"><strong>Pay your Registration (KES 400)</strong></div>
+              <div class="small">Recipient (M-Pesa / WhatsApp): <strong>+254706382616</strong></div>
 
-      <li><strong>Payment Method & Records</strong><br>
-        The <strong>weekly winner</strong> shall decide whether payments will be sent <strong>directly to them</strong> or <strong>to the treasurer</strong>.<br>
-        If sent to the treasurer, they will handle collection, keep official records, and update the group.<br>
-        In such cases, the <strong>treasurer shall retain KES 100 per gameweek</strong> as a service fee.<br>
-        If sent directly to the winner, the <strong>winner must confirm all receipts with the treasurer</strong> for record-keeping.
-      </li>
+              <div class="pay-actions">
+                <a class="pay-btn" href="https://wa.me/254706382616?text=Hi%20Treasurer%2C%20I%27m%20ready%20to%20pay%20KES%20400%20for%20Maestros%20registration.%20Team%20name%3A%20_____" target="_blank" rel="noopener" onclick="playClick()">Open WhatsApp</a>
+                <a class="pay-btn" href="tel:+254706382616" onclick="playClick()">Call Treasurer</a>
+                <button class="copy-btn" onclick="copyNumber()">Copy Number</button>
+              </div>
+              <div class="small" style="margin-top:8px">Tip: On mobile use WhatsApp to coordinate M-Pesa payment and then confirm via the group.</div>
+            </div>
+          </li>
 
-      <li><strong>Points Tie</strong><br>
-        In the event of a tie in gameweek points, the winning amount will be <strong>shared equally among the tied participants</strong>.
-      </li>
+          <li><strong>Weekly Champion Reward</strong><br>At the end of each gameweek, the weekly champion shall receive <strong>KES 50 from each participant</strong>.</li>
 
-      <li><strong>Transfers</strong><br>
-        A maximum of <strong>–8 points</strong> is allowed in transfers per gameweek.<br>
-        <strong>Free transfers, Free Hit, and Wildcard</strong> are permitted as per official game rules.
-      </li>
+          <li><strong>Payment Method & Records</strong><br>
+            The weekly winner may have payments sent directly or to the treasurer. If sent to the treasurer, the treasurer retains <strong>KES 100</strong> per gameweek for record-keeping/processing.
+          </li>
 
-      <li><strong>Late Joiners</strong><br>
-        New participants joining after the league has started must pay a <strong>registration fee of KES 500</strong>.
-      </li>
+          <li><strong>Points Tie</strong><br>In the event of a tie in gameweek points the weekly reward shall be shared equally among tied participants.</li>
 
-      <li><strong>Refund Policy</strong><br>
-        Registration fees are <strong>non-refundable</strong> under any circumstances.
-      </li>
+          <li><strong>Transfers</strong><br>Maximum transfer penalty of <strong>–8 points</strong>/GW. Free transfers, Free Hit, and Wildcard allowed per official rules.</li>
 
-      <li><strong>Disqualification Clause</strong><br>
-        <strong>Failure to remit payments on time</strong> to three consecutive weekly champions will result in <strong>disqualification</strong> from the league.<br>
-        <strong>There is no appeal once disqualified.</strong>
-      </li>
+          <li><strong>Late Joiners</strong><br>Teams joining after the league started pay <strong>KES 500</strong> registration fee.</li>
 
-      <li><strong>Eligibility</strong><br>
-        Only <strong>registered teams</strong> are allowed to participate in the league.
-      </li>
+          <li><strong>Refund Policy</strong><br>All registration fees are non-refundable.</li>
 
-      <li><strong>Group Engagement</strong><br>
-        Every member is expected to <strong>at least react to messages</strong> in the group to promote active engagement and communication.
-      </li>
-    </ol>
+          <li><strong>Disqualification</strong><br>Failure to remit payments to three consecutive weekly champions results in disqualification — no appeal.</li>
 
-    <div class="fpl-section">
-      <h2>View Our 2025/26 Maestroes Classic League Table</h2>
-      <a onclick="playClick()" href="https://fantasy.premierleague.com/leagues/403426/standings/c" target="_blank" style="color: yellow; text-decoration: underline;">Click here to view</a>
+          <li><strong>Eligibility</strong><br>Only registered teams are allowed to participate.</li>
+
+          <li><strong>Group Engagement</strong><br>All members should react/engage in the group to promote activity.</li>
+        </ol>
+      </section>
+
+      <!-- final table link -->
+      <div class="card final-table-section">
+        <h2>🏆 2024/25 Final FPL Table</h2>
+        <p class="small">Click below to view the final photo of our 2024/25 standings.</p>
+        <a class="fpl-btn" href="https://photos.app.goo.gl/y59SZi7NDxvepp9P9" target="_blank" rel="noopener" onclick="playClick()">View 2024/25 Final Table</a>
+      </div>
+
+      <!-- Weekly champions (2024/25 shown earlier) -->
+      <section class="card" aria-label="Weekly champions 2024 25">
+        <h2>Weekly Champions 2024/25 (summary)</h2>
+        <table aria-label="weekly champions 2024 25">
+          <thead><tr><th>GW</th><th>Team</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>EASTERN SNIPER</td><td class="small"></td></tr>
+            <tr><td>2</td><td>SOLIDARITY</td><td class="small"></td></tr>
+            <tr><td>3</td><td>IAM JOSE MOURINHO</td><td>80</td></tr>
+            <tr><td>3</td><td>OVERWHELMING</td><td>80</td></tr>
+            <tr><td>4</td><td>OVERWHELMING</td><td class="small"></td></tr>
+            <!-- trimmed for brevity in UI; full list kept in original working file if needed -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Registered teams 2025/26 -->
+      <section class="card registered-teams" aria-label="Registered teams 2025 26">
+        <h2>⚽ Registered Teams — 2025/26 (Alphabetical)</h2>
+        <table aria-label="registered teams">
+          <thead><tr><th>#</th><th>Team</th><th>Fee (KES)</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Askofu</td><td>400</td></tr>
+            <tr><td>2</td><td>Cassava Farmer</td><td>400</td></tr>
+            <tr><td>3</td><td>Double D</td><td>400</td></tr>
+            <tr><td>4</td><td>Dons of Thunder</td><td>400</td></tr>
+            <tr><td>5</td><td>Eberechiis</td><td>400</td></tr>
+            <tr><td>6</td><td>Engoge</td><td>400</td></tr>
+            <tr><td>7</td><td>Evolution</td><td>400</td></tr>
+            <tr><td>8</td><td>Favoured</td><td>400</td></tr>
+            <tr><td>9</td><td>GEN-Z</td><td>400</td></tr>
+            <tr><td>10</td><td>Gmax</td><td>400</td></tr>
+            <tr><td>11</td><td>Gyokeres</td><td>400</td></tr>
+            <tr><td>12</td><td>Jeddy Kevoh</td><td>400</td></tr>
+            <tr><td>13</td><td>Kitchen master</td><td>400</td></tr>
+            <tr><td>14</td><td>Mataktics</td><td>400</td></tr>
+            <tr><td>15</td><td>Mzee wenger</td><td>400</td></tr>
+            <tr><td>16</td><td>Passenger</td><td>400</td></tr>
+            <tr><td>17</td><td>Pending moderation</td><td>400</td></tr>
+            <tr><td>18</td><td>Retired Generals</td><td>400</td></tr>
+            <tr><td>19</td><td>Rock star</td><td>400</td></tr>
+            <tr><td>20</td><td>Team kin one</td><td>400</td></tr>
+            <tr><td>21</td><td>Thee Kop</td><td>400</td></tr>
+            <tr><td>22</td><td>UTAFITI OTI</td><td>400</td></tr>
+            <tr><td>23</td><td>Victor</td><td>400</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 2025/26 Gameweek winners (full GW1-GW38 template) -->
+      <section class="card gw-section" aria-label="Gameweek winners 2025 26">
+        <h2>🏆 Maestros FPL — Gameweek Winners 2025/26</h2>
+        <table aria-label="gameweek winners 2025 26">
+          <thead><tr><th>GW</th><th>Winner</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Team Kin one</td><td>76</td></tr>
+            <tr><td>2</td><td>Double D</td><td>79</td></tr>
+            <tr><td>3</td><td>Pending Moderation</td><td>73</td></tr>
+            <tr><td>4</td><td>-</td><td>-</td></tr>
+            <tr><td>5</td><td>-</td><td>-</td></tr>
+            <tr><td>6</td><td>-</td><td>-</td></tr>
+            <tr><td>7</td><td>-</td><td>-</td></tr>
+            <tr><td>8</td><td>-</td><td>-</td></tr>
+            <tr><td>9</td><td>-</td><td>-</td></tr>
+            <tr><td>10</td><td>-</td><td>-</td></tr>
+            <tr><td>11</td><td>-</td><td>-</td></tr>
+            <tr><td>12</td><td>-</td><td>-</td></tr>
+            <tr><td>13</td><td>-</td><td>-</td></tr>
+            <tr><td>14</td><td>-</td><td>-</td></tr>
+            <tr><td>15</td><td>-</td><td>-</td></tr>
+            <tr><td>16</td><td>-</td><td>-</td></tr>
+            <tr><td>17</td><td>-</td><td>-</td></tr>
+            <tr><td>18</td><td>-</td><td>-</td></tr>
+            <tr><td>19</td><td>-</td><td>-</td></tr>
+            <tr><td>20</td><td>-</td><td>-</td></tr>
+            <tr><td>21</td><td>-</td><td>-</td></tr>
+            <tr><td>22</td><td>-</td><td>-</td></tr>
+            <tr><td>23</td><td>-</td><td>-</td></tr>
+            <tr><td>24</td><td>-</td><td>-</td></tr>
+            <tr><td>25</td><td>-</td><td>-</td></tr>
+            <tr><td>26</td><td>-</td><td>-</td></tr>
+            <tr><td>27</td><td>-</td><td>-</td></tr>
+            <tr><td>28</td><td>-</td><td>-</td></tr>
+            <tr><td>29</td><td>-</td><td>-</td></tr>
+            <tr><td>30</td><td>-</td><td>-</td></tr>
+            <tr><td>31</td><td>-</td><td>-</td></tr>
+            <tr><td>32</td><td>-</td><td>-</td></tr>
+            <tr><td>33</td><td>-</td><td>-</td></tr>
+            <tr><td>34</td><td>-</td><td>-</td></tr>
+            <tr><td>35</td><td>-</td><td>-</td></tr>
+            <tr><td>36</td><td>-</td><td>-</td></tr>
+            <tr><td>37</td><td>-</td><td>-</td></tr>
+            <tr><td>38</td><td>-</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- FPL large section separated from weekly champions -->
+      <div class="fpl-section card" aria-label="FPL Live standings">
+        <h2>📊 Click to view our 2025/26 Maestros Classic League Table (live)</h2>
+        <p class="small">This opens the official Fantasy Premier League standings page for our league.</p>
+        <a class="fpl-btn" href="https://fantasy.premierleague.com/leagues/403426/standings/c" target="_blank" rel="noopener" onclick="playClick()">Click here to view our 2025/26 Maestroes Classic League Table</a>
+      </div>
+
+      <div class="spacer"></div>
+
+      <!-- WhatsApp group -->
+      <section class="card">
+        <h2>Join Our WhatsApp Group</h2>
+        <p class="small">Click below to join the Maestros WhatsApp community for updates and confirmations.</p>
+        <a class="pay-btn" href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" rel="noopener" onclick="playClick()">Join WhatsApp Group</a>
+      </section>
+
+      <div style="height:40px"></div>
     </div>
-
-    <div class="whatsapp-section">
-      <h2>Join Our WhatsApp Group</h2>
-      <a onclick="playClick()" href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen; text-decoration: underline;">Click here to join</a>
-    </div>
-  </div>
+  </main>
 
   <script>
-    function login() {
-      document.getElementById('login').style.display = 'none';
-      document.getElementById('main').style.display = 'block';
+    /* ================= SCRIPTS ================= */
+
+    // Click sound
+    function playClick(){
+      const s = document.getElementById('clickSound');
+      if(!s) return;
+      try{ s.currentTime = 0; s.play(); }catch(e){}
     }
 
-    function playClick() {
-      document.getElementById('clickSound').play();
+    // Copy treasurer number
+    function copyNumber(){
+      const num = '+254706382616';
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(num).then(()=> alert('Number copied: ' + num)).catch(()=> prompt('Copy this number:', num));
+      } else {
+        prompt('Copy this number:', num);
+      }
     }
 
-    document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', playClick);
+    // Login/session handling using sessionStorage
+    function login(){
+      sessionStorage.setItem('loggedIn','true');
+      showMainUI();
+    }
+    function logout(){
+      sessionStorage.removeItem('loggedIn');
+      // show login again
+      showLoginUI();
+      // scroll top
+      window.scrollTo(0,0);
+    }
+
+    function showMainUI(){
+      const login = document.getElementById('login');
+      const main = document.getElementById('main');
+      if(login) login.style.display = 'none';
+      if(main) main.style.display = 'block';
+    }
+    function showLoginUI(){
+      const login = document.getElementById('login');
+      const main = document.getElementById('main');
+      if(login) login.style.display = 'flex';
+      if(main) main.style.display = 'none';
+    }
+
+    // On page load: respect sessionStorage (stay logged in on refresh, logs out on tab close)
+    window.addEventListener('load', function(){
+      try{
+        const isLogged = sessionStorage.getItem('loggedIn') === 'true';
+        if(isLogged) showMainUI(); else showLoginUI();
+      }catch(e){
+        showLoginUI();
+      }
+
+      // attach click sound to external links (non-intrusive)
+      document.querySelectorAll('a[target="_blank"]').forEach(a=>{
+        a.addEventListener('click', playClick);
+      });
+
+      // start login background slideshow
+      startLoginBgSlideshow();
     });
+
+    /* ===== LOGIN SLIDESHOW (for login background) ===== */
+    const loginImages = [
+      // Replace these with direct hosted EPL player images if you prefer
+      'https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?auto=format&fit=crop&w=1920&q=80',
+      'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1920&q=80',
+      'https://wallpapercave.com/wp/wp6515971.jpg',
+      'https://wallpapercave.com/wp/wp10847491.jpg'
+    ];
+    let loginBgIndex = 0;
+    function setLoginBg(url){
+      const el = document.getElementById('login-bg');
+      if(!el) return;
+      el.style.backgroundImage = `linear-gradient(rgba(12,22,34,0.18), rgba(12,22,34,0.18)), url('${url}')`;
+    }
+    function startLoginBgSlideshow(){
+      if(!loginImages || !loginImages.length) return;
+      setLoginBg(loginImages[0]);
+      loginBgIndex = 1;
+      setInterval(()=>{
+        setLoginBg(loginImages[loginBgIndex % loginImages.length]);
+        loginBgIndex++;
+      },6000);
+    }
   </script>
 </body>
 </html>
-
