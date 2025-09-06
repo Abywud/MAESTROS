@@ -1,564 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maestros</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maestroes FPL</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      color: white;
-      background: linear-gradient(-45deg, #1d1d1d, #0d47a1, #1b5e20, #880e4f);
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #ff512f, #dd2476);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      animation: gradientBG 12s ease infinite;
+      color: white;
+      text-align: center;
     }
-
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
-    .login-container {
-      background-image: url('https://fantasy.premierleague.com/static/media/logo.9c960834.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      padding: 20px;
-    }
-
-    .login-container a {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .main-content {
-      display: none;
-      padding: 20px;
-      background-image: url('https://wallpapercave.com/wp/wp2599594.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      overflow-y: auto;
-    }
-
     h1, h2 {
-      margin-top: 0;
-      text-shadow: 1px 1px 5px black;
+      margin: 20px 0;
     }
-
-    ul {
-      list-style-type: decimal;
-      padding-left: 20px;
+    .login-container {
+      margin: 50px auto;
+      width: 320px;
+      padding: 25px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
-
+    .login-container h2 {
+      margin-bottom: 15px;
+    }
+    .login-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+    .login-container button {
+      padding: 10px 20px;
+      background: #ff512f;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login-container button:hover {
+      background: #ff784f;
+    }
+    section {
+      margin: 50px auto;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
-      color: white;
-      background-color: rgba(0,0,0,0.6);
+      margin-top: 15px;
     }
-
-    th, td {
+    table, th, td {
       border: 1px solid white;
+    }
+    th, td {
       padding: 8px;
-      text-align: left;
     }
-
     th {
-      background-color: #222;
+      background: #ff512f;
     }
-
-    .trophy {
-      animation: bounce 1s infinite;
+    a.button-link {
       display: inline-block;
+      margin: 15px 0;
+      padding: 12px 20px;
+      background: #ff512f;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+    a.button-link:hover {
+      background: #ff784f;
     }
-
-    a {
-      cursor: pointer;
-    }
-
-    .fpl-table-section {
-    margin-bottom: 80px;
-    padding: 30px;
-    background-color: rgba(0, 0, 0, 0.4);
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    font-size: 20px;
-  }
   </style>
 </head>
 <body>
-  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
 
-  <div class="login-container" id="login" style="position: relative; overflow: hidden;">
-  <div id="login-bg" style="
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    opacity: 0.15;
-    transition: background-image 1s ease-in-out;
-  "></div>
-
-  <div style="
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    margin-top: 100px;
-    z-index: 1;
-  ">
-    <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">MAESTROS Login</h1>
-    <p style="font-size: 16px; margin-bottom: 25px;">Welcome to MAESTROS web page</p>
-    <a onclick="playClick(); login()" style="
-      background-color: #0d47a1;
-      color: white;
-      padding: 12px 28px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 16px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#1565c0'"
-       onmouseout="this.style.backgroundColor='#0d47a1'">
-      Enter
-    </a>
+  <!-- Login Page -->
+  <div class="login-container" id="loginPage">
+    <h2>Maestroes Login</h2>
+    <p>Welcome to Maestroes Web Page</p>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
   </div>
-</div>
 
-  <div class="main-content" id="main">
-    <h1>Welcome to Maestros</h1>
+  <!-- Main Content -->
+  <div id="mainContent" style="display:none;">
+    <h1>Maestroes FPL 2025/26</h1>
 
-    <h2>Maestros Rules</h2>
-    <ol>
-   <li><strong>Multiple Squads</strong><br>
-      Participants may register multiple teams, provided each squad is officially registered with the league.
-    </li>
+    <!-- League Table Link -->
+    <a class="button-link" href="https://fantasy.premierleague.com/leagues/403426/standings/c" target="_blank">
+      Click here to view our 2025/26 Maestroes Classic League Table
+    </a>
 
-    <li><strong>Registration Fee & Prize Distribution</strong><br>
-      A <strong>registration fee of KES 400</strong> is required per team.  
-      This amount is pooled and awarded to the top four teams at the end of the season as follows:
-      <ul class="subpoints">
-        <li><strong>1st place</strong> – 50% of the total pool</li>
-        <li><strong>2nd place</strong> – 25% of the total pool</li>
-        <li><strong>3rd place</strong> – 15% of the total pool</li>
-        <li><strong>4th place</strong> – 10% of the total pool</li>
+    <!-- Registered Teams -->
+    <section>
+      <h2>Registered Teams 2025/26</h2>
+      <ul style="text-align:left; display:inline-block;">
+        <li>Askofu - 400</li>
+        <li>Cassava Farmer - 400</li>
+        <li>Double D - 400</li>
+        <li>Dons of Thunder - 400</li>
+        <li>EBerechiis - 400</li>
+        <li>Engoge - 400</li>
+        <li>Evolution - 400</li>
+        <li>Favoured - 400</li>
+        <li>GEN-Z - 400</li>
+        <li>Gmax - 400</li>
+        <li>Gyokeres - 400</li>
+        <li>Jeddy Kevoh - 400</li>
+        <li>Kitchen Master - 400</li>
+        <li>Mataktics - 400</li>
+        <li>Mzee Wenga - 400</li>
+        <li>Passenger - 400</li>
+        <li>Pending Moderation - 400</li>
+        <li>Retired Generals - 400</li>
+        <li>Rock Star - 400</li>
+        <li>Team Kin One - 400</li>
+        <li>Thee Kop - 400</li>
+        <li>UTAFITI OTI - 400</li>
+        <li>Victor - 400</li>
       </ul>
-    </li>
+    </section>
 
-    <li><strong>Weekly Champion Reward</strong><br>
-      At the end of each gameweek, the weekly champion shall be entitled to a reward of <strong>KES 50</strong> from every other team.
-    </li>
-
-    <li><strong>Payment Method & Records</strong><br>
-  After each gameweek, all participants, excluding the winner, must remit <strong>KES 50</strong> to the <strong>treasurer</strong>.  
-  The treasurer shall ensure proper documentation of all payments and release the total winnings to the weekly champion prior to the commencement of the next gameweek.  
-  From the total amount collected each gameweek, the treasurer shall retain <strong>KES 100</strong> as an administrative fee to cover record-keeping and payment processing.
-</li>
-
-
-    <li><strong>Tie in Weekly Points</strong><br>
-      In the event of a tie in gameweek points, the weekly reward will be <strong>shared equally</strong> among the tied Teams.
-    </li>
-
-    <li><strong>Transfers</strong><br>
-      A maximum of <strong>–8 points</strong> is allowed for transfers in any gameweek.  
-      <strong>Free transfers, Free Hit, and Wildcard</strong> are permitted in line with the official game rules.
-    </li>
-
-    <li><strong>Late Joiners</strong><br>
-      Teams joining after the league has commenced must pay a <strong>registration fee of KES 500</strong>.
-    </li>
-
-    <li><strong>Refund Policy</strong><br>
-      All registration fees are <strong>non-refundable</strong> under any circumstances.
-    </li>
-
-    <li><strong>Disqualification</strong><br>
-      Failure to remit payments on time for <strong>three consecutive gameweeks</strong> will result in <strong>disqualification</strong> from the league.  
-      <strong>No appeals</strong> will be entertained once a team is disqualified.
-    </li>
-
-    <li><strong>Eligibility</strong><br>
-      Only <strong>registered teams</strong> are permitted to participate in the league.
-    </li>
-
-    <li><strong>Group Engagement</strong><br>
-      All members are expected to <strong>react to messages</strong> in the group to encourage active participation and communication.
-    </li>
-  </ol>
-
-    <h2> 2024/25 Season teams</h2>
-    <ul>
-      <li>Afc</li>
-      <li>Bedroom master fc</li>
-      <li>Cassava farmer</li>
-      <li>Eastern Sniper</li>
-      <li>Elevation</li>
-      <li>Engoge</li>
-      <li>Gen Z</li>
-      <li>I am Jose Mourinho.</li>
-      <li>Jeddykevoh4</li>
-      <li>Mzee Wenger</li>
-      <li>Madeleine's</li>
-      <li>Mali safi fc</li>
-      <li>Natembea</li>
-      <li>Overwhelming</li>
-      <li>Red Thunder Fc</li>
-      <li>Rio Kise</li>
-      <li>Solidarity</li>
-      <li>Planned With Time</li>
-    </ul>
-
-<!-- FINAL TABLE SECTION -->
-<div class="final-table-section">
-  <h2>🏆 2024/25 Final FPL Table</h2>
-  <p>View the complete final standings of the Maestros FPL 2024/25 season here:</p>
-  <a href="https://photos.app.goo.gl/y59SZi7NDxvepp9P9" target="_blank" class="final-table-link">
-    📸 Click to View Final Table
-  </a>
-</div>
-
-<style>
-  .final-table-section {
-    margin-top: 80px;
-    margin-bottom: 50px;
-    padding: 25px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .final-table-section h2 {
-    margin-bottom: 10px;
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .final-table-link {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-
-  .final-table-link:hover {
-    background-color: #0056b3;
-  }
-</style>
-  
-    <h2>Weekly Champions 2024/25 season</h2>
-    <table>
-      <thead>
+    <!-- Gameweek Winners -->
+    <section>
+      <h2>Gameweek Winners 🏆</h2>
+      <table>
         <tr>
-          <th>Game Week</th>
-          <th>Team</th>
+          <th>Gameweek</th>
+          <th>Winner</th>
           <th>Points</th>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>EASTERN SNIPER</td><td></td></tr>
-        <tr><td>2</td><td>SOLIDARITY</td><td></td></tr>
-        <tr><td rowspan="2">3</td><td>IAM JOSE MOURINHO</td><td>80</td></tr>
-        <tr><td>OVERWHELMING</td><td>80</td></tr>
-        <tr><td>4</td><td>OVERWHELMING</td><td></td></tr>
-        <tr><td>5</td><td>OVERWHELMING <span class="trophy">🏆🏆</span></td><td>74</td></tr>
-        <tr><td>6</td><td>MZEE WENGER</td><td>78</td></tr>
-        <tr><td>7</td><td>BEDROOM MASTER FC</td><td></td></tr>
-        <tr><td>8</td><td>BEDROOM MASTER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>9</td><td>GEN Z</td><td>80</td></tr>
-        <tr><td>10</td><td>ELEVATION</td><td></td></tr>
-        <tr><td>11</td><td>RED THUNDER FC</td><td></td></tr>
-        <tr><td>12</td><td>RETIRED G</td><td></td></tr>
-        <tr><td>13</td><td>SOLIDARITY <span class="trophy">🏆🏆</span></td><td>101</td></tr>
-        <tr><td>14</td><td>RED THUNDER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>15</td><td>MEDELEIN’S</td><td></td></tr>
-        <tr><td>16</td><td>EASTERN SNIPER <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>17</td><td>ENGOGE</td><td></td></tr>
-        <tr><td>18</td><td>MADELEINES <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>19</td><td>CASSAVA FARMER</td><td>91</td></tr>
-        <tr><td>20</td><td>MADELEINES <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>21</td><td>CASSAVA FARMER <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>22</td><td>ELEVATION <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>23</td><td>JEDDY KEVOH</td><td>76</td></tr>
-        <tr><td>24</td><td>ELEVATION <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>25</td><td>RETIRED G <span class="trophy">🏆🏆</span></td><td>74</td></tr>
-        <tr><td>26</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>27</td><td>RETIRED G <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>28</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>29</td><td>OVERWHELMING <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>30</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>31</td><td>GEN Z <span class="trophy">🏆🏆</span></td><td></td></tr>
-        <tr><td>32</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>33</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>34</td><td>MZEE WENGER <span class="trophy">🏆🏆</span></td><td>95</td></tr>
-        <tr><td>35</td><td>GEN Z <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>36</td><td>GEN Z <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-        <tr><td>37</td><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-        <tr><td rowspan="2">38</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆🏆</span> (Super GW Champion)</td><td>68</td></tr>
-        <tr><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆🏆</span></td><td>68</td></tr>
-      </tbody>
-    </table>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Maestros FPL Registrations 2025/26</title>
-  <style>
-    body {
-      background: #111;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: white;
-    }
-
-    .registered-teams {
-      margin: 60px auto;
-      padding: 20px;
-      text-align: center;
-      max-width: 900px;
-    }
-
-    .registered-teams h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .registered-teams p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-
-    .teams-table {
-      margin: 0 auto;
-      width: 85%;
-      border-collapse: collapse;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .teams-table th, .teams-table td {
-      padding: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .teams-table th {
-      background: rgba(0, 123, 255, 0.7);
-      font-weight: bold;
-      color: #fff;
-      text-transform: uppercase;
-    }
-
-    .teams-table tr:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-  </style>
-</head>
-<body>
-
-  <div class="registered-teams">
-    <h2>⚽ Maestros FPL Classic League 2025/26 Registrations</h2>
-    <p>These are the registered teams for the 2025/26 season (alphabetical order):</p>
-
-    <table class="teams-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Team Name</th>
-          <th>Fee (Ksh)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Askofu</td><td>400</td></tr>
-        <tr><td>2</td><td>Cassava farmer</td><td>400</td></tr>
-        <tr><td>3</td><td>Double D</td><td>400</td></tr>
-        <tr><td>4</td><td>Dons of Thunder</td><td>400</td></tr>
-        <tr><td>5</td><td>Eberechiis</td><td>400</td></tr>
-        <tr><td>6</td><td>Engoge</td><td>400</td></tr>
-        <tr><td>7</td><td>Evolution</td><td>400</td></tr>
-        <tr><td>8</td><td>Favoured</td><td>400</td></tr>
-        <tr><td>9</td><td>GEN-Z</td><td>400</td></tr>
-        <tr><td>10</td><td>Gmax</td><td>400</td></tr>
-        <tr><td>11</td><td>Gyokeres</td><td>400</td></tr>
-        <tr><td>12</td><td>Jeddy Kevoh</td><td>400</td></tr>
-        <tr><td>13</td><td>Kitchen master</td><td>400</td></tr>
-        <tr><td>14</td><td>Mataktics</td><td>400</td></tr>
-        <tr><td>15</td><td>Mzee wenger</td><td>400</td></tr>
-        <tr><td>16</td><td>Passenger</td><td>400</td></tr>
-        <tr><td>17</td><td>Pending moderation</td><td>400</td></tr>
-        <tr><td>18</td><td>Retired Generals</td><td>400</td></tr>
-        <tr><td>19</td><td>Rock star</td><td>400</td></tr>
-        <tr><td>20</td><td>Team kin one</td><td>400</td></tr>
-        <tr><td>21</td><td>Thee Kop</td><td>400</td></tr>
-        <tr><td>22</td><td>UTAFITI OTI</td><td>400</td></tr>
-        <tr><td>23</td><td>Victor</td><td>400</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Gameweek Winners</title>
-  <style>
-    body {
-      background: #111;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      color: white;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #FFD700;
-    }
-
-    table {
-      margin: 0 auto;
-      width: 90%;
-      border-collapse: collapse;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    th {
-      background: rgba(0, 123, 255, 0.7);
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    tr:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    td {
-      color: #ddd;
-    }
-
-    .trophy {
-      font-size: 18px;
-    }
-  </style>
-</head>
-<body>
-
-  <h2>🏆 Maestros FPL Gameweek Winners 2025/26</h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Gameweek</th>
-        <th>Winner Team</th>
-        <th>Points</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>GW 1</td><td>Team Kin one <span class="trophy">🏆</span></td><td>76</td></tr>
-      <tr><td>GW 2</td><td>Double D <span class="trophy">🏆</span></td><td>79</td></tr>
-      <tr><td>GW 3</td><td>Pending Moderation <span class="trophy">🏆</span></td><td>73</td></tr>
-      <!-- Keep adding GW winners up to GW 38 -->
-      <tr><td>GW 4</td><td>-</td><td>-</td></tr>
-      <tr><td>GW 5</td><td>-</td><td>-</td></tr>
-      <tr><td>GW 6</td><td>-</td><td>-</td></tr>
-      <!-- ... Continue until GW 38 -->
-    </tbody>
-  </table>
-
-</body>
-</html>
-
-
- <div class="fpl-link">
-      <h3>📊 Click here to view our 2025/26 Maestros Classic League Table</h3>
-      <a href="https://fantasy.premierleague.com/leagues/403426/standings/c" target="_blank">
-        View Live Standings
-      </a>
-    </div>
-  </div>
-
-    <h2>Join Our WhatsApp Group</h2>
-    <a onclick="playClick()" href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen; text-decoration: underline;">Click here to join the Maestros WhatsApp Group</a>
+        <tr><td>GW 1</td><td>Team Kin One</td><td>76</td></tr>
+        <tr><td>GW 2</td><td>Double D</td><td>79</td></tr>
+        <tr><td>GW 3</td><td>Pending Moderation</td><td>73</td></tr>
+        <!-- You can add GW 4 → GW 38 here -->
+      </table>
+    </section>
   </div>
 
   <script>
-  function login() {
-    // Set login flag when user clicks Enter
-    localStorage.setItem('loggedIn', 'true');
-    document.getElementById('login').style.display = 'none';
-    document.getElementById('main').style.display = 'block';
-  }
-
-  function playClick() {
-    document.getElementById('clickSound').play();
-  }
-
-  // When page loads, check if logged in
-  window.onload = function () {
-    const isLoggedIn = localStorage.getItem('loggedIn');
-    if (isLoggedIn === 'true') {
-      document.getElementById('login').style.display = 'none';
-      document.getElementById('main').style.display = 'block';
+    // Simple login
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if(user && pass){
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        localStorage.setItem("maestroesLoggedIn", "true");
+      } else {
+        alert("Enter Username & Password");
+      }
     }
-  };
 
-  // When tab or browser is closed or refreshed, log out automatically
-  window.onbeforeunload = function () {
-    localStorage.removeItem('loggedIn');
-  };
+    // Keep login after refresh
+    window.onload = function(){
+      if(localStorage.getItem("maestroesLoggedIn") === "true"){
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+      }
+    };
+  </script>
 
-  // Optional: Play click sound on all <a> clicks
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', playClick);
-  });
-</script>
 </body>
 </html>
