@@ -65,6 +65,20 @@
     .login-box a:hover {
       background: #0d47a1;
     }
+    .login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.login-buttons a {
+  margin-top: 0;
+  min-width: 100px;
+  text-align: center;
+  cursor: pointer;
+}
 
     /* MAIN CONTENT */
     .main-content {
@@ -129,13 +143,18 @@
   <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
 
   <!-- LOGIN -->
-  <div class="login-container" id="login">
-    <div class="login-box">
-      <h1>MAESTROS Login</h1>
-      <p>Welcome to the official Maestros FPL page</p>
-      <a onclick="playClick(); login()">Enter</a>
+ <!-- LOGIN -->
+<div class="login-container" id="login">
+  <div class="login-box">
+    <h1>MAESTROS FPL</h1>
+    <p>Choose your login to continue</p>
+
+    <div class="login-buttons">
+      <a onclick="playClick(); login('WANTAM')">WANTAM</a>
+      <a onclick="playClick(); login('TUTAM')">TUTAM</a>
     </div>
   </div>
+</div>
 
   <!-- MAIN CONTENT -->
   <div class="main-content" id="main">
