@@ -378,22 +378,30 @@
 
   </div>
 
-  <script>
-    function login() {
-      localStorage.setItem('loggedIn', 'true');
+<script>
+  function login(user) {
+    localStorage.setItem('loggedIn', 'true');
+    localStorage.setItem('maestrosUser', user);
+
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+  }
+
+  function playClick() {
+    document.getElementById('clickSound').play();
+  }
+
+  window.onload = function () {
+    if (localStorage.getItem('loggedIn') === 'true') {
       document.getElementById('login').style.display = 'none';
       document.getElementById('main').style.display = 'block';
     }
-    function playClick() { document.getElementById('clickSound').play(); }
-    window.onload = function () {
-      if (localStorage.getItem('loggedIn') === 'true') {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('main').style.display = 'block';
-      }
-    };
-    window.onbeforeunload = function () {
-      localStorage.removeItem('loggedIn');
-    };
+  };
+
+  window.onbeforeunload = function () {
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('maestrosUser');
+  };
 </script>
     <!-- 2026/27 REGISTRATIONS -->
 <div class="section">
