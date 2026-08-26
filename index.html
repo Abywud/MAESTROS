@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maestros FPL</title>
+
   <style>
-    /* GLOBAL BODY BACKGROUND */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -26,23 +26,34 @@
       text-shadow: 1px 1px 6px black;
     }
 
-    a { color: #4da3ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: #4da3ff;
+      text-decoration: none;
+    }
 
-    /* LOGIN PAGE */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* LOGIN POPUP */
     .login-container {
-      height: 100vh;
-      display: flex;
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
       justify-content: center;
       align-items: center;
+      background: rgba(0, 0, 0, 0.85);
     }
 
     .login-box {
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.9);
       padding: 40px;
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      max-width: 400px;
+      width: 85%;
     }
 
     .login-box h1 {
@@ -50,45 +61,64 @@
       margin-bottom: 15px;
     }
 
-    .login-box a {
+    .login-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .login-buttons a {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 28px;
+      padding: 14px 30px;
       background: #1565c0;
       color: white;
       border-radius: 8px;
       font-weight: bold;
       font-size: 16px;
+      cursor: pointer;
       transition: background 0.3s ease;
     }
 
-    .login-box a:hover {
+    .login-buttons a:hover {
       background: #0d47a1;
+      text-decoration: none;
     }
-    .login-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.login-buttons a {
-  margin-top: 0;
-  min-width: 100px;
-  text-align: center;
-  cursor: pointer;
-}
 
     /* MAIN CONTENT */
     .main-content {
-      display: none;
+      display: block;
       padding: 20px;
       min-height: 100vh;
       background: rgba(0, 0, 0, 0.6);
     }
 
-    ol, ul { max-width: 900px; margin: auto; }
+    /* LOGIN BUTTON */
+    .top-login {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 5000;
+      padding: 12px 22px;
+      background: #1565c0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    }
+
+    .top-login:hover {
+      background: #0d47a1;
+    }
+
+    ol, ul {
+      max-width: 900px;
+      margin: auto;
+    }
 
     table {
       width: 90%;
@@ -111,12 +141,23 @@
       text-transform: uppercase;
     }
 
-    tr:hover { background: rgba(255, 255, 255, 0.1); }
+    tr:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-    .trophy { animation: bounce 1s infinite; display: inline-block; }
+    .trophy {
+      animation: bounce 1s infinite;
+      display: inline-block;
+    }
+
     @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     .section {
@@ -136,381 +177,751 @@
       font-weight: bold;
       border-radius: 8px;
     }
-    .final-table-link:hover { background-color: #0056b3; }
+
+    .final-table-link:hover {
+      background-color: #0056b3;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      table {
+        width: 100%;
+        font-size: 13px;
+      }
+
+      th, td {
+        padding: 8px 5px;
+      }
+
+      .section {
+        padding: 12px;
+      }
+
+      .login-box {
+        padding: 30px 20px;
+      }
+    }
   </style>
 </head>
-<body>
-  <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
 
-  <!-- LOGIN -->
- <!-- LOGIN -->
+<body>
+
+<audio id="clickSound"
+  src="https://www.soundjay.com/buttons/sounds/button-09.mp3">
+</audio>
+
+<!-- LOGIN BUTTON -->
+<button class="top-login" onclick="playClick(); openLogin()">
+  🔐 LOGIN
+</button>
+
+<!-- LOGIN POPUP -->
 <div class="login-container" id="login">
+
   <div class="login-box">
+
     <h1>MAESTROS FPL</h1>
+
     <p>Choose your login to continue</p>
 
     <div class="login-buttons">
-      <a onclick="playClick(); login('WANTAM')">WANTAM</a>
-      <a onclick="playClick(); login('TUTAM')">TUTAM</a>
+
+      <a onclick="playClick(); login('WANTAM')">
+        WANTAM
+      </a>
+
+      <a onclick="playClick(); login('TUTAM')">
+        TUTAM
+      </a>
+
     </div>
+
   </div>
+
 </div>
 
-  <!-- MAIN CONTENT -->
-  <div class="main-content" id="main">
 
-    <h1>⚽ Welcome to Maestros FPL</h1>
+<!-- MAIN CONTENT -->
+<div class="main-content" id="main">
 
-    <div class="section">
-      <h2>📜 Maestros Rules</h2>
-      <ol>
-        <li><strong>Multiple Squads:</strong> Participants may register multiple teams, provided each squad is officially registered with the league.</li>
+  <h1>⚽ Welcome to Maestros FPL</h1>
 
-        <li><strong>Registration Fee & Prize Distribution:</strong><br>
-          Each team pays <strong>KES 400</strong>.    
-          Distribution of the contributed fee is as follows:  
-          <ul>
-            <li>1st place – (50%)</li>
-            <li>2nd place – (25%)</li>
-            <li>3rd place – (15%)</li>
-            <li>4th place – (10%)</li>
-          </ul>
-        </li>
 
-       <li>
-  <strong>Weekly Champion Reward & Treasurer Retention:</strong><br>
-  At the end of each gameweek, the gameweek winner receives <strong>KES 50</strong> from every other team. 
-  The treasurer retains <strong>KES 100</strong> from each team’s contribution for administrative purposes 
-  before distributing the weekly champion rewards.
-</li>
+  <!-- MAESTROS RULES -->
+  <div class="section">
 
-  <strong>2. Registration & Payment:</strong><br>
-  Every participant must pay a registration fee of 
-  <span style="color:#00cc66; font-weight:bold;">Ksh 400</span>.<br>
-  Payments are to be made via 
-  <span style="color:#0066ff; font-weight:bold;">M-Pesa</span> using the details below:
-  
-  <div style="margin:12px 0; padding:12px; border:2px dashed #00cc66; border-radius:10px; background:rgba(0,0,0,0.05); width:fit-content;">
-    <p style="margin:6px 0;"><strong>📱 M-Pesa Number:</strong> <span style="color:#ff6600;">+254 706 382 616</span></p>
-    <p style="margin:6px 0;"><strong>👤 Treasurer:</strong> <span style="color:#cc0000;">George Ikwenyi</span></p>
-    <p style="margin:6px 0;">
-      <a href="tel:+254706382616" style="color:#0066ff; text-decoration:none; font-weight:bold;">📞 Call Treasurer</a> | 
-      <a href="https://wa.me/254706382616" target="_blank" style="color:#25D366; text-decoration:none; font-weight:bold;">💬 WhatsApp Treasurer</a>
+    <h2>📜 Maestros Rules</h2>
+
+    <ol>
+
+      <li>
+        <strong>Multiple Squads:</strong>
+        Participants may register multiple teams, provided each squad is officially registered with the league.
+      </li>
+
+      <li>
+        <strong>Registration Fee & Prize Distribution:</strong><br>
+
+        Each team pays <strong>KES 400</strong>.
+
+        Distribution of the contributed fee is as follows:
+
+        <ul>
+          <li>1st place – (50%)</li>
+          <li>2nd place – (25%)</li>
+          <li>3rd place – (15%)</li>
+          <li>4th place – (10%)</li>
+        </ul>
+      </li>
+
+      <li>
+
+        <strong>Weekly Champion Reward & Treasurer Retention:</strong><br>
+
+        At the end of each gameweek, the gameweek winner receives
+        <strong>KES 50</strong> from every other team.
+
+        The treasurer retains <strong>KES 100</strong> from each team's contribution
+        for administrative purposes before distributing the weekly champion rewards.
+
+      </li>
+
+
+      <li>
+
+        <strong>Registration & Payment:</strong><br>
+
+        Every participant must pay a registration fee of
+        <span style="color:#00cc66; font-weight:bold;">Ksh 400</span>.
+
+        Payments are to be made via
+        <span style="color:#0066ff; font-weight:bold;">M-Pesa</span>
+        using the details below.
+
+        <div style="
+          margin:12px 0;
+          padding:12px;
+          border:2px dashed #00cc66;
+          border-radius:10px;
+          background:rgba(0,0,0,0.05);
+          width:fit-content;
+        ">
+
+          <p>
+            <strong>📱 M-Pesa Number:</strong>
+            <span style="color:#ff6600;">
+              +254 706 382 616
+            </span>
+          </p>
+
+          <p>
+            <strong>👤 Treasurer:</strong>
+            <span style="color:#cc0000;">
+              George Ikwenyi
+            </span>
+          </p>
+
+          <p>
+
+            <a href="tel:+254706382616"
+               style="color:#0066ff; font-weight:bold;">
+              📞 Call Treasurer
+            </a>
+
+            |
+
+            <a href="https://wa.me/254706382616"
+               target="_blank"
+               style="color:#25D366; font-weight:bold;">
+              💬 WhatsApp Treasurer
+            </a>
+
+          </p>
+
+        </div>
+
+        <em style="color:#666;">
+          (Ensure you keep your confirmation message as proof of payment)
+        </em>
+
+      </li>
+
+
+      <li>
+        <strong>Tie in Weekly Points:</strong>
+        If there is a tie, the reward is shared equally.
+      </li>
+
+
+      <li>
+        <strong>Transfers:</strong>
+        A maximum of –8 points is allowed for transfers in any gameweek.
+        Free transfers, Free Hit, and Wildcard are permitted as per official FPL rules.
+      </li>
+
+
+      <li>
+        <strong>Late Joiners:</strong>
+        Teams joining after kickoff must pay KES 500.
+      </li>
+
+
+      <li>
+        <strong>Refund Policy:</strong>
+        All fees are non-refundable.
+      </li>
+
+
+      <li>
+        <strong>Disqualification:</strong>
+        Failure to pay for three consecutive gameweeks = disqualification,
+        with no appeal.
+      </li>
+
+
+      <li>
+        <strong>Eligibility:</strong>
+        Only registered teams are permitted to participate.
+      </li>
+
+
+      <li>
+        <strong>Group Engagement:</strong>
+        Members must react to group messages for active participation.
+      </li>
+
+    </ol>
+
+  </div>
+
+
+  <!-- 2024/25 FINAL TABLE -->
+  <div class="section">
+
+    <h2>🏆 2024/25 Final FPL Table</h2>
+
+    <p>
+      View the complete standings of the 2024/25 season:
     </p>
-  </div>
 
-  <em style="color:#666;">(Ensure you keep your confirmation message as proof of payment)</em>
-</li>
+    <a href="https://photos.app.goo.gl/y59SZi7NDxvepp9P9"
+       target="_blank"
+       class="final-table-link">
 
+      📸 Click to View Final Table
 
-        <li><strong>Tie in Weekly Points:</strong> If there is a tie, the reward is shared equally.</li>
-
-        <li><strong>Transfers:</strong> A maximum of –8 points is allowed for transfers in any gameweek. Free transfers, Free Hit, and Wildcard are permitted as per official FPL rules.</li>
-
-        <li><strong>Late Joiners:</strong> Teams joining after kickoff must pay KES 500.</li>
-
-        <li><strong>Refund Policy:</strong> All fees are non-refundable.</li>
-
-        <li><strong>Disqualification:</strong> Failure to pay for three consecutive gameweeks = disqualification, with no appeal.</li>
-
-        <li><strong>Eligibility:</strong> Only registered teams are permitted to participate.</li>
-
-        <li><strong>Group Engagement:</strong> Members must react to group messages for active participation.</li>
-      </ol>
-    </div>
-
-    <!-- FINAL TABLE -->
-    <div class="section">
-      <h2>🏆 2024/25 Final FPL Table</h2>
-      <p>View the complete standings of the 2024/25 season:</p>
-      <a href="https://photos.app.goo.gl/y59SZi7NDxvepp9P9" target="_blank" class="final-table-link">📸 Click to View Final Table</a>
-    </div>
-
-    <!-- WEEKLY CHAMPIONS 2024/25 -->
-    <div class="section">
-     <h2>Weekly Champions 2024/25</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Game Week</th>
-      <th>Team</th>
-      <th>Points</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>EASTERN SNIPER</td><td></td></tr>
-    <tr><td>2</td><td>SOLIDARITY</td><td></td></tr>
-    <tr><td rowspan="2">3</td><td>IAM JOSE MOURINHO</td><td>80</td></tr>
-    <tr><td>OVERWHELMING</td><td>80</td></tr>
-    <tr><td>4</td><td>OVERWHELMING</td><td></td></tr>
-    <tr><td>5</td><td>OVERWHELMING <span class="trophy">🏆🏆</span></td><td>74</td></tr>
-    <tr><td>6</td><td>MZEE WENGER</td><td>78</td></tr>
-    <tr><td>7</td><td>BEDROOM MASTER FC</td><td></td></tr>
-    <tr><td>8</td><td>BEDROOM MASTER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>9</td><td>GEN Z</td><td>80</td></tr>
-    <tr><td>10</td><td>ELEVATION</td><td></td></tr>
-    <tr><td>11</td><td>RED THUNDER FC</td><td></td></tr>
-    <tr><td>12</td><td>RETIRED G</td><td></td></tr>
-    <tr><td>13</td><td>SOLIDARITY <span class="trophy">🏆🏆</span></td><td>101</td></tr>
-    <tr><td>14</td><td>RED THUNDER FC <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>15</td><td>MEDELEIN’S</td><td></td></tr>
-    <tr><td>16</td><td>EASTERN SNIPER <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>17</td><td>ENGOGE</td><td></td></tr>
-    <tr><td>18</td><td>MADELEINES <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>19</td><td>CASSAVA FARMER</td><td>91</td></tr>
-    <tr><td>20</td><td>MADELEINES <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>21</td><td>CASSAVA FARMER <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>22</td><td>ELEVATION <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>23</td><td>JEDDY KEVOH</td><td>76</td></tr>
-    <tr><td>24</td><td>ELEVATION <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>25</td><td>RETIRED G <span class="trophy">🏆🏆</span></td><td>74</td></tr>
-    <tr><td>26</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>27</td><td>RETIRED G <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>28</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>29</td><td>OVERWHELMING <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>30</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>31</td><td>GEN Z <span class="trophy">🏆🏆</span></td><td></td></tr>
-    <tr><td>32</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>33</td><td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>34</td><td>MZEE WENGER <span class="trophy">🏆🏆</span></td><td>95</td></tr>
-    <tr><td>35</td><td>GEN Z <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>36</td><td>GEN Z <span class="trophy">🏆🏆🏆🏆</span></td><td></td></tr>
-    <tr><td>37</td><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆</span></td><td></td></tr>
-    <tr><td rowspan="2">38</td><td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆🏆</span> (Super GW Champion)</td><td>68</td></tr>
-    <tr><td>EASTERN SNIPER <span class="trophy">🏆🏆🏆🏆</span></td><td>68</td></tr>
-  </tbody>
-</table>
-
-    </div>
-
-    <!-- 2025/26 REGISTRATIONS -->
-    <div class="section">
-      <h2>📋 Maestros FPL Classic League 2025/26 Registrations</h2>
-      <table>
-        <thead><tr><th>#</th><th>Team</th><th>Fee</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>Askofu</td><td>400</td></tr>
-          <tr><td>2</td><td>Cassava farmer</td><td>400</td></tr>
-          <tr><td>3</td><td>Double D</td><td>400</td></tr>
-          <tr><td>4</td><td>Dons of Thunder</td><td>400</td></tr>
-          <tr><td>5</td><td>Eberechiis</td><td>400</td></tr>
-          <tr><td>6</td><td>Engoge</td><td>400</td></tr>
-          <tr><td>7</td><td>Evolution</td><td>400</td></tr>
-          <tr><td>8</td><td>Favoured</td><td>400</td></tr>
-          <tr><td>9</td><td>GEN-Z</td><td>400</td></tr>
-          <tr><td>10</td><td>Gmax</td><td>400</td></tr>
-          <tr><td>11</td><td>Gyokeres</td><td>400</td></tr>
-          <tr><td>12</td><td>Jeddy Kevoh</td><td>400</td></tr>
-          <tr><td>13</td><td>Kitchen master</td><td>400</td></tr>
-          <tr><td>14</td><td>Mataktics</td><td>400</td></tr>
-          <tr><td>15</td><td>Mzee wenger</td><td>400</td></tr>
-          <tr><td>16</td><td>Passenger</td><td>400</td></tr>
-          <tr><td>17</td><td>Pending moderation</td><td>400</td></tr>
-          <tr><td>18</td><td>Retired Generals</td><td>400</td></tr>
-          <tr><td>19</td><td>Rock star</td><td>400</td></tr>
-          <tr><td>20</td><td>Team kin one</td><td>400</td></tr>
-          <tr><td>21</td><td>Thee Kop</td><td>400</td></tr>
-          <tr><td>22</td><td>UTAFITI OTI</td><td>400</td></tr>
-          <tr><td>23</td><td>Victor</td><td>400</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- WEEKLY CHAMPIONS 2025/26 -->
-    <div class="section">
-     <h2>🏆 Maestros FPL Gameweek Winners 2025/26</h2>
-<table>
-  <thead><tr><th>GW</th><th>Winner</th><th>Points</th></tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Team Kin one <span class="trophy">🏆</span></td><td>76</td></tr>
-    <tr><td>2</td><td>Double D <span class="trophy">🏆</span></td><td>79</td></tr>
-    <tr><td>3</td><td>Pending Moderation <span class="trophy">🏆</span></td><td>73</td></tr>
-    <tr><td>4</td><td>Rock Star FC <span class="trophy">🏆</span></td><td>91</td></tr>
-    <tr><td>5</td><td>Utafiti Oti <span class="trophy">🏆</span></td><td>71</td></tr>
-    <tr><td>6</td><td>Utafiti Oti <span class="trophy">🏆</span></td><td>81</td></tr>
-    <tr><td>7</td><td>Team Kin one <span class="trophy">🏆</span></td><td>99</td></tr>
-    <tr><td>8</td><td>Mzee Wenger <span class="trophy">🏆</span></td><td>86</td></tr>
-    <tr><td>9</td><td>Victor <span class="trophy">🏆</span></td><td>88</td></tr>
-    <tr><td>10</td><td>Double D <span class="trophy">🏆</span></td><td>97</td></tr>
-    <tr><td>11</td><td>Matactics <span class="trophy">🏆</span></td><td>65</td></tr>
-    <tr><td>12</td><td>GYÖKERES &amp; 10 OTHERS <span class="trophy">🏆</span></td><td>66</td></tr>
-    <tr><td>13</td><td>EBERECHIS FC <span class="trophy">🏆</span></td><td>64</td></tr>
-    <tr><td>14</td><td>Team Kin one <span class="trophy">🏆</span></td><td>91</td></tr>
-    <tr><td>15</td><td>Pending Moderation <span class="trophy">🏆</span></td><td>86</td></tr>
-    <tr><td>16</td><td>Utafiti Oti <span class="trophy">🏆</span></td><td>91</td></tr>
-    <tr><td>17</td><td>GYÖKERES &amp; 10 OTHERS <span class="trophy">🏆</span></td><td>104</td></tr>
-    <tr><td>18</td><td>Retired General <span class="trophy">🏆</span></td><td>72</td></tr>
-    <tr><td>19</td><td>Rock Star FC <span class="trophy">🏆</span></td><td>70</td></tr>
-    <tr><td>20</td><td>Double D <span class="trophy">🏆</span></td><td>62</td></tr>
-    <tr><td>21</td><td>Team Kin one <span class="trophy">🏆</span> &amp; Evolution <span class="trophy">🏆</span></td><td>-</td></tr>
-    <tr><td>22</td><td>Favoured <span class="trophy">🏆</span></td><td>54</td></tr>
-    <tr><td>23</td><td>Victor <span class="trophy">🏆</span> &amp; Pending Moderation <span class="trophy">🏆</span></td><td>54</td></tr>
-    <tr><td>24</td><td>Cassava Farmer <span class="trophy">🏆</span></td><td>78</td></tr>
-    <tr><td>25</td><td>Mr Jeff Products <span class="trophy">🏆</span></td><td>84</td></tr>
-    <tr><td>26</td><td>Retired General <span class="trophy">🏆</span></td><td>82</td></tr>
-    <tr><td>27</td><td>Team Kin one <span class="trophy">🏆</span></td><td>74</td></tr>
-    <tr><td>28</td><td>Evolution <span class="trophy">🏆</span></td><td>95</td></tr>
-    <tr><td>29</td><td>Rock Star FC <span class="trophy">🏆</span></td><td>91</td></tr>
-    <tr><td>30</td><td>Rock Star FC <span class="trophy">🏆</span></td><td>72</td></tr>
-    <tr><td>31</td><td>Pending Moderation <span class="trophy">🏆</span></td><td>-</td></tr>
-    <tr><td>32</td><td>Mzee Wenger <span class="trophy">🏆</span></td><td>85</td></tr>
-    <tr><td>33</td><td>The Passenger <span class="trophy">🏆</span></td><td>98</td></tr>
-    <tr><td>34</td><td>Double D <span class="trophy">🏆</span></td><td>71</td></tr>
-    <tr><td>35</td><td>Jeddy Kevoh <span class="trophy">🏆</span> &amp; Victor <span class="trophy">🏆</span></td><td>81</td></tr>
-    <tr><td>36</td><td>Evolution <span class="trophy">🏆</span></td><td>91</td></tr>
-    <tr><td>37</td><td>Rockstar<span class="trophy">🏆</span></td><td>-</td></tr>
-    <tr><td>38</td><td>Rockstar<span class="trophy">🏆</span></td><td>-</td></tr>
-  </tbody>
-</table>
-    </div>
-
-    <!-- LIVE LEAGUE TABLE -->
-    <div class="section">
-      <h3>📊 Click here to view our 2025/26 Maestros Classic League Table</h3>
-      <a href="https://fantasy.premierleague.com/leagues/403426/standings/c" target="_blank" class="final-table-link">View Live Standings</a>
-    </div>
-
-    <!-- WHATSAPP -->
-    <div class="section" style="text-align:center;">
-      <h2>💬 Join Our WhatsApp Group</h2>
-      <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA" target="_blank" style="color: lightgreen; font-size:18px;">Click here to join the Maestros WhatsApp Group</a>
-    </div>
+    </a>
 
   </div>
 
+
+  <!-- WEEKLY CHAMPIONS 2024/25 -->
+  <div class="section">
+
+    <h2>Weekly Champions 2024/25</h2>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Game Week</th>
+          <th>Team</th>
+          <th>Points</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr><td>1</td><td>EASTERN SNIPER</td><td></td></tr>
+        <tr><td>2</td><td>SOLIDARITY</td><td></td></tr>
+
+        <tr>
+          <td rowspan="2">3</td>
+          <td>IAM JOSE MOURINHO</td>
+          <td>80</td>
+        </tr>
+
+        <tr>
+          <td>OVERWHELMING</td>
+          <td>80</td>
+        </tr>
+
+        <tr><td>4</td><td>OVERWHELMING</td><td></td></tr>
+
+        <tr>
+          <td>5</td>
+          <td>OVERWHELMING <span class="trophy">🏆🏆</span></td>
+          <td>74</td>
+        </tr>
+
+        <tr><td>6</td><td>MZEE WENGER</td><td>78</td></tr>
+        <tr><td>7</td><td>BEDROOM MASTER FC</td><td></td></tr>
+
+        <tr>
+          <td>8</td>
+          <td>BEDROOM MASTER FC <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr><td>9</td><td>GEN Z</td><td>80</td></tr>
+        <tr><td>10</td><td>ELEVATION</td><td></td></tr>
+        <tr><td>11</td><td>RED THUNDER FC</td><td></td></tr>
+        <tr><td>12</td><td>RETIRED G</td><td></td></tr>
+
+        <tr>
+          <td>13</td>
+          <td>SOLIDARITY <span class="trophy">🏆🏆</span></td>
+          <td>101</td>
+        </tr>
+
+        <tr>
+          <td>14</td>
+          <td>RED THUNDER FC <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr><td>15</td><td>MEDELEIN’S</td><td></td></tr>
+
+        <tr>
+          <td>16</td>
+          <td>EASTERN SNIPER <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr><td>17</td><td>ENGOGE</td><td></td></tr>
+
+        <tr>
+          <td>18</td>
+          <td>MADELEINES <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr><td>19</td><td>CASSAVA FARMER</td><td>91</td></tr>
+
+        <tr>
+          <td>20</td>
+          <td>MADELEINES <span class="trophy">🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>21</td>
+          <td>CASSAVA FARMER <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>22</td>
+          <td>ELEVATION <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr><td>23</td><td>JEDDY KEVOH</td><td>76</td></tr>
+
+        <tr>
+          <td>24</td>
+          <td>ELEVATION <span class="trophy">🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>25</td>
+          <td>RETIRED G <span class="trophy">🏆🏆</span></td>
+          <td>74</td>
+        </tr>
+
+        <tr>
+          <td>26</td>
+          <td>ELEVATION <span class="trophy">🏆🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>27</td>
+          <td>RETIRED G <span class="trophy">🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>28</td>
+          <td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>29</td>
+          <td>OVERWHELMING <span class="trophy">🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>30</td>
+          <td>I AM JOSE MOURINHO <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>31</td>
+          <td>GEN Z <span class="trophy">🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>32</td>
+          <td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>33</td>
+          <td>I AM JOSE MOURINHO <span class="trophy">🏆🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>34</td>
+          <td>MZEE WENGER <span class="trophy">🏆🏆</span></td>
+          <td>95</td>
+        </tr>
+
+        <tr>
+          <td>35</td>
+          <td>GEN Z <span class="trophy">🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>36</td>
+          <td>GEN Z <span class="trophy">🏆🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>37</td>
+          <td>EASTERN SNIPER <span class="trophy">🏆🏆🏆</span></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">38</td>
+          <td>ELEVATION <span class="trophy">🏆🏆🏆🏆🏆🏆</span> (Super GW Champion)</td>
+          <td>68</td>
+        </tr>
+
+        <tr>
+          <td>EASTERN SNIPER <span class="trophy">🏆🏆🏆🏆</span></td>
+          <td>68</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- 2025/26 REGISTRATIONS -->
+  <div class="section">
+
+    <h2>📋 Maestros FPL Classic League 2025/26 Registrations</h2>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Team</th>
+          <th>Fee</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr><td>1</td><td>Askofu</td><td>400</td></tr>
+        <tr><td>2</td><td>Cassava farmer</td><td>400</td></tr>
+        <tr><td>3</td><td>Double D</td><td>400</td></tr>
+        <tr><td>4</td><td>Dons of Thunder</td><td>400</td></tr>
+        <tr><td>5</td><td>Eberechiis</td><td>400</td></tr>
+        <tr><td>6</td><td>Engoge</td><td>400</td></tr>
+        <tr><td>7</td><td>Evolution</td><td>400</td></tr>
+        <tr><td>8</td><td>Favoured</td><td>400</td></tr>
+        <tr><td>9</td><td>GEN-Z</td><td>400</td></tr>
+        <tr><td>10</td><td>Gmax</td><td>400</td></tr>
+        <tr><td>11</td><td>Gyokeres</td><td>400</td></tr>
+        <tr><td>12</td><td>Jeddy Kevoh</td><td>400</td></tr>
+        <tr><td>13</td><td>Kitchen master</td><td>400</td></tr>
+        <tr><td>14</td><td>Mataktics</td><td>400</td></tr>
+        <tr><td>15</td><td>Mzee wenger</td><td>400</td></tr>
+        <tr><td>16</td><td>Passenger</td><td>400</td></tr>
+        <tr><td>17</td><td>Pending moderation</td><td>400</td></tr>
+        <tr><td>18</td><td>Retired Generals</td><td>400</td></tr>
+        <tr><td>19</td><td>Rock star</td><td>400</td></tr>
+        <tr><td>20</td><td>Team kin one</td><td>400</td></tr>
+        <tr><td>21</td><td>Thee Kop</td><td>400</td></tr>
+        <tr><td>22</td><td>UTAFITI OTI</td><td>400</td></tr>
+        <tr><td>23</td><td>Victor</td><td>400</td></tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- WEEKLY CHAMPIONS 2025/26 -->
+  <div class="section">
+
+    <h2>🏆 Maestros FPL Gameweek Winners 2025/26</h2>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>GW</th>
+          <th>Winner</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr><td>1</td><td>Team Kin one 🏆</td><td>76</td></tr>
+        <tr><td>2</td><td>Double D 🏆</td><td>79</td></tr>
+        <tr><td>3</td><td>Pending Moderation 🏆</td><td>73</td></tr>
+        <tr><td>4</td><td>Rock Star FC 🏆</td><td>91</td></tr>
+        <tr><td>5</td><td>Utafiti Oti 🏆</td><td>71</td></tr>
+        <tr><td>6</td><td>Utafiti Oti 🏆</td><td>81</td></tr>
+        <tr><td>7</td><td>Team Kin one 🏆</td><td>99</td></tr>
+        <tr><td>8</td><td>Mzee Wenger 🏆</td><td>86</td></tr>
+        <tr><td>9</td><td>Victor 🏆</td><td>88</td></tr>
+        <tr><td>10</td><td>Double D 🏆</td><td>97</td></tr>
+        <tr><td>11</td><td>Matactics 🏆</td><td>65</td></tr>
+        <tr><td>12</td><td>GYÖKERES &amp; 10 OTHERS 🏆</td><td>66</td></tr>
+        <tr><td>13</td><td>EBERECHIS FC 🏆</td><td>64</td></tr>
+        <tr><td>14</td><td>Team Kin one 🏆</td><td>91</td></tr>
+        <tr><td>15</td><td>Pending Moderation 🏆</td><td>86</td></tr>
+        <tr><td>16</td><td>Utafiti Oti 🏆</td><td>91</td></tr>
+        <tr><td>17</td><td>GYÖKERES &amp; 10 OTHERS 🏆</td><td>104</td></tr>
+        <tr><td>18</td><td>Retired General 🏆</td><td>72</td></tr>
+        <tr><td>19</td><td>Rock Star FC 🏆</td><td>70</td></tr>
+        <tr><td>20</td><td>Double D 🏆</td><td>62</td></tr>
+        <tr><td>21</td><td>Team Kin one 🏆 &amp; Evolution 🏆</td><td>-</td></tr>
+        <tr><td>22</td><td>Favoured 🏆</td><td>54</td></tr>
+        <tr><td>23</td><td>Victor 🏆 &amp; Pending Moderation 🏆</td><td>54</td></tr>
+        <tr><td>24</td><td>Cassava Farmer 🏆</td><td>78</td></tr>
+        <tr><td>25</td><td>Mr Jeff Products 🏆</td><td>84</td></tr>
+        <tr><td>26</td><td>Retired General 🏆</td><td>82</td></tr>
+        <tr><td>27</td><td>Team Kin one 🏆</td><td>74</td></tr>
+        <tr><td>28</td><td>Evolution 🏆</td><td>95</td></tr>
+        <tr><td>29</td><td>Rock Star FC 🏆</td><td>91</td></tr>
+        <tr><td>30</td><td>Rock Star FC 🏆</td><td>72</td></tr>
+        <tr><td>31</td><td>Pending Moderation 🏆</td><td>-</td></tr>
+        <tr><td>32</td><td>Mzee Wenger 🏆</td><td>85</td></tr>
+        <tr><td>33</td><td>The Passenger 🏆</td><td>98</td></tr>
+        <tr><td>34</td><td>Double D 🏆</td><td>71</td></tr>
+        <tr><td>35</td><td>Jeddy Kevoh 🏆 &amp; Victor 🏆</td><td>81</td></tr>
+        <tr><td>36</td><td>Evolution 🏆</td><td>91</td></tr>
+        <tr><td>37</td><td>Rockstar 🏆</td><td>-</td></tr>
+        <tr><td>38</td><td>Rockstar 🏆</td><td>-</td></tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- LIVE LEAGUE TABLE -->
+  <div class="section">
+
+    <h3>
+      📊 Click here to view our 2025/26 Maestros Classic League Table
+    </h3>
+
+    <a href="https://fantasy.premierleague.com/leagues/403426/standings/c"
+       target="_blank"
+       class="final-table-link">
+
+      View Live Standings
+
+    </a>
+
+  </div>
+
+
+  <!-- WHATSAPP -->
+  <div class="section" style="text-align:center;">
+
+    <h2>💬 Join Our WhatsApp Group</h2>
+
+    <a href="https://chat.whatsapp.com/Cfwf9Rc68849iRwuxlnDgA"
+       target="_blank"
+       style="color: lightgreen; font-size:18px;">
+
+      Click here to join the Maestros WhatsApp Group
+
+    </a>
+
+  </div>
+
+
+  <!-- 2026/27 REGISTRATIONS -->
+  <div class="section">
+
+    <h2>📋 Maestros FPL Classic League 2026/27 Registrations</h2>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>#</th>
+          <th>Team</th>
+          <th>Fee</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr><td>1</td><td>After Review</td><td>400</td></tr>
+        <tr><td>2</td><td>Archangel</td><td>400</td></tr>
+        <tr><td>3</td><td>Artetactico</td><td>400</td></tr>
+        <tr><td>4</td><td>Aureate</td><td>400</td></tr>
+        <tr><td>5</td><td>Baite FC</td><td>400</td></tr>
+        <tr><td>6</td><td>Bow for Joao</td><td>400</td></tr>
+        <tr><td>7</td><td>Bruno</td><td>400</td></tr>
+        <tr><td>8</td><td>Classic 11</td><td>400</td></tr>
+        <tr><td>9</td><td>D2 FC</td><td>400</td></tr>
+        <tr><td>10</td><td>Defending Generals</td><td>400</td></tr>
+        <tr><td>11</td><td>DJ Yobina</td><td>400</td></tr>
+        <tr><td>12</td><td>Elevation</td><td>400</td></tr>
+        <tr><td>13</td><td>Engoge</td><td>400</td></tr>
+        <tr><td>14</td><td>Favoured</td><td>400</td></tr>
+        <tr><td>15</td><td>I Am Kimathi</td><td>400</td></tr>
+        <tr><td>16</td><td>J.J</td><td>400</td></tr>
+        <tr><td>17</td><td>Jeddy Kevoh</td><td>400</td></tr>
+        <tr><td>18</td><td>KN Investments</td><td>400</td></tr>
+        <tr><td>19</td><td>Mannuben</td><td>400</td></tr>
+        <tr><td>20</td><td>Mast Go</td><td>400</td></tr>
+        <tr><td>21</td><td>MK Dons</td><td>400</td></tr>
+        <tr><td>22</td><td>Mzee Wenga</td><td>400</td></tr>
+        <tr><td>23</td><td>Passenger</td><td>400</td></tr>
+        <tr><td>24</td><td>Real Impact</td><td>400</td></tr>
+        <tr><td>25</td><td>Rock Star</td><td>400</td></tr>
+        <tr><td>26</td><td>Rosario 10</td><td>400</td></tr>
+        <tr><td>27</td><td>Soliderity</td><td>400</td></tr>
+        <tr><td>28</td><td>Strategiest</td><td>400</td></tr>
+        <tr><td>29</td><td>Team Kin One</td><td>400</td></tr>
+        <tr><td>30</td><td>Top Soccer</td><td>400</td></tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- 2026/27 GAME WEEK WINNERS -->
+  <div class="section">
+
+    <h2>MAESTROS GAME WEEK WINNERS 🏆</h2>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Game Week</th>
+          <th>Name</th>
+          <th>Score</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>GW 1</td>
+          <td>Rosario 10</td>
+          <td>76</td>
+        </tr>
+
+        <tr><td>GW 2</td><td></td><td></td></tr>
+        <tr><td>GW 3</td><td></td><td></td></tr>
+        <tr><td>GW 4</td><td></td><td></td></tr>
+        <tr><td>GW 5</td><td></td><td></td></tr>
+        <tr><td>GW 6</td><td></td><td></td></tr>
+        <tr><td>GW 7</td><td></td><td></td></tr>
+        <tr><td>GW 8</td><td></td><td></td></tr>
+        <tr><td>GW 9</td><td></td><td></td></tr>
+        <tr><td>GW 10</td><td></td><td></td></tr>
+        <tr><td>GW 11</td><td></td><td></td></tr>
+        <tr><td>GW 12</td><td></td><td></td></tr>
+        <tr><td>GW 13</td><td></td><td></td></tr>
+        <tr><td>GW 14</td><td></td><td></td></tr>
+        <tr><td>GW 15</td><td></td><td></td></tr>
+        <tr><td>GW 16</td><td></td><td></td></tr>
+        <tr><td>GW 17</td><td></td><td></td></tr>
+        <tr><td>GW 18</td><td></td><td></td></tr>
+        <tr><td>GW 19</td><td></td><td></td></tr>
+        <tr><td>GW 20</td><td></td><td></td></tr>
+        <tr><td>GW 21</td><td></td><td></td></tr>
+        <tr><td>GW 22</td><td></td><td></td></tr>
+        <tr><td>GW 23</td><td></td><td></td></tr>
+        <tr><td>GW 24</td><td></td><td></td></tr>
+        <tr><td>GW 25</td><td></td><td></td></tr>
+        <tr><td>GW 26</td><td></td><td></td></tr>
+        <tr><td>GW 27</td><td></td><td></td></tr>
+        <tr><td>GW 28</td><td></td><td></td></tr>
+        <tr><td>GW 29</td><td></td><td></td></tr>
+        <tr><td>GW 30</td><td></td><td></td></tr>
+        <tr><td>GW 31</td><td></td><td></td></tr>
+        <tr><td>GW 32</td><td></td><td></td></tr>
+        <tr><td>GW 33</td><td></td><td></td></tr>
+        <tr><td>GW 34</td><td></td><td></td></tr>
+        <tr><td>GW 35</td><td></td><td></td></tr>
+        <tr><td>GW 36</td><td></td><td></td></tr>
+        <tr><td>GW 37</td><td></td><td></td></tr>
+        <tr><td>GW 38</td><td></td><td></td></tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
 <script>
+
+  function openLogin() {
+    document.getElementById('login').style.display = 'flex';
+  }
+
+
   function login(user) {
+
     localStorage.setItem('loggedIn', 'true');
+
     localStorage.setItem('maestrosUser', user);
 
     document.getElementById('login').style.display = 'none';
-    document.getElementById('main').style.display = 'block';
+
   }
+
 
   function playClick() {
+
     document.getElementById('clickSound').play();
+
   }
 
-  function openLogin() {
-  document.getElementById('login').style.display = 'flex';
-}
-
-function login(user) {
-  localStorage.setItem('loggedIn', 'true');
-  localStorage.setItem('maestrosUser', user);
-
-  document.getElementById('login').style.display = 'none';
-}
-
-function playClick() {
-  document.getElementById('clickSound').play();
-}
-
-  window.onbeforeunload = function () {
-    localStorage.removeItem('loggedIn');
-    localStorage.removeItem('maestrosUser');
-  };
 </script>
-    <!-- 2026/27 REGISTRATIONS -->
-<div class="section">
-  <h2>📋 Maestros FPL Classic League 2026/27 Registrations</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Team</th>
-        <th>Fee</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>1</td><td>After Review</td><td>400</td></tr>
-      <tr><td>2</td><td>Archangel</td><td>400</td></tr>
-      <tr><td>3</td><td>Artetactico</td><td>400</td></tr>
-      <tr><td>4</td><td>Aureate</td><td>400</td></tr>
-      <tr><td>5</td><td>Baite FC</td><td>400</td></tr>
-      <tr><td>6</td><td>Bow for Joao</td><td>400</td></tr>
-      <tr><td>7</td><td>Bruno</td><td>400</td></tr>
-      <tr><td>8</td><td>Classic 11</td><td>400</td></tr>
-      <tr><td>9</td><td>D2 FC</td><td>400</td></tr>
-      <tr><td>10</td><td>Defending Generals</td><td>400</td></tr>
-      <tr><td>11</td><td>DJ Yobina</td><td>400</td></tr>
-      <tr><td>12</td><td>Elevation</td><td>400</td></tr>
-      <tr><td>13</td><td>Engoge</td><td>400</td></tr>
-      <tr><td>14</td><td>Favoured</td><td>400</td></tr>
-      <tr><td>15</td><td>I Am Kimathi</td><td>400</td></tr>
-      <tr><td>16</td><td>J.J</td><td>400</td></tr>
-      <tr><td>17</td><td>Jeddy Kevoh</td><td>400</td></tr>
-      <tr><td>18</td><td>KN Investments</td><td>400</td></tr>
-      <tr><td>19</td><td>Mannuben</td><td>400</td></tr>
-      <tr><td>20</td><td>Mast Go</td><td>400</td></tr>
-      <tr><td>21</td><td>MK Dons</td><td>400</td></tr>
-      <tr><td>22</td><td>Mzee Wenga</td><td>400</td></tr>
-      <tr><td>23</td><td>Passenger</td><td>400</td></tr>
-      <tr><td>24</td><td>Real Impact</td><td>400</td></tr>
-      <tr><td>25</td><td>Rock Star</td><td>400</td></tr>
-      <tr><td>26</td><td>Rosario 10</td><td>400</td></tr>
-      <tr><td>27</td><td>Soliderity</td><td>400</td></tr>
-      <tr><td>28</td><td>Strategiest</td><td>400</td></tr>
-      <tr><td>29</td><td>Team Kin One</td><td>400</td></tr>
-      <tr><td>30</td><td>Top Soccer</td><td>400</td></tr>
-    </tbody>
-  </table>
-</div>
-  <div class="section">
-  <h2>MAESTROS GAME WEEK WINNERS 🏆</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Game Week</th>
-        <th>Name</th>
-        <th>Score</th>
-      </tr>
-    </thead>
-
-     <!-- 2026/27 gameweek winners -->
-    <tbody>
-      <tr><td>GW 1</td><td>Rosario</td><td>76</td></tr>
-      <tr><td>GW 2</td><td></td><td></td></tr>
-      <tr><td>GW 3</td><td></td><td></td></tr>
-      <tr><td>GW 4</td><td></td><td></td></tr>
-      <tr><td>GW 5</td><td></td><td></td></tr>
-      <tr><td>GW 6</td><td></td><td></td></tr>
-      <tr><td>GW 7</td><td></td><td></td></tr>
-      <tr><td>GW 8</td><td></td><td></td></tr>
-      <tr><td>GW 9</td><td></td><td></td></tr>
-      <tr><td>GW 10</td><td></td><td></td></tr>
-      <tr><td>GW 11</td><td></td><td></td></tr>
-      <tr><td>GW 12</td><td></td><td></td></tr>
-      <tr><td>GW 13</td><td></td><td></td></tr>
-      <tr><td>GW 14</td><td></td><td></td></tr>
-      <tr><td>GW 15</td><td></td><td></td></tr>
-      <tr><td>GW 16</td><td></td><td></td></tr>
-      <tr><td>GW 17</td><td></td><td></td></tr>
-      <tr><td>GW 18</td><td></td><td></td></tr>
-      <tr><td>GW 19</td><td></td><td></td></tr>
-      <tr><td>GW 20</td><td></td><td></td></tr>
-      <tr><td>GW 21</td><td></td><td></td></tr>
-      <tr><td>GW 22</td><td></td><td></td></tr>
-      <tr><td>GW 23</td><td></td><td></td></tr>
-      <tr><td>GW 24</td><td></td><td></td></tr>
-      <tr><td>GW 25</td><td></td><td></td></tr>
-      <tr><td>GW 26</td><td></td><td></td></tr>
-      <tr><td>GW 27</td><td></td><td></td></tr>
-      <tr><td>GW 28</td><td></td><td></td></tr>
-      <tr><td>GW 29</td><td></td><td></td></tr>
-      <tr><td>GW 30</td><td></td><td></td></tr>
-      <tr><td>GW 31</td><td></td><td></td></tr>
-      <tr><td>GW 32</td><td></td><td></td></tr>
-      <tr><td>GW 33</td><td></td><td></td></tr>
-      <tr><td>GW 34</td><td></td><td></td></tr>
-      <tr><td>GW 35</td><td></td><td></td></tr>
-      <tr><td>GW 36</td><td></td><td></td></tr>
-      <tr><td>GW 37</td><td></td><td></td></tr>
-      <tr><td>GW 38</td><td></td><td></td></tr>
-    </tbody>
-  </table>
-</div>
-  </script>
 </body>
 </html>
