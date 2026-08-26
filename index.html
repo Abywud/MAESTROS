@@ -391,12 +391,20 @@
     document.getElementById('clickSound').play();
   }
 
-  window.onload = function () {
-    if (localStorage.getItem('loggedIn') === 'true') {
-      document.getElementById('login').style.display = 'none';
-      document.getElementById('main').style.display = 'block';
-    }
-  };
+  function openLogin() {
+  document.getElementById('login').style.display = 'flex';
+}
+
+function login(user) {
+  localStorage.setItem('loggedIn', 'true');
+  localStorage.setItem('maestrosUser', user);
+
+  document.getElementById('login').style.display = 'none';
+}
+
+function playClick() {
+  document.getElementById('clickSound').play();
+}
 
   window.onbeforeunload = function () {
     localStorage.removeItem('loggedIn');
